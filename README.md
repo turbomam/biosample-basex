@@ -1,2 +1,11 @@
 # biosample-basex
-Using the Base-X XML database to discover structure in NCBI's Biosample database
+Using the BaseX XML database to discover structure in NCBI's Biosample database
+
+BaseX can be installed with apt-get or hamebrew
+
+https://docs.basex.org/wiki/Main_Page
+
+https://basex.org/download/
+
+
+
