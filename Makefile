@@ -1,4 +1,7 @@
-.PHONY: biosample-basex count-biosamples
+.PHONY: biosample-basex count-biosamples biosample_tabular
+
+# be careful about using the basex gui and cli at the same time
+# (memory-wise, that is)
 
 # use curl or wget?
 # actually getting an error using wget from my LBL MBP!
@@ -22,5 +25,9 @@ biosample-basex: target/biosample_set.xml
 	basex -c 'CREATE DB biosample_set target/biosample_set.xml'
 
 count-biosamples:
-	time basex queries/count_biosamples.xq
+	date ; time basex queries/count_biosamples.xq
 
+# 15 minutes
+# this is currently a SUBSET of the columns in the harmonized_table.db SQLite database
+biosample_tabular:
+	date ; time basex queries/biosample_tabular.xq > target/biosample_tabular.tsv
