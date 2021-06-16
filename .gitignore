@@ -2,3 +2,5 @@ downloads
 target
 .DS_Store
 .idea
+venv
+
