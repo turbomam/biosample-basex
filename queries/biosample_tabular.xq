@@ -1,6 +1,11 @@
 declare option output:method "csv";
 declare option output:csv "header=yes, separator=tab";
 
+(:
+The BioSampleSet/BioSample/@id values look like sequential integers
+Is data(BioSampleSet/BioSample/@accession) the same as data(BioSampleSet/BioSample/Ids/Id[@is_primary='1’])?
+:)
+
 for $bs in doc(
   'biosample_set'
 )/BioSampleSet/BioSample
@@ -25,7 +30,6 @@ let $title := data(
 let $org_tax_name := data(
   $bs/Description/Organism/@taxonomy_name
 )
-(: description paragraphs:)
 
 let $package := data(
   $bs/Package
@@ -62,6 +66,7 @@ return <csv><record>
 <accession>{
   $accession
 }</accession>
+
 <primary_id>{
   $primary_id_val
 }</primary_id>
@@ -71,9 +76,11 @@ return <csv><record>
 <descr_paragraphs>{$descr_paragraphs}</descr_paragraphs>
 
 <model>{$model}</model>
+
 <org_tax_id>{
   $org_tax_id
 }</org_tax_id>
+
 <org_tax_name>{
   $org_tax_name
 }</org_tax_name>
@@ -102,3 +109,4 @@ return <csv><record>
 }</host_taxid>
 
 </record></csv>
+
