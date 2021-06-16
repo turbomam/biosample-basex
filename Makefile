@@ -81,7 +81,7 @@ target/list_biosamples_packages.tsv:
 	basex queries/list_biosamples_packages.xq > $@ && head $@
 # package has data and display name
 
-# still on 2M0lines test database
+# 12 minutes
 target/biosample_attribute_value_xq.tsv:
 	date && time ( basex queries/biosample_attribute_value_xq.xq > $@ ) && head $@
 

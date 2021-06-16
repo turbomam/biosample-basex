@@ -1,8 +1,9 @@
 declare option output:method "csv";
 declare option output:csv "header=yes, separator=tab";
 
+(: _2M_lines :)
 for $bsattrib in doc(
-  'biosample_set_2M_lines'
+  'biosample_set'
 )/BioSampleSet/BioSample/Attributes/Attribute[@harmonized_name]
 
 let $ahn := data(
