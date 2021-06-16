@@ -81,6 +81,10 @@ target/list_biosamples_packages.tsv:
 	basex queries/list_biosamples_packages.xq > $@ && head $@
 # package has data and display name
 
+# still on 2M0lines test database
+target/biosample_attribute_value_xq.tsv:
+	date && time ( basex queries/biosample_attribute_value_xq.xq > $@ ) && head $@
+
 # 15 minutes
 # this is currently a SUBSET of the columns in the harmonized_table.db SQLite database
 target/biosample_tabular.tsv:
