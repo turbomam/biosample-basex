@@ -1,7 +1,7 @@
 # biosample-basex
 Using the BaseX XML database to discover structure in NCBI's Biosample database
 
-BaseX can be installed with homebrew on Macs. It can be installed with `apt-get` on Ubuntu Linux machines, but I prefer to download the `.zip` archive. That makes it easier to increase the allocated RAM in the launch scripts. For eaxmple, `basex/bin/basex` might look like this:
+BaseX can be installed with homebrew on Macs. It can be installed with `apt-get` on Ubuntu Linux machines, but I prefer to download the `.zip` archive. That makes it easier to make the necessary increase to the allocated RAM in the launch scripts. For eaxmple, on a 32 GB machine, `basex/bin/basex` might look like this:
 
 ```bash
 #!/usr/bin/env bash
