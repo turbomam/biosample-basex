@@ -43,7 +43,7 @@ count-biosamples:
 target/count_BioSampleSet_elements.tsv:
 	basex queries/count_BioSampleSet_elements.xq | tee $@
 
-target/count_BioSample_elements.:
+target/count_BioSample_elements.tsv:
 	basex queries/count_BioSample_elements.xq | tee $@
 
 # Id elements have no child elements
