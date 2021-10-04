@@ -30,7 +30,7 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 # ~ 90 minutes on cori @ Xmx  = 96 GB RAM. Xmx may not matter much for load. But indexing?
 # du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
 biosample-basex: target/biosample_set.xml
-	$BASEXCMD -c 'CREATE DB biosample_set target/biosample_set.xml'
+	$(BASEXCMD) -c 'CREATE DB biosample_set target/biosample_set.xml'
 
 # 2 million biosamples 20211004
 # 2 minutes
@@ -40,4 +40,10 @@ target/count_biosamples.tsv:
 # 35 minutes
 target/biosample_non-attribute_plus_emp500_wide.tsv:
 	date ; time $(BASEXCMD) queries/biosample_non-attribute_plus_emp500_wide.xq > $@
+	
+# add to non-attributes query
+# empo_0 ???
+# empo_1 ???
+# empo_2 ???
+# empo_3 ???
 
