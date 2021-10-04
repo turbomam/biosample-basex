@@ -1,5 +1,9 @@
+# currently only intended to create SQLite db file
+#   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
+
 .PHONY: biosample-basex
 .PHONY: count-biosamples
+
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
 export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
@@ -29,6 +33,11 @@ biosample-basex: target/biosample_set.xml
 	$BASEXCMD -c 'CREATE DB biosample_set target/biosample_set.xml'
 
 # 2 million biosamples 20211004
-count-biosamples:
-	date ; time $(BASEXCMD) queries/count_biosamples.xq
+# 2 minutes
+target/count_biosamples.tsv:
+	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
+
+# 35 minutes
+target/biosample_non-attribute_plus_emp500_wide.tsv:
+	date ; time $(BASEXCMD) queries/biosample_non-attribute_plus_emp500_wide.xq > $@
 
