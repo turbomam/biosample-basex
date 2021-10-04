@@ -1,6 +1,9 @@
 .PHONY: biosample-basex
 .PHONY: count-biosamples
 
+export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
+export BASEXCMD=$PROJDIR/biosample-basex/basex/bin/basex
+
 # be careful about using the basex gui and cli at the same time
 # (memory-wise, that is)
 
@@ -31,8 +34,8 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 # not certain that all of the most impactful indexes are being built
 # on MacOS, the database will be created in ~/basex/data by default
 biosample-basex: target/biosample_set.xml
-	basex -c 'CREATE DB biosample_set target/biosample_set.xml'
+	$BASEXCMD -c 'CREATE DB biosample_set target/biosample_set.xml'
 
 count-biosamples:
-	date ; time basex queries/count_biosamples.xq
+	date ; time $BASEXCMD queries/count_biosamples.xq
 
