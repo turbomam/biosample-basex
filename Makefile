@@ -37,5 +37,5 @@ biosample-basex: target/biosample_set.xml
 	$BASEXCMD -c 'CREATE DB biosample_set target/biosample_set.xml'
 
 count-biosamples:
-	date ; time $BASEXCMD queries/count_biosamples.xq
+	date ; time $(BASEXCMD) queries/count_biosamples.xq
 
