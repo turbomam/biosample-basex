@@ -2,7 +2,7 @@
 .PHONY: count-biosamples
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
-export BASEXCMD=$PROJDIR/biosample-basex/basex/bin/basex
+export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
 
 # be careful about using the basex gui and cli at the same time
 # (memory-wise, that is)
