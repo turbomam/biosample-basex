@@ -3,6 +3,19 @@
 
 .PHONY: biosample-basex
 .PHONY: count-biosamples
+.PHONY: clean
+.PHONY: count_clean
+.PHONY: all
+
+all: clean biosample-basex target/biosample_non-attribute_plus_emp500_wide.tsv
+
+clean:
+	# not wiping or overwriting BaseX database as part of 'clean'
+	rm -rf downloads/*
+	rm -rf target/*
+
+count_clean:
+	rm -rf target/count_biosamples.tsv
 
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
@@ -41,9 +54,15 @@ target/count_biosamples.tsv:
 target/biosample_non-attribute_plus_emp500_wide.tsv:
 	date ; time $(BASEXCMD) queries/biosample_non-attribute_plus_emp500_wide.xq > $@
 	
-# add to non-attributes query
-# empo_0 ???
-# empo_1 ???
-# empo_2 ???
-# empo_3 ???
+# add EMP Ontology terms to non-attributes query ???
+# empo_0
+# empo_1
+# empo_2
+# empo_3
+
+# make a document about which terms (harmonized attribute, non-harmonized attribute or non-attriubte) go into queries/biosample_non-attribute_plus_emp500_wide.xq
+#   and make all attributes/harmonized attributes options for the long/EAV query?
+
+target/long_attributes.tsv:
+	date ; time $(BASEXCMD) queries/long_attributes.xq > $@
 
