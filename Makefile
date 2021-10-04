@@ -31,4 +31,13 @@ biosample-basex: target/biosample_set.xml
 # 2 million biosamples 20211004
 count-biosamples:
 	date ; time $(BASEXCMD) queries/count_biosamples.xq
+	
+# add to non-attributes query
+# emp500_principal_investigator
+# emp500_study_id
+# emp500_title
+# empo_0 ???
+# empo_1 ???
+# empo_2 ???
+# empo_3 ???
 
