@@ -23,6 +23,14 @@ let $id := fn:normalize-space(
   )
 )
 
+let $xref_ids := fn:normalize-space(
+  string-join(
+    $bs/Ids/Id/concat(
+      @db,':',.
+    ),$delim
+  )
+)
+
 
 let $sraid :=  fn:normalize-space(
   string-join(
@@ -175,7 +183,9 @@ return
   $primary_id
 }</primary_id>
 
-
+<xref_ids>{
+  $xref_ids
+}</xref_ids>
 
 <sra_id>{
   $sraid
