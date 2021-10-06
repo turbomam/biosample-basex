@@ -1,38 +1,5 @@
 BASEX APPROACH ADDS
 
-WHY IN QUOTES?
-	< "depth"
-	< "temp"
-	
-SEEMS OK EITHER WAY
-select
-	"id",
-	depth,
-	temp
-from
-	biosample_merged bm
-where
-	depth is not null
-and depth != ""
-and temp is not null
-and temp != ""
-limit 9;
-
-|id  |depth|temp       |
-|----|-----|-----------|
-|1340|25m  |26.16 deg C|
-|1362|25m  |25.26 deg C|
-|2676|0.38 |4.42       |
-|3957|121  |4          |
-|3958|121  |3.8653     |
-|3959|63   |2.7245     |
-|3960|63   |2.5385     |
-|3961|62.9 |13.6       |
-|3962|62.9 |13.6       |
-
-	
-???	
-	< geo_loc_exposure
 
 JUST DIFFERENCES IN NAMES OF ID COLUMNS. ID MAY BE USED DIFFERENTLY TOO.
 	< accession
@@ -62,6 +29,38 @@ ADDITIONAL TRACABILITY, ESP. FOR EMP 500. MAY ALREADY BE IN BILL'S XREF
 NEW STYLE FOR INTERLEAVED ENTREZ LINKS
 	< entrez_links
 
+WHY IN QUOTES?
+	< "depth"
+	< "temp"
+	
+SEEMS OK EITHER WAY
+
+select
+	"id",
+	depth,
+	temp
+from
+	biosample_merged bm
+where
+	depth is not null
+and depth != ""
+and temp is not null
+and temp != ""
+limit 9;
+
+|id  |depth|temp       |
+|----|-----|-----------|
+|1340|25m  |26.16 deg C|
+|1362|25m  |25.26 deg C|
+|2676|0.38 |4.42       |
+|3957|121  |4          |
+|3958|121  |3.8653     |
+|3959|63   |2.7245     |
+|3960|63   |2.5385     |
+|3961|62.9 |13.6       |
+|3962|62.9 |13.6       |
+
+
 RECENTLY ADDED SARS COV2 ATTRIBUTES
 	< date_of_sars_cov_2_vaccination
 	< prior_sars_cov_2_vaccination
@@ -72,27 +71,76 @@ RECENTLY ADDED WASTEWATER ATTRIBUTES
 	< ww_sample_site
 	< ww_surv_jurisdiction
 	< ww_surv_system_sample_id
+	
+NEW ATTRIBUTE?	
+	< geo_loc_exposure
+
+mam@cori07:/global/cfs/cdirs/m3513/endurable/biosample/mam/biosample-basex/target> grep geo_loc_exposure biosample_set.xml
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+    <Attribute attribute_name="geo_loc_exposure" harmonized_name="geo_loc_exposure" display_name="geo loc exposure">Russia</Attribute>
+
+mam@cori07:/global/cfs/cdirs/m3513/endurable/biosample/mam/biosample-basex/target> zcat /global/cfs/cdirs/m3513/endurable/biosample/biosample-analysis/downloads/biosample_set.xml.gz  | grep geo_loc_exposure 
+mam@cori07:/global/cfs/cdirs/m3513/endurable/biosample/mam/biosample-basex/target>
+
 
 also: mixture of blank cells and nulls
+review column names: SQL friendly, same as what NCBI uses where ever possible
+ALTER DB biosample_set biosample_set_20211005
+paramterize database name and file paths?
+less phony make rules?
 
 ---
 
 BASEX APPROACH LOST
 
-
-
 ???
 	> solar_irradiance
-
-
-GOT DOUBLE QUOTE WRAPPERS
-	> depth
-	> temp
-
-JUST DIFFERENCES IN NAMES OF ID COLUMNS. ID MAY BE USED DIFFERENTLY TOO.
-	> accession_biosample_id
-	> xref
 	
+mam@cori07:/global/cfs/cdirs/m3513/endurable/biosample/mam/biosample-basex/target> zcat /global/cfs/cdirs/m3513/endurable/biosample/biosample-analysis/downloads/biosample_set.xml.gz  | grep solar_irradiance
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1940.73</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1940.73</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1940.73</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2724.54</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2724.54</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2724.54</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1433.68</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1433.68</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1433.68</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2033.89</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2033.89</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2033.89</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1804.15</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1804.15</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1804.15</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1863.14</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1863.14</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1863.14</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1940.73</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1940.73</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1940.73</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2724.54</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2724.54</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2724.54</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1433.68</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1433.68</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1433.68</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2033.89</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2033.89</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">2033.89</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1804.15</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1804.15</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1804.15</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1863.14</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1863.14</Attribute>
+    <Attribute attribute_name="solar irradiance" harmonized_name="solar_irradiance" display_name="solar irradiance">1863.14</Attribute>
+
+
+
 |id|accession_biosample_id|xref|
 |--|----------------------|----|
 |BIOSAMPLE:SAMN00000002|2|BIOSAMPLE:SAMN00000002&#124;SRA:SRS000002&#124;WUGSC:19655|
@@ -121,3 +169,14 @@ where
 	"attribute" is not null
 	and "attribute" != ""
 count = 0
+
+GOT DOUBLE QUOTE WRAPPERS
+	> depth
+	> temp
+	
+NEW BASEX based SQLite can be queried on those columns. See above.
+
+JUST DIFFERENCES IN NAMES OF ID COLUMNS. ID MAY BE USED DIFFERENTLY TOO.
+	> accession_biosample_id
+	> xref
+

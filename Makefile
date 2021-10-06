@@ -4,11 +4,7 @@
 # currently only intended to create SQLite db file
 #   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
 
-.PHONY: biosample-basex
-.PHONY: count-biosamples
-.PHONY: clean
-.PHONY: count_clean
-.PHONY: all
+.PHONY: biosample-basex count-biosamples clean count_clean all
 
 all: clean biosample-basex target/biosample_non-attribute_plus_emp500_wide.tsv chunked_attributes wide_chunks catted_chunks
 
@@ -53,17 +49,12 @@ target/count_biosamples.tsv:
 	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
 
 # 35 minutes
-target/biosample_non-attribute_plus_emp500_wide.tsv:
-	date ; time $(BASEXCMD) queries/biosample_non-attribute_plus_emp500_wide.xq > $@
+# target/biosample_non-attribute_plus_emp500_wide.tsv:
+# date ; time $(BASEXCMD) queries/biosample_non-attribute_plus_emp500_wide.xq > $@
+target/biosample_non_harmonized_attributes_wide.tsv:
+	date ; time $(BASEXCMD) queries/biosample_non_harmonized_attributes_wide.xq > $@
 	
-# add EMP Ontology terms to non-attributes query ???
-# empo_0
-# empo_1
-# empo_2
-# empo_3
-
-# make a document about which terms (harmonized attribute, non-harmonized attribute or non-attriubte) go into queries/biosample_non-attribute_plus_emp500_wide.xq
-#   and make all attributes/harmonized attributes options for the long/EAV query?
+# ---
 
 target/long_attributes.tsv:
 	date ; time $(BASEXCMD) queries/long_attributes.xq > $@
@@ -88,5 +79,20 @@ catted_chunks:
 # sqlite> CREATE INDEX catted_wide_attributes_id_idx on catted_wide_attributes("id");
 # sqlite> CREATE INDEX non_harmonized_attributes_id_idx on non_harmonized_attributes("id");
 # sqlite> CREATE VIEW biosample_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_attributes using("id");
+
+# ---
+
+# add EMP Ontology terms to non-attributes query ???
+# empo_0
+# empo_1
+# empo_2
+# empo_3
+
+# make a document about which terms (harmonized attribute, non-harmonized attribute or non-attriubte) go into queries/biosample_non-attribute_plus_emp500_wide.xq
+#   and make all attributes/harmonized attributes options for the long/EAV query?
+
+# add harmonized name accounting
+
+
 
 
