@@ -1,51 +1,53 @@
 declare option output:method "csv";
 declare option output:csv "header=yes, separator=tab";
 
-let $delim := "|||"
+let $delim := $delim
 
-for $element in doc(
+for $bs in doc(
   'biosample_set'
 )/BioSampleSet/BioSample
-
-let $sraid :=  fn:normalize-space(
-  string-join(
-    data(
-      $element/Ids/Id[@db="SRA"]
-    ),"|||"
-  )
-)
 
 let $accession :=  fn:normalize-space(
   string-join(
     data(
-      $element/@accession
-    ),"|||"
+      $bs/@accession
+    ),$delim
   )
 )
 
-let $biosample_id := fn:normalize-space(
+let $id := fn:normalize-space(
   string-join(
     data(
-      $element/@id
-    ),"|||"
+      $bs/@id
+    ),$delim
   )
 )
+
+
+let $sraid :=  fn:normalize-space(
+  string-join(
+    data(
+      $bs/Ids/Id[@db="SRA"]
+    ),$delim
+  )
+)
+
 let $dna_source := fn:normalize-space(
   string-join(
     data(
-      $element/Links/Link[@type="url" and @label="DNA Source"]
-    ),"|||"
+      $bs/Links/Link[@type="url" and @label="DNA Source"]
+    ),$delim
   )
 )
 let $doi := fn:normalize-space(
   string-join(
     data(
-      $element/Links/Link[@label="DOI"]
-    ),"|||"
+      $bs/Links/Link[@label="DOI"]
+    ),$delim
   )
 )
 
-let $entrez_link := $element/Links/Link[@type="entrez"]
+let $entrez_link := $bs/Links/Link[@type="entrez"]
 
 let $entrez_links := fn:normalize-space(
   string-join(
@@ -55,100 +57,103 @@ let $entrez_links := fn:normalize-space(
   )
 )
 
-let $model_cat := fn:normalize-space(
+let $model := fn:normalize-space(
   string-join(
     data(
-      $element/Models/Model
-    ),"|||"
+      $bs/Models/Model
+    ),$delim
   )
 )
 let $package := fn:normalize-space(
   string-join(
     data(
-      $element/Package
-    ),"|||"
+      $bs/Package
+    ),$delim
   )
 )
 let $package_display_name := fn:normalize-space(
   string-join(
     data(
-      $element/Package/@display_name
-    ),"|||"
+      $bs/Package/@display_name
+    ),$delim
   )
 )
-let $paragraph_cat := fn:normalize-space(
+let $paragraph := fn:normalize-space(
   string-join(
     data(
-      $element/Description/Comment/Paragraph
-    ),"|||"
+      $bs/Description/Comment/Paragraph
+    ),$delim
   )
 )
 
-let $primary_id_data := fn:normalize-space(
+let $primary_id := fn:normalize-space(
   string-join(
     data(
-      $element/Ids/Id[@is_primary="1"]
-    ),"|||"
+      $bs/Ids/Id[@is_primary="1"]
+    ),$delim
   )
 )
 
 let $status := fn:normalize-space(
   string-join(
     data(
-      $element/Status/@status
-    ),"|||"
+      $bs/Status/@status
+    ),$delim
   )
 )
+
+let $status_when := fn:normalize-space(
+  string-join(
+    data(
+      $bs/Status/@when
+    ),$delim
+  )
+)
+
 let $taxonomy_id := fn:normalize-space(
   string-join(
     data(
-      $element/Description/Organism/@taxonomy_id
-    ),"|||"
+      $bs/Description/Organism/@taxonomy_id
+    ),$delim
   )
 )
 let $taxonomy_name := fn:normalize-space(
   string-join(
     data(
-      $element/Description/Organism/@taxonomy_name
-    ),"|||"
+      $bs/Description/Organism/@taxonomy_name
+    ),$delim
   )
 )
 let $title := fn:normalize-space(
   string-join(
     data(
-      $element/Description/Title
-    ),"|||"
+      $bs/Description/Title
+    ),$delim
   )
 )
-let $when := fn:normalize-space(
-  string-join(
-    data(
-      $element/Status/@when
-    ),"|||"
-  )
-)
+
 
 let $emp500_principal_investigator := fn:normalize-space(
   string-join(
     data(
-      $element/Attributes/Attribute[@attribute_name='emp500_principal_investigator']
-    ),"|||"
+      $bs/Attributes/Attribute[@attribute_name='emp500_principal_investigator']
+    ),$delim
   )
 )
 
 let $emp500_study_id := fn:normalize-space(
   string-join(
     data(
-      $element/Attributes/Attribute[@attribute_name='emp500_study_id']
-    ),"|||"
+      $bs/Attributes/Attribute[@attribute_name='emp500_study_id']
+    ),$delim
   )
 )
 
 let $emp500_title := fn:normalize-space(
   string-join(
     data(
-      $element/Attributes/Attribute[@attribute_name='emp500_title']
-    ),"|||"
+      $bs/Attributes/Attribute[@attribute_name='emp500_title']
+    ),$delim
   )
 )
 
@@ -161,22 +166,26 @@ return
 }
 </accession>
 
-
-<SRA_id>{
-  $sraid
-}</SRA_id>
-
 <id>{
-  $biosample_id
+  $id
 }
 </id>
+
 <primary_id>{
-  $primary_id_data
+  $primary_id
 }</primary_id>
 
- <dna_source>{
+
+
+<sra_id>{
+  $sraid
+}</sra_id>
+
+
+<dna_source>{
   $dna_source
 }</dna_source>
+
 <doi>{
   $doi
 }</doi>
@@ -188,7 +197,7 @@ return
 </entrez_links>
 
 <model>{
-  $model_cat
+  $model
 }</model>
 
 <package>{
@@ -202,14 +211,9 @@ return
   $status
 }</status>
 
-<title>{
-  $title
-}</title>
-
-
-<status_date>{
-  $when
-}</status_date>
+<status_when>{
+  $status_when
+}</status_when>
 
 <taxonomy_id>{
   $taxonomy_id
@@ -218,9 +222,15 @@ return
   $taxonomy_name
 }</taxonomy_name>
 
+
+<title>{
+  $title
+}</title>
+
 <paragraph>{
-  $paragraph_cat
+  $paragraph
 }</paragraph>
+
 
 <emp500_principal_investigator>
 {$emp500_principal_investigator}
@@ -233,7 +243,6 @@ return
 <emp500_title>
 {$emp500_title}
 </emp500_title>
-
 
 
 </csv></result>
