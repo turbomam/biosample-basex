@@ -1,0 +1,123 @@
+BASEX APPROACH ADDS
+
+WHY IN QUOTES?
+	< "depth"
+	< "temp"
+	
+SEEMS OK EITHER WAY
+select
+	"id",
+	depth,
+	temp
+from
+	biosample_merged bm
+where
+	depth is not null
+and depth != ""
+and temp is not null
+and temp != ""
+limit 9;
+
+|id  |depth|temp       |
+|----|-----|-----------|
+|1340|25m  |26.16 deg C|
+|1362|25m  |25.26 deg C|
+|2676|0.38 |4.42       |
+|3957|121  |4          |
+|3958|121  |3.8653     |
+|3959|63   |2.7245     |
+|3960|63   |2.5385     |
+|3961|62.9 |13.6       |
+|3962|62.9 |13.6       |
+
+	
+???	
+	< geo_loc_exposure
+
+JUST DIFFERENCES IN NAMES OF ID COLUMNS. ID MAY BE USED DIFFERENTLY TOO.
+	< accession
+	< primary_id
+	
+|id|accession|primary_id|
+|--|---------|----------|
+|2|SAMN00000002|SAMN00000002|
+|3|SAMN00000003|SAMN00000003|
+|4|SAMN00000004|SAMN00000004|
+|5|SAMN00000005|SAMN00000005|
+|6|SAMN00000006|SAMN00000006|
+|7|SAMN00000007|SAMN00000007|
+|8|SAMN00000008|SAMN00000008|
+|9|SAMN00000009|SAMN00000009|
+|10|SAMN00000010|SAMN00000010|
+
+
+EMP 500 NON-HARMONIZED ATTRIBUTES "FORCED"
+	< emp500_principal_investigator
+	< emp500_study_id
+	< emp500_title
+
+ADDITIONAL TRACABILITY, ESP. FOR EMP 500. MAY ALREADY BE IN BILL'S XREF
+	< SRA_id
+
+NEW STYLE FOR INTERLEAVED ENTREZ LINKS
+	< entrez_links
+
+RECENTLY ADDED SARS COV2 ATTRIBUTES
+	< date_of_sars_cov_2_vaccination
+	< prior_sars_cov_2_vaccination
+
+RECENTLY ADDED WASTEWATER ATTRIBUTES
+	< purpose_of_ww_sampling
+	< ww_processing_protocol
+	< ww_sample_site
+	< ww_surv_jurisdiction
+	< ww_surv_system_sample_id
+
+also: mixture of blank cells and nulls
+
+---
+
+BASEX APPROACH LOST
+
+
+
+???
+	> solar_irradiance
+
+
+GOT DOUBLE QUOTE WRAPPERS
+	> depth
+	> temp
+
+JUST DIFFERENCES IN NAMES OF ID COLUMNS. ID MAY BE USED DIFFERENTLY TOO.
+	> accession_biosample_id
+	> xref
+	
+|id|accession_biosample_id|xref|
+|--|----------------------|----|
+|BIOSAMPLE:SAMN00000002|2|BIOSAMPLE:SAMN00000002&#124;SRA:SRS000002&#124;WUGSC:19655|
+|BIOSAMPLE:SAMN00000003|3|SRA:SRS000003&#124;BIOSAMPLE:SAMN00000003&#124;WUGSC:19659|
+|BIOSAMPLE:SAMN00000004|4|SRA:SRS000004&#124;BIOSAMPLE:SAMN00000004&#124;WUGSC:19859|
+|BIOSAMPLE:SAMN00000005|5|WUGSC:Biomphalaria glabrata&#124;BIOSAMPLE:SAMN00000005&#124;SRA:SRS000005|
+|BIOSAMPLE:SAMN00000006|6|SRA:SRS000006&#124;BIOSAMPLE:SAMN00000006&#124;WUGSC:Callithrix jacchus|
+|BIOSAMPLE:SAMN00000007|7|SRA:SRS000007&#124;BIOSAMPLE:SAMN00000007&#124;WUGSC:19663|
+|BIOSAMPLE:SAMN00000008|8|SRA:SRS000008&#124;BIOSAMPLE:SAMN00000008&#124;WUGSC:18155|
+|BIOSAMPLE:SAMN00000009|9|WUGSC:Monodelphis domestica&#124;BIOSAMPLE:SAMN00000009&#124;SRA:SRS000009|
+|BIOSAMPLE:SAMN00000010|10|SRA:SRS000010&#124;BIOSAMPLE:SAMN00000010&#124;WUGSC:Ruminococcus sp. GM2/1|
+
+
+OLD STYLE OF UNCOUPLED ENTREZ LINKS
+	> entrez_label
+	> entrez_target
+	> entrez_value
+	
+WAS ALWAYS EMPTY?
+	> attribute
+select
+	count(1)
+from
+	biosample b
+where
+	"attribute" is not null
+	and "attribute" != ""
+count = 0
