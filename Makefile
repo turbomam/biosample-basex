@@ -10,16 +10,12 @@
 .PHONY: count_clean
 .PHONY: all
 
-all: clean biosample-basex target/biosample_non-attribute_plus_emp500_wide.tsv
+all: clean biosample-basex target/biosample_non-attribute_plus_emp500_wide.tsv chunked_attributes wide_chunks catted_chunks
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
 	rm -rf downloads/*
 	rm -rf target/*
-
-count_clean:
-	rm -rf target/count_biosamples.tsv
-
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
 export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
@@ -47,6 +43,9 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 # du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
 biosample-basex: target/biosample_set.xml
 	$(BASEXCMD) -c 'CREATE DB biosample_set target/biosample_set.xml'
+
+count_clean:
+	rm -rf target/count_biosamples.tsv
 
 # 2 million biosamples 20211004
 # 2 minutes
@@ -83,10 +82,11 @@ PHONY: catted_chunks
 catted_chunks:
 	python3 cat_wide_attributes.py
 
-
-
-# merge
-# load into sqlite3
-
+# turn these into make rules
+# sqlite> .import target/catted_wide_attributes.tsv catted_wide_attributes
+# sqlite> .import target/biosample_non-attribute_plus_emp500_wide.tsv non_harmonized_attributes
+# sqlite> CREATE INDEX catted_wide_attributes_id_idx on catted_wide_attributes("id");
+# sqlite> CREATE INDEX non_harmonized_attributes_id_idx on non_harmonized_attributes("id");
+# sqlite> CREATE VIEW biosample_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_attributes using("id");
 
 
