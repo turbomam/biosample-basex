@@ -23,6 +23,8 @@ export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
 # make sure that the same dataset is being used in all queries
 
 # be consistent about identifying samples with accession or primary ID
+	
+# ---
 
 # 20211004: 1.5 GB
 # roughly 1 minute
@@ -39,6 +41,8 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 # du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
 biosample-basex: target/biosample_set.xml
 	$(BASEXCMD) -c 'CREATE DB biosample_set target/biosample_set.xml'
+	
+# ---
 
 count_clean:
 	rm -rf target/count_biosamples.tsv
@@ -47,6 +51,8 @@ count_clean:
 # 2 minutes
 target/count_biosamples.tsv:
 	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
+	
+# ---
 
 # 35 minutes
 # target/biosample_non-attribute_plus_emp500_wide.tsv:
@@ -56,8 +62,8 @@ target/biosample_non_harmonized_attributes_wide.tsv:
 	
 # ---
 
-target/long_attributes.tsv:
-	date ; time $(BASEXCMD) queries/long_attributes.xq > $@
+target/biosample_harmonized_attributes_long.tsv:
+	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
 	
 .PHONY: chunked_attributes
 chunked_attributes:
