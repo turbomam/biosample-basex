@@ -1,7 +1,7 @@
 declare option output:method "csv";
 declare option output:csv "header=yes, separator=tab";
 
-let $delim := $delim
+let $delim := "|||"
 
 for $bs in doc(
   'biosample_set'
