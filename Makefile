@@ -1,3 +1,6 @@
+# paramterize the basex path so multiple people can use this
+# cori requires: 'module load python'
+
 # currently only intended to create SQLite db file
 #   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
 
@@ -65,4 +68,25 @@ target/biosample_non-attribute_plus_emp500_wide.tsv:
 
 target/long_attributes.tsv:
 	date ; time $(BASEXCMD) queries/long_attributes.xq > $@
+	
+.PHONY: chunked_attributes
+chunked_attributes:
+	get_harmonized-values_chunks.sh
+
+# PARAMETERIZE OUT THE HARDCODED PATHS
+# here and elsewhere
+.PHONY: wide_chunks
+wide_chunks:
+	python3 make_wide_chunks.py
+
+PHONY: catted_chunks
+catted_chunks:
+	python3 cat_wide_attributes.py
+
+
+
+# merge
+# load into sqlite3
+
+
 
