@@ -65,9 +65,9 @@ target/biosample_non_harmonized_attributes_wide.tsv:
 target/biosample_harmonized_attributes_long.tsv:
 	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
 	
-.PHONY: chunked_attributes
-chunked_attributes:
-	get_harmonized-values_chunks.sh
+.PHONY: chunk_harmonized_attributes_long
+chunk_harmonized_attributes_long:
+	chunk_harmonized_attributes_long.sh
 
 # PARAMETERIZE OUT THE HARDCODED PATHS
 # here and elsewhere
