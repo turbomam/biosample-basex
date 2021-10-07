@@ -80,7 +80,7 @@ chunk_harmonized_attributes_long:
 # PARAMETERIZE OUT THE HARDCODED PATHS
 # here and elsewhere
 wide_chunks:
-	python3 make_wide_ha_chunks.py
+	python3 util/make_wide_ha_chunks.py
 	
 # ---
 
