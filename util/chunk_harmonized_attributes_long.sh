@@ -17,7 +17,7 @@ do
   -bmin_bs_id_val=${start} \
   -bmax_bs_id_val=${bs_reached} \
   queries/chunk_harmonized_attributes_long.xq > \
-  target/chunks_long/chunk_harmonized_attributes_long_${start}_${bs_reached}.tsv && \
+  target/chunks_long/chunk_harmonized_attributes_${start}_${bs_reached}.tsv && \
   date
 done
 

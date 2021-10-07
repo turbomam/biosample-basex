@@ -8,7 +8,7 @@ cat_cout = 40
 wide_root = "target/chunks_wide"
 all_files = glob.glob(wide_root + "/*.tsv")
 
-output_file = "target/catted_wide_attributes.tsv"
+output_file = "target/catted_wide_harmonized_attributes.tsv"
 
 all_files.sort()
 
@@ -28,4 +28,5 @@ print(datetime.now().strftime("%H:%M:%S"))
 print(frame.shape)
 frame.to_csv(output_file, sep="\t", index=False)
 print(datetime.now().strftime("%H:%M:%S"))
+
 
