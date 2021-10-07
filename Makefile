@@ -1,6 +1,8 @@
 # paramterize the basex path so multiple people can use this
 # cori requires: 'module load python'
 
+# modify clean steps so that they don't delete readmes
+
 # currently only intended to create SQLite db file
 #   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
 
