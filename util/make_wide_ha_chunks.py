@@ -12,8 +12,9 @@ data_files.sort()
 
 for file in data_files:
     print(file)
-    full_path = join(data_root, file)
-#     print(full_path)
+#    full_path = join(data_root, file)
+    full_path = file
+    print(full_path)
     long_chunk = pd.read_csv(full_path, sep="\t")
     wide_chunk = long_chunk.pivot(index=["id"], 
                     columns='attribute', 
