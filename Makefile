@@ -4,9 +4,9 @@
 # currently only intended to create SQLite db file
 #   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
 
-.PHONY: biosample-basex count-biosamples clean count_clean all
+.PHONY: biosample-basex count-biosamples clean count_clean all chunk_harmonized_attributes_long wide_chunks catted_chunks
 
-all: clean biosample-basex target/biosample_non-attribute_plus_emp500_wide.tsv chunked_attributes wide_chunks catted_chunks
+all: clean biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long wide_chunks catted_chunks
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
@@ -66,17 +66,14 @@ target/biosample_harmonized_attributes_long.tsv:
 	
 # ---
 
-.PHONY: chunk_harmonized_attributes_long
 chunk_harmonized_attributes_long:
-	chunk_harmonized_attributes_long.sh
+	util/chunk_harmonized_attributes_long.sh
 
 # PARAMETERIZE OUT THE HARDCODED PATHS
 # here and elsewhere
-.PHONY: wide_chunks
 wide_chunks:
 	python3 make_wide_chunks.py
 
-PHONY: catted_chunks
 catted_chunks:
 	python3 cat_wide_attributes.py
 
