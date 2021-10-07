@@ -96,7 +96,8 @@ catted_chunks: wide_chunks
 
 # how far do we watn to go with dependencies?
 # esp when they are phony?
-populate_sqlite_etc: target/biosample_non_harmonized_attributes_wide.tsv catted_chunks
+#  target/biosample_non_harmonized_attributes_wide.tsv catted_chunks
+populate_sqlite_etc:
 	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
 	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/catted_wide_harmonized_attributes.tsv catted_wide_harmonized_attributes" ""
 	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_id_idx on non_harmonized_attributes("id")' ''
