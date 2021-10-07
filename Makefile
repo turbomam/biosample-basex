@@ -2,6 +2,7 @@
 # cori requires: 'module load python'
 
 # modify clean steps so that they don't delete readmes
+# add additional targetd cleanup steps
 
 # currently only intended to create SQLite db file
 #   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
@@ -13,7 +14,10 @@ all: clean biosample-basex target/biosample_non_harmonized_attributes_wide.tsv c
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
 	rm -rf downloads/*
-	rm -rf target/*
+	# rm -rf target/*
+	rm -rf target/chunks_long/*.tsv
+	rm -rf target/chunks_wide/*.tsv
+	
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
 export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
