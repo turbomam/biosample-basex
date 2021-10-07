@@ -85,7 +85,7 @@ wide_chunks:
 # ---
 
 catted_chunks:
-	python3 cat_wide_attributes.py
+	python3 cat_wide_ha_chunks.py
 
 # turn these into make rules
 # sqlite> .import target/catted_wide_attributes.tsv catted_wide_attributes
