@@ -1,5 +1,5 @@
 from os import listdir
-from os.path import join
+from os.path import join, basename
 import pandas as pd
 import glob
 
@@ -14,7 +14,7 @@ for file in data_files:
     print(file)
 #    full_path = join(data_root, file)
     full_path = file
-    file = os.path.basename(full_path)
+    file = basename(full_path)
     print(full_path)
     print(file)
     long_chunk = pd.read_csv(full_path, sep="\t")
