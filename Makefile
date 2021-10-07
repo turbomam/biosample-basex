@@ -55,16 +55,17 @@ target/count_biosamples.tsv:
 # ---
 
 # 35 minutes
-# target/biosample_non-attribute_plus_emp500_wide.tsv:
-# date ; time $(BASEXCMD) queries/biosample_non-attribute_plus_emp500_wide.xq > $@
 target/biosample_non_harmonized_attributes_wide.tsv:
 	date ; time $(BASEXCMD) queries/biosample_non_harmonized_attributes_wide.xq > $@
 	
 # ---
 
+# deprecated in favor of chunk_harmonized_attributes_long
 target/biosample_harmonized_attributes_long.tsv:
 	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
 	
+# ---
+
 .PHONY: chunk_harmonized_attributes_long
 chunk_harmonized_attributes_long:
 	chunk_harmonized_attributes_long.sh
