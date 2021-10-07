@@ -1,11 +1,13 @@
 from os import listdir
 from os.path import join
 import pandas as pd
+import glob
 
-data_root = "target/chunks"
+data_root = "target/chunks_long"
 output_root = "target/chunks_wide"
 
-data_files = listdir(data_root)
+# data_files = listdir(data_root)
+data_files = glob.glob(data_root + "/*.tsv")
 data_files.sort()
 
 for file in data_files:

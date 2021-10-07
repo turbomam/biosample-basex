@@ -74,11 +74,15 @@ target/biosample_harmonized_attributes_long.tsv:
 
 chunk_harmonized_attributes_long:
 	util/chunk_harmonized_attributes_long.sh
+	
+# ---
 
 # PARAMETERIZE OUT THE HARDCODED PATHS
 # here and elsewhere
 wide_chunks:
-	python3 make_wide_chunks.py
+	python3 make_wide_ha_chunks.py
+	
+# ---
 
 catted_chunks:
 	python3 cat_wide_attributes.py
