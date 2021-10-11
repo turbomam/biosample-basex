@@ -1,16 +1,14 @@
 # paramterize the basex path so multiple people can use this
 # cori requires: 'module load python'
 
-# modify clean steps so that they don't delete readmes
-# add additional targetd cleanup steps
-
 # currently only intended to create SQLite db file
 #   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
 
 # make a document about which terms (harmonized attribute, non-harmonized attribute or non-attriubte) go into queries/biosample_non-attribute_plus_emp500_wide.xq
 #   and make all attributes/harmonized attributes options for the long/EAV query?
 
-# add harmonized name accounting
+
+# add steps for zipping sSQLite database and deleting it in clean step
 
 .PHONY: biosample-basex count-biosamples clean count_clean all chunk_harmonized_attributes_long wide_chunks catted_chunks
 
@@ -22,6 +20,8 @@ clean:
 	# rm -rf target/*
 	rm -rf target/chunks_long/*.tsv
 	rm -rf target/chunks_wide/*.tsv
+	rm -rf target/*.tsv
+	rm -rf target/*.db
 	
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
@@ -89,25 +89,21 @@ wide_chunks: chunk_harmonized_attributes_long
 	
 # ---
 
-catted_chunks: wide_chunks
-	python3 util/cat_wide_ha_chunks.py
+wide_ha_chunks_to_sqlite: wide_chunks
+	python3 util/wide_ha_chunks_to_sqlite.py
 	
 # ---
 
 # how far do we watn to go with dependencies?
 # esp when they are phony?
-#  target/biosample_non_harmonized_attributes_wide.tsv catted_chunks
-populate_sqlite_etc: 
+populate_sqlite_etc: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
 	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
-	# sqlite3 target/biosample_basex.db ".mode tabs" ".import target/catted_wide_harmonized_attributes.tsv catted_wide_harmonized_attributes" ""
 	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_raw_id_idx on non_harmonized_attributes("raw_id")' ''
 	sqlite3 target/biosample_basex.db 'CREATE INDEX catted_wide_harmonized_attributes_raw_id_idx on catted_wide_harmonized_attributes("raw_id")' ''
 	# what kind of join? full outer tricky in sqlite?
+	# gets some nulls in harmonized attribute columns
 	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
-	# lite3 target/biosample_basex.db
-	# sqlite> select * from biosample_basex_merged where "raw_id" > 9 and "raw_id" < 999 limit 3;
-	
-# ---
+	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
 
 # add EMP Ontology terms to non-attributes query ???
 # empo_0

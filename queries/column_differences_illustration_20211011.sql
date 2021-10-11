@@ -6,7 +6,7 @@ select
 	raw_id, --- good for indexing
 	--- was accession_biosample_id
 	primary_id,
-	accession,
+	accession,  --- try querying for primary_id != accession
 	xref_ids,
 	--- was xref
 	entrez_links,
@@ -33,3 +33,4 @@ select
 	ww_surv_system_sample_id
 from
 	biosample_basex_merged bbm ;
+	
