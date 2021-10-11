@@ -19,7 +19,7 @@ for file in data_files:
     print(datetime.now().strftime("%H:%M:%S"))
     long_chunk = pd.read_csv(full_path, sep="\t")
     print(datetime.now().strftime("%H:%M:%S"))
-    wide_chunk = long_chunk.pivot(index=["id"], 
+    wide_chunk = long_chunk.pivot(index=["raw_id"], 
                     columns='attribute', 
                     values='value')
     wide_chunk.reset_index(level=0, inplace=True)

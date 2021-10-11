@@ -15,11 +15,27 @@ let $accession :=  fn:normalize-space(
   )
 )
 
+
 let $id := fn:normalize-space(
   string-join(
     data(
       $bs/@id
     ),$delim
+  )
+)
+
+let $primary_id := fn:normalize-space(
+  string-join(
+    data(
+      $bs/Ids/Id[@is_primary="1"]
+    ),$delim
+  )
+)
+
+(: string join without distinct/unique prob causes dupes :)
+let $curie_id := fn:normalize-space(
+concat(
+      "BIOSAMPLE:",$primary_id
   )
 )
 
@@ -94,14 +110,6 @@ let $paragraph := fn:normalize-space(
   )
 )
 
-let $primary_id := fn:normalize-space(
-  string-join(
-    data(
-      $bs/Ids/Id[@is_primary="1"]
-    ),$delim
-  )
-)
-
 let $status := fn:normalize-space(
   string-join(
     data(
@@ -169,15 +177,21 @@ return
 
 <result><csv>
 
+
+<id>{
+  $curie_id
+}
+</id>
+
 <accession>{
   $accession
 }
 </accession>
 
-<id>{
+<raw_id>{
   $id
 }
-</id>
+</raw_id>
 
 <primary_id>{
   $primary_id

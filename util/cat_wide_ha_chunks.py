@@ -1,18 +1,41 @@
 import pandas as pd
 import glob
+import sqlite3
 
 from datetime import datetime
 
-cat_cout = 40
+from sqlalchemy import create_engine
+engine = create_engine('sqlite:///target/biosample_basex.db', echo=False)
+
+# can set lower in dev mode
+# be careful, don't forget to set back to soemthing well higher than the number of TSVs
+cat_cout = 99
 
 wide_root = "target/chunks_wide"
 all_files = glob.glob(wide_root + "/*.tsv")
 
-output_file = "target/catted_wide_harmonized_attributes.tsv"
-
 all_files.sort()
 
-li = []
+chunk_list = []
+column_name_set = set()
+
+for filename in all_files[0:cat_cout]:
+    print(filename)
+    print(datetime.now().strftime("%H:%M:%S"))
+    with open(filename) as f:
+        first_line = f.readline()
+        # print(first_line)
+        col_names = first_line.split()
+        column_name_set = column_name_set.union(set(col_names))
+
+column_name_list = list(column_name_set)
+column_name_list.remove("raw_id")
+column_name_list.sort()
+column_name_list.insert(0,"raw_id")
+
+
+print(column_name_list)
+print(len(column_name_list))
 
 for filename in all_files[0:cat_cout]:
     print(filename)
@@ -20,13 +43,15 @@ for filename in all_files[0:cat_cout]:
     df = pd.read_csv(filename, index_col=None, sep="\t", low_memory=False)
     print(df.shape)
     print(datetime.now().strftime("%H:%M:%S"))
-    li.append(df)
-
-print(datetime.now().strftime("%H:%M:%S"))    
-frame = pd.concat(li, axis=0, ignore_index=True)
-print(datetime.now().strftime("%H:%M:%S"))
-print(frame.shape)
-frame.to_csv(output_file, sep="\t", index=False)
-print(datetime.now().strftime("%H:%M:%S"))
-
-
+    current_cols = list(df.columns)
+    missing_cols = list(set(column_name_list) - set(current_cols))
+    missing_cols.sort()
+    # print(missing_cols)
+    for i in missing_cols:
+        df[i] = ""
+    print(datetime.now().strftime("%H:%M:%S"))
+    df = df[column_name_list]
+    print(datetime.now().strftime("%H:%M:%S"))
+    print(df.shape)
+    df.to_sql('catted_wide_harmonized_attributes', con=engine, if_exists="append")
+    print(datetime.now().strftime("%H:%M:%S"))

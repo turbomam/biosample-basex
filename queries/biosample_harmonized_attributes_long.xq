@@ -45,9 +45,9 @@ let $value := fn:normalize-space(
 return 
 
 <csv><record> 
-<id>{
+<raw_id>{
   $id
-}</id>
+}</raw_id>
 <attribute>{
   $attribute
 }</attribute>

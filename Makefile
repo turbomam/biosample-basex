@@ -97,15 +97,15 @@ catted_chunks: wide_chunks
 # how far do we watn to go with dependencies?
 # esp when they are phony?
 #  target/biosample_non_harmonized_attributes_wide.tsv catted_chunks
-populate_sqlite_etc:
+populate_sqlite_etc: 
 	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
-	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/catted_wide_harmonized_attributes.tsv catted_wide_harmonized_attributes" ""
-	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_id_idx on non_harmonized_attributes("id")' ''
-	sqlite3 target/biosample_basex.db 'CREATE INDEX catted_wide_harmonized_attributes_id_idx on catted_wide_harmonized_attributes("id")' ''
+	# sqlite3 target/biosample_basex.db ".mode tabs" ".import target/catted_wide_harmonized_attributes.tsv catted_wide_harmonized_attributes" ""
+	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_raw_id_idx on non_harmonized_attributes("raw_id")' ''
+	sqlite3 target/biosample_basex.db 'CREATE INDEX catted_wide_harmonized_attributes_raw_id_idx on catted_wide_harmonized_attributes("raw_id")' ''
 	# what kind of join? full outer tricky in sqlite?
-	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("id")' ''
+	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
 	# lite3 target/biosample_basex.db
-	# sqlite> select * from biosample_basex_merged where "id" > 9 and "id" < 999 limit 3;
+	# sqlite> select * from biosample_basex_merged where "raw_id" > 9 and "raw_id" < 999 limit 3;
 	
 # ---
 

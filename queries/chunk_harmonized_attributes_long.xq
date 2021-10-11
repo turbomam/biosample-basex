@@ -15,7 +15,7 @@ let $bs_id_val := data(
 
 where xs:integer(
   $bs_id_val
-) > $min_bs_id_val
+) >= $min_bs_id_val
 and xs:integer(
   $bs_id_val
 ) < $max_bs_id_val
@@ -44,9 +44,9 @@ order by xs:integer(
 return 
 
 <csv><record> 
-<id>{
+<raw_id>{
   $bs_id_val
-}</id>
+}</raw_id>
 <attribute>{
   $uhn_val
 }</attribute>
