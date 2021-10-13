@@ -37,7 +37,7 @@ let $n := data(
 )
 
 let $v := data(
-  $attrib
+  fn:normalize-space($attrib)
 )
 
 return 
