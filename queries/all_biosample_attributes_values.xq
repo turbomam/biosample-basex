@@ -30,10 +30,10 @@ concat(
 )
 
 let $an := data(
-  $attrib/@attribute_name
+  fn:normalize-space($attrib/@attribute_name)
 )
 let $n := data(
-  $attrib/@harmonized_name
+  fn:normalize-space($attrib/@harmonized_name)
 )
 
 let $v := data(
