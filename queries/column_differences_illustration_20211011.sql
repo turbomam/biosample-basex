@@ -1,12 +1,15 @@
+
 --- NULLs indicate samples for which there are no harmonized namae attributes? (left merge)
 --- no "attribute" column any more. Was always empty in harmonized_table.db
 --- note quoting of column anmes that are reserved in some SQL dialects
 select
 	"id",
-	raw_id, --- good for indexing
+	raw_id,
+	--- good for indexing
 	--- was accession_biosample_id
 	primary_id,
-	accession,  --- try querying for primary_id != accession
+	accession,
+	--- try querying for primary_id != accession
 	xref_ids,
 	--- was xref
 	entrez_links,
@@ -33,4 +36,3 @@ select
 	ww_surv_system_sample_id
 from
 	biosample_basex_merged bbm ;
-	
