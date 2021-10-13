@@ -96,7 +96,7 @@ wide_ha_chunks_to_sqlite: wide_chunks
 
 # how far do we watn to go with dependencies?
 # esp when they are phony?
-populate_sqlite_etc: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
+target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
 	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
 	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_raw_id_idx on non_harmonized_attributes("raw_id")' ''
 	sqlite3 target/biosample_basex.db 'CREATE INDEX catted_wide_harmonized_attributes_raw_id_idx on catted_wide_harmonized_attributes("raw_id")' ''
@@ -104,6 +104,15 @@ populate_sqlite_etc: target/biosample_non_harmonized_attributes_wide.tsv wide_ha
 	# gets some nulls in harmonized attribute columns
 	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
 	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
+
+target/biosample_basex.db.gz: 
+	# depends on target/biosample_basex.db
+	gzip -c $< > $@
+	chmod 777 $@
+
+/global/cfs/cdirs/m3513/www/biosample/biosample_basex.db.gz: target/biosample_basex.db.gz
+	cp $< $@
+	chmod 777 $@
 
 # add EMP Ontology terms to non-attributes query ???
 # empo_0
