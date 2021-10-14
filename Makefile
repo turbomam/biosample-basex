@@ -94,10 +94,16 @@ wide_ha_chunks_to_sqlite: wide_chunks
 	
 # ---
 
-all_biosample_attributes_values.tsv:
+target/all_biosample_attributes_values.tsv:
 	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
 	
 # ---
+
+target/all_biosample_attributes_values.xq:
+        date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq  > $@ 
+
+# ---
+
 
 # how far do we watn to go with dependencies?
 # esp when they are phony?
