@@ -34,7 +34,7 @@ export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
 # make sure that the same dataset is being used in all queries
 
 # be consistent about identifying samples with accession or primary ID
-	
+
 # ---
 
 # 20211004: 1.5 GB
@@ -52,30 +52,30 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 # du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
 biosample-basex: target/biosample_set.xml
 	$(BASEXCMD) -c 'CREATE DB biosample_set target/biosample_set.xml'
-	
+
 # ---
 
 # 35 minutes
 target/biosample_non_harmonized_attributes_wide.tsv:
 	date ; time $(BASEXCMD) queries/biosample_non_harmonized_attributes_wide.xq > $@
-	
+
 # ---
 
 chunk_harmonized_attributes_long:
 	util/chunk_harmonized_attributes_long.sh
-	
+
 # ---
 
 # PARAMETERIZE OUT THE HARDCODED PATHS
 # here and elsewhere
 wide_chunks: chunk_harmonized_attributes_long
 	python3 util/make_wide_ha_chunks.py
-	
+
 # ---
 
 wide_ha_chunks_to_sqlite: wide_chunks
 	python3 util/wide_ha_chunks_to_sqlite.py
-	
+
 # ---
 
 # how far do we watn to go with dependencies?
@@ -88,7 +88,7 @@ target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv w
 	# gets some nulls in harmonized attribute columns
 	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
 	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
-	
+
 # ---
 
 # depends on target/biosample_basex.db and a previous-generation harmonized_table.db
@@ -115,7 +115,7 @@ target/biosample_basex.db.gz:
 
 target/all_biosample_attributes_values.tsv:
 	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
-	
+
 # ---
 
 # add EMP Ontology terms to non-attributes query ???
@@ -125,7 +125,7 @@ target/all_biosample_attributes_values.tsv:
 # empo_3
 
 target/all_biosample_attributes_values.xq:
-        date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq  > $@ 
+	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq  > $@ 
 
 # ---
 
@@ -142,6 +142,6 @@ target/count_biosamples.tsv:
 # deprecated in favor of chunk_harmonized_attributes_long shell script
 target/biosample_harmonized_attributes_long.tsv:
 	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
-	
+
 # ---
 
