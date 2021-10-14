@@ -12,7 +12,7 @@
 
 .PHONY: biosample-basex count-biosamples clean count_clean all chunk_harmonized_attributes_long wide_chunks catted_chunks
 
-all: clean biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long wide_chunks catted_chunks
+all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
@@ -55,25 +55,9 @@ biosample-basex: target/biosample_set.xml
 	
 # ---
 
-count_clean:
-	rm -rf target/count_biosamples.tsv
-
-# 2 million biosamples 20211004
-# 2 minutes
-target/count_biosamples.tsv:
-	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
-	
-# ---
-
 # 35 minutes
 target/biosample_non_harmonized_attributes_wide.tsv:
 	date ; time $(BASEXCMD) queries/biosample_non_harmonized_attributes_wide.xq > $@
-	
-# ---
-
-# deprecated in favor of chunk_harmonized_attributes_long
-target/biosample_harmonized_attributes_long.tsv:
-	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
 	
 # ---
 
@@ -94,17 +78,6 @@ wide_ha_chunks_to_sqlite: wide_chunks
 	
 # ---
 
-target/all_biosample_attributes_values.tsv:
-	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
-	
-# ---
-
-target/all_biosample_attributes_values.xq:
-        date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq  > $@ 
-
-# ---
-
-
 # how far do we watn to go with dependencies?
 # esp when they are phony?
 target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
@@ -115,19 +88,60 @@ target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv w
 	# gets some nulls in harmonized attribute columns
 	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
 	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
+	
+# ---
 
+# depends on target/biosample_basex.db and a previous-generation harmonized_table.db
+# path currently hardcoded
+target/column_differences.txt:
+	python column_differences.py > $@
+
+# ---
+# depends on target/biosample_basex.db and wide_ha_chunks_to_sqlite, 
+#   but want to be careful about adding duplicate rows 
+#   or nuking the rows that are added live by wide_ha_chunks_to_sqlite
+#   although they are stagews as wide chunks, too
 target/biosample_basex.db.gz: 
 	# depends on target/biosample_basex.db
 	gzip -c $< > $@
 	chmod 777 $@
 
+# factor out this hardcoded path
 /global/cfs/cdirs/m3513/www/biosample/biosample_basex.db.gz: target/biosample_basex.db.gz
 	cp $< $@
 	chmod 777 $@
+
+# ---
+
+target/all_biosample_attributes_values.tsv:
+	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
+	
+# ---
 
 # add EMP Ontology terms to non-attributes query ???
 # empo_0
 # empo_1
 # empo_2
 # empo_3
+
+target/all_biosample_attributes_values.xq:
+        date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq  > $@ 
+
+# ---
+
+count_clean:
+	rm -rf target/count_biosamples.tsv
+
+# 2 million biosamples 20211004
+# 2 minutes
+target/count_biosamples.tsv:
+	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
+
+# ---
+
+# deprecated in favor of chunk_harmonized_attributes_long shell script
+target/biosample_harmonized_attributes_long.tsv:
+	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
+	
+# ---
 
