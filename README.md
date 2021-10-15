@@ -31,3 +31,4 @@ https://basex.org/download/
 
 
 
+TODO: update for running on NERSC cori

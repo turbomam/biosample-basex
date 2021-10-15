@@ -1,91 +1,145 @@
-.PHONY: biosample-basex
-.PHONY: count-biosamples
+# paramterize the basex path so multiple people can use this
+# cori requires: 'module load python'
 
-# be careful about using the basex gui and cli at the same time
-# (memory-wise, that is)
+# currently only intended to create SQLite db file
+#   not Parquet, or EAV TSVs as specified in biosample-analysis, etc.
+
+# make a document about which terms (harmonized attribute, non-harmonized attribute or non-attriubte) go into queries/biosample_non-attribute_plus_emp500_wide.xq
+#   and make all attributes/harmonized attributes options for the long/EAV query?
+
+
+# add steps for zipping sSQLite database and deleting it in clean step
+
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite
+
+all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
+
+clean:
+	# not wiping or overwriting BaseX database as part of 'clean'
+	rm -rf downloads/*.gz
+	# rm -rf target/*
+	rm -rf target/chunks_long/*.tsv
+	rm -rf target/chunks_wide/*.tsv
+	rm -rf target/*.tsv
+	rm -rf target/*.db
+	rm -rf target/*.txt
+	rm -rf target/*.gz
+
+
+export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
+export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
 
 # work on file and variable naming conventions
 # capitalization
 # count X by Y
-# use CSV serializer wherever possible, not string concatenation
 # make sure that the same dataset is being used in all queries
 
 # be consistent about identifying samples with accession or primary ID
 
-# use curl or wget?
-# actually getting an error using wget from my LBL MBP!
-# 2021-06-15: 1.3 GB
+# ---
+
+# 20211004: 1.5 GB
 # roughly 1 minute
 downloads/biosample_set.xml.gz:
 	# wget ftp://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
 	curl ftp://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz --output $@
 
-# 2021-06-15: 44 GB
-# 731549545 text LINES (not entity count)
-# roughly 1 minute
+# 2021-06-15: 51 GB
+# roughly 2 minutes
 target/biosample_set.xml: downloads/biosample_set.xml.gz
 	gunzip -c $< > $@
 
-# ~ 40 minutes @ Xmx  = 24 GB RAM
-# ~ 45 GB
-# not certain that all of the most impactful indexes are being built
-# on MacOS, the database will be created in ~/basex/data by default
+# ~ 90 minutes on cori @ Xmx  = 96 GB RAM. Xmx may not matter much for load. But indexing?
+# du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
 biosample-basex: target/biosample_set.xml
-	basex -c 'CREATE DB biosample_set target/biosample_set.xml'
+	$(BASEXCMD) -c 'CREATE DB biosample_set target/biosample_set.xml'
 
-count-biosamples:
-	date ; time basex queries/count_biosamples.xq
+# ---
 
+# 35 minutes
+target/biosample_non_harmonized_attributes_wide.tsv:
+	date ; time $(BASEXCMD) queries/biosample_non_harmonized_attributes_wide.xq > $@
 
-# is there a pattern for generalizing these queries?
+# ---
 
-# BioSampleSet elements only have BioSample elements
-target/count_BioSampleSet_elements.tsv:
-	basex queries/count_BioSampleSet_elements.xq | tee $@
+chunk_harmonized_attributes_long:
+	util/chunk_harmonized_attributes_long.sh
 
-target/count_BioSample_elements.tsv:
-	basex queries/count_BioSample_elements.xq | tee $@
+# ---
 
-# Id elements have no child elements
-target/count_BioSample_Ids_elements.tsv:
-	basex queries/count_BioSample_Ids_elements.xq | tee $@
+# PARAMETERIZE OUT THE HARDCODED PATHS
+# here and elsewhere
+wide_chunks: chunk_harmonized_attributes_long
+	python3 util/make_wide_ha_chunks.py
 
-# Do Id elements have attributes (from an XML syntax perspective?)
-target/count_id_attribs.tsv:
-	basex queries/count_id_attribs.xq | tee $@
+# ---
 
-# What values does the db attribute take?
-target/count_biosamples_by_iddb.tsv:
-	basex queries/count_biosamples_by_iddb.xq > $@ && head $@
+wide_ha_chunks_to_sqlite: wide_chunks
+	python3 util/wide_ha_chunks_to_sqlite.py
 
-# add more, like bs accession, is primary, db label
-target/list_iddb_idval_by_primary.tsv:
-	basex queries/list_iddb_idval_by_primary.xq > $@ && head $@
+# ---
 
-# what are the attributes of BioSamples?
-target/count_bs_attribs.tsv:
-	basex queries/count_bs_attribs.xq > $@ && head $@
+# how far do we want to go with dependencies?
+# esp when they are phony?
+target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
+	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
+	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_raw_id_idx on non_harmonized_attributes("raw_id")' ''
+	sqlite3 target/biosample_basex.db 'CREATE INDEX catted_wide_harmonized_attributes_raw_id_idx on catted_wide_harmonized_attributes("raw_id")' ''
+	# what kind of join? full outer tricky in sqlite?
+	# gets some nulls in harmonized attribute columns
+	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
+	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
 
-#data(BioSampleSet/BioSample/Models/Model) have up to 2 models per biosample
-target/count_model_values.tsv:
-	basex queries/count_model_values.xq > $@ && head $@
-target/list_biosample_model_combos.tsv:
-	basex queries/list_biosample_model_combos.xq > $@ && head $@
-target/count_models_by_biosample.tsv:
-	basex queries/count_models_by_biosample.xq > $@ && head $@
+# ---
 
-# https://www.ncbi.nlm.nih.gov/books/NBK169436/ :
-# In addition to BioSample type (called Model in the schema) and attributes,
-# each BioSample record also contains:
-target/list_biosamples_packages.tsv:
-	basex queries/list_biosamples_packages.xq > $@ && head $@
-# package has data and display name
+# depends on target/biosample_basex.db and a previous-generation harmonized_table.db
+# path currently hardcoded
+target/column_differences.txt:
+	python util/column_differences.py > $@
 
-# 12 minutes
-target/biosample_attribute_value_xq.tsv:
-	date && time ( basex queries/biosample_attribute_value_xq.xq > $@ ) && head $@
+# ---
+# depends on target/biosample_basex.db and wide_ha_chunks_to_sqlite, 
+#   but want to be careful about adding duplicate rows 
+#   or nuking the rows that are added live by wide_ha_chunks_to_sqlite
+#   although they are stagews as wide chunks, too
+target/biosample_basex.db.gz: 
+	# depends on target/biosample_basex.db
+	gzip -c target/biosample_basex.db > $@
+	chmod 777 $@
 
-# 15 minutes
-# this is currently a SUBSET of the columns in the harmonized_table.db SQLite database
-target/biosample_tabular.tsv:
-	date ; time basex queries/biosample_tabular.xq > $@ && head $@
+# factor out this hardcoded path
+/global/cfs/cdirs/m3513/www/biosample/biosample_basex.db.gz: target/biosample_basex.db.gz
+	cp $< $@
+	chmod 777 $@
+
+# ---
+
+target/all_biosample_attributes_values.tsv:
+	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
+
+# ---
+
+# add EMP Ontology terms to non-attributes query ???
+# empo_0
+# empo_1
+# empo_2
+# empo_3
+
+# ---
+
+count_clean:
+	rm -rf target/count_biosamples.tsv
+
+# 2 million biosamples 20211004
+# 2 minutes
+target/count_biosamples.tsv:
+	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
+
+# ---
+
+# deprecated in favor of chunk_harmonized_attributes_long shell script
+target/biosample_harmonized_attributes_long.tsv:
+	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
+
+# ---
+

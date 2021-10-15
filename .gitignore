@@ -3,4 +3,6 @@ target
 .DS_Store
 .idea
 venv
+basex
+extras
 
