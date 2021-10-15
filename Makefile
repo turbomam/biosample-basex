@@ -102,7 +102,7 @@ target/column_differences.txt:
 #   although they are stagews as wide chunks, too
 target/biosample_basex.db.gz: 
 	# depends on target/biosample_basex.db
-	gzip -c target/biosample_basex.db.gz > $@
+	gzip -c target/biosample_basex.db > $@
 	chmod 777 $@
 
 # factor out this hardcoded path
