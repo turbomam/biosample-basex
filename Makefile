@@ -22,7 +22,9 @@ clean:
 	rm -rf target/chunks_wide/*.tsv
 	rm -rf target/*.tsv
 	rm -rf target/*.db
-	
+	rm -rf target/*.txt
+	rm -rf target/*.gz
+
 
 export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
 export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
