@@ -16,7 +16,7 @@ all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmoni
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
-	rm -rf downloads/*
+	rm -rf downloads/*.gz
 	# rm -rf target/*
 	rm -rf target/chunks_long/*.tsv
 	rm -rf target/chunks_wide/*.tsv
