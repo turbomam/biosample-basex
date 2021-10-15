@@ -30,7 +30,6 @@ export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
 # work on file and variable naming conventions
 # capitalization
 # count X by Y
-# use CSV serializer wherever possible, not string concatenation
 # make sure that the same dataset is being used in all queries
 
 # be consistent about identifying samples with accession or primary ID
@@ -78,7 +77,7 @@ wide_ha_chunks_to_sqlite: wide_chunks
 
 # ---
 
-# how far do we watn to go with dependencies?
+# how far do we want to go with dependencies?
 # esp when they are phony?
 target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
 	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
@@ -103,7 +102,7 @@ target/column_differences.txt:
 #   although they are stagews as wide chunks, too
 target/biosample_basex.db.gz: 
 	# depends on target/biosample_basex.db
-	gzip -c $< > $@
+	gzip -c target/biosample_basex.db.gz > $@
 	chmod 777 $@
 
 # factor out this hardcoded path
