@@ -4,10 +4,10 @@ import sqlite3
 
 # command line parameters?
 # config file?
-db1_path = '/home/mark/harmonized_table.db'
+db1_path = 'extras/harmonized_table.db'
 table1 = "biosample"
 
-db2_path = '/home/mark/biosample_basex.db'
+db2_path = 'target/biosample_basex.db'
 table2 = "biosample_basex_merged"
 
 
