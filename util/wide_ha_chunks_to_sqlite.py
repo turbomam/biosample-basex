@@ -53,5 +53,5 @@ for filename in all_files[0:cat_cout]:
     df = df[column_name_list]
     print(datetime.now().strftime("%H:%M:%S"))
     print(df.shape)
-    df.to_sql('catted_wide_harmonized_attributes', con=engine, if_exists="append")
+    df.to_sql('catted_wide_harmonized_attributes', con=engine, if_exists="append", index=False)
     print(datetime.now().strftime("%H:%M:%S"))

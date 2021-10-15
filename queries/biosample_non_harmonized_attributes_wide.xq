@@ -39,7 +39,7 @@ concat(
   )
 )
 
-let $xref_ids := fn:normalize-space(
+let $ xref := fn:normalize-space(
   string-join(
     $bs/Ids/Id/concat(
       @db,':',.
@@ -118,7 +118,7 @@ let $status := fn:normalize-space(
   )
 )
 
-let $status_when := fn:normalize-space(
+let $status_date := fn:normalize-space(
   string-join(
     data(
       $bs/Status/@when
@@ -197,9 +197,9 @@ return
   $primary_id
 }</primary_id>
 
-<xref_ids>{
-  $xref_ids
-}</xref_ids>
+< xref>{
+  $ xref
+}</ xref>
 
 <sra_id>{
   $sraid
@@ -235,9 +235,9 @@ return
   $status
 }</status>
 
-<status_when>{
-  $status_when
-}</status_when>
+<status_date>{
+  $status_date
+}</status_date>
 
 <taxonomy_id>{
   $taxonomy_id
