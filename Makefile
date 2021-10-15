@@ -10,7 +10,7 @@
 
 # add steps for zipping sSQLite database and deleting it in clean step
 
-.PHONY: biosample-basex count-biosamples clean count_clean all chunk_harmonized_attributes_long wide_chunks catted_chunks
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite
 
 all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
 
@@ -93,7 +93,7 @@ target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv w
 # depends on target/biosample_basex.db and a previous-generation harmonized_table.db
 # path currently hardcoded
 target/column_differences.txt:
-	python column_differences.py > $@
+	python util/column_differences.py > $@
 
 # ---
 # depends on target/biosample_basex.db and wide_ha_chunks_to_sqlite, 
@@ -122,9 +122,6 @@ target/all_biosample_attributes_values.tsv:
 # empo_1
 # empo_2
 # empo_3
-
-target/all_biosample_attributes_values.xq:
-	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq  > $@ 
 
 # ---
 
