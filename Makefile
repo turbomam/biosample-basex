@@ -108,6 +108,8 @@ target/biosample_basex.db.gz:
 	chmod 777 $@
 
 # factor out this hardcoded path
+# available at https://portal.nersc.gov/project/m3513/biosample
+# https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
 /global/cfs/cdirs/m3513/www/biosample/biosample_basex.db.gz: target/biosample_basex.db.gz
 	cp $< $@
 	chmod 777 $@
@@ -122,8 +124,10 @@ target/all_biosample_attributes_values.tsv:
 target/SRA_Run_Members.tab:
 	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
 
+# an index on biosample_basex.db.non_harmonized_attributes.emp500_title will help, too
 target/SRA_Run_Members.db: target/SRA_Run_Members.tab
-	sqlite3 $@ ".mode tabs" ".import $< non_harmonized_attributes" ""
+	sqlite3 $@ ".mode tabs" ".import $< SRA_Run_Members" ""
+	sqlite3 $@ 'CREATE INDEX Sample_idx on SRA_Run_Members("Sample")' ''
 
 target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	gzip -c $< > $@
