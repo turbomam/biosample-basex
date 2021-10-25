@@ -124,7 +124,7 @@ target/all_biosample_attributes_values.tsv:
 target/SRA_Run_Members.tab:
 	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
 
-# an index on biosample_basex.db.non_harmonized_attributes.emp500_title will help, too
+# an index on biosample_basex.db.non_harmonized_attributes.emp500_title will help LATER ON, too
 target/SRA_Run_Members.db: target/SRA_Run_Members.tab
 	sqlite3 $@ ".mode tabs" ".import $< SRA_Run_Members" ""
 	sqlite3 $@ 'CREATE INDEX Sample_idx on SRA_Run_Members("Sample")' ''
@@ -136,12 +136,13 @@ target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	cp $< $@
 	chmod 777 $@
 
+index_biosample_sra_ids:
+	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
+
 target/biosample_srrs.txt:
 	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
 
-# index biosample_basex.db.non_harmonized_attributes.emp500_title?
 
-# attach 'SRA_Run_Members.db' as srm;
 
 # select
 # 	sra_id,
