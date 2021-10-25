@@ -136,10 +136,10 @@ target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	cp $< $@
 	chmod 777 $@
 
-index_biosample_sra_ids:
+index_biosample_sra_ids: 
 	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
 
-target/biosample_srrs.txt:
+target/biosample_srrs.txt: target/SRA_Run_Members.db index_biosample_sra_ids
 	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
 
 
