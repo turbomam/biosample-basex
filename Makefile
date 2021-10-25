@@ -119,6 +119,14 @@ target/all_biosample_attributes_values.tsv:
 
 # ---
 
+target/SRA_Run_Members.tab:
+	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
+
+target/SRA_Run_Members.db: target/SRA_Run_Members.tab
+	sqlite3 $@ ".mode tabs" ".import $< non_harmonized_attributes" ""
+
+# ---
+
 # add EMP Ontology terms to non-attributes query ???
 # empo_0
 # empo_1
