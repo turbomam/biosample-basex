@@ -125,6 +125,82 @@ target/SRA_Run_Members.tab:
 target/SRA_Run_Members.db: target/SRA_Run_Members.tab
 	sqlite3 $@ ".mode tabs" ".import $< non_harmonized_attributes" ""
 
+target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
+	gzip -c $< > $@
+
+/global/cfs/cdirs/m3513/www/biosample/target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
+	cp $< $@
+	chmod 777 $@
+
+# index biosample_basex.db.non_harmonized_attributes.emp500_title?
+
+# select
+# 	taxonomy_name,
+# 	count(1)
+# from
+# 	non_harmonized_attributes nha
+# where
+# 	emp500_title is not null
+# 	and emp500_title != ''
+# group by
+# 	taxonomy_name
+# order by
+# 	taxonomy_name;
+
+# |taxonomy_name|count(1)|
+# |-------------|--------|
+# |activated sludge metagenome|17|
+# |algae metagenome|49|
+# |bioreactor metagenome|9|
+# |coal metagenome|16|
+# |coral metagenome|20|
+# |freshwater sediment metagenome|47|
+# |gut metagenome|199|
+# |insect metagenome|28|
+# |lichen metagenome|12|
+# |marine metagenome|37|
+# |marine sediment metagenome|66|
+# |metagenome|2|
+# |microbial mat metagenome|1|
+# |mollusc metagenome|13|
+# |mouse skin metagenome|3|
+# |oil field metagenome|14|
+# |plant metagenome|15|
+# |salt marsh metagenome|24|
+# |sand metagenome|9|
+# |seawater metagenome|2|
+# |soil metagenome|189|
+# |sponge metagenome|57|
+# |stromatolite metagenome|1|
+
+# |taxonomy_name                 |count(1)|
+# |------------------------------|--------|
+# |gut metagenome                |199     |
+# |soil metagenome               |189     |
+# |marine sediment metagenome    |66      |
+# |sponge metagenome             |57      |
+# |algae metagenome              |49      |
+# |freshwater sediment metagenome|47      |
+# |marine metagenome             |37      |
+# |insect metagenome             |28      |
+# |salt marsh metagenome         |24      |
+# |coral metagenome              |20      |
+# |activated sludge metagenome   |17      |
+# |coal metagenome               |16      |
+# |plant metagenome              |15      |
+# |oil field metagenome          |14      |
+# |mollusc metagenome            |13      |
+# |lichen metagenome             |12      |
+# |bioreactor metagenome         |9       |
+# |sand metagenome               |9       |
+# |mouse skin metagenome         |3       |
+# |metagenome                    |2       |
+# |seawater metagenome           |2       |
+# |microbial mat metagenome      |1       |
+# |stromatolite metagenome       |1       |
+
+
+
 # ---
 
 # add EMP Ontology terms to non-attributes query ???
