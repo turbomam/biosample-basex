@@ -128,7 +128,7 @@ target/SRA_Run_Members.db: target/SRA_Run_Members.tab
 target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	gzip -c $< > $@
 
-/global/cfs/cdirs/m3513/www/biosample/target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
+/global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
 	cp $< $@
 	chmod 777 $@
 
