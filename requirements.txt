@@ -1,2 +1,8 @@
 pandas
+jupyter
+black
+pandas_profiling
+sklearn
+linkml
+linkml-runtime
 
