@@ -137,7 +137,7 @@ target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	chmod 777 $@
 
 target/biosample_srrs.txt:
-	sqlite3 "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id" "" > $@
+	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
 
 # index biosample_basex.db.non_harmonized_attributes.emp500_title?
 
