@@ -139,6 +139,11 @@ target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 index_biosample_sra_ids: 
 	sqlite3 target/biosample_basex.db 'drop index if exists biosample_sra_id_idx' ''
 	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
+	# what happens if column already exists?
+	# sqlite3 target/biosample_basex.db 'drop column if exists from_emp_500_idx' ''
+	-sqlite3 target/biosample_basex.db 'alter non_harmonized_attributes add from_emp_500 as (emp500_title is not null and emp500_title != '')' ''
+	sqlite3 target/biosample_basex.db 'drop index if exists from_emp_500_idx' ''
+	sqlite3 target/biosample_basex.db 'CREATE INDEX from_emp_500_idx on non_harmonized_attributes("from_emp_500")' ''
 
 target/biosample_srrs.txt: target/SRA_Run_Members.db index_biosample_sra_ids
 	# the output is pipe delimeted despite the mode tabs assertion
@@ -151,7 +156,7 @@ target/biosample_srrs.tsv: target/biosample_srrs.txt
 
 ingest_biosample_srrs: target/biosample_srrs.tsv
 	sqlite3 target/SRA_Run_Members.db ".mode tabs" ".import $< biosample_srrs" ""
-
+	sqlite3 target/SRA_Run_Members.db 'CREATE INDEX biosample_sra_id_idx on biosample_srrs("sra")' ''
 
 # select
 # 	sra_id,
