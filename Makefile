@@ -144,7 +144,7 @@ target/biosample_srrs.txt: target/SRA_Run_Members.db index_biosample_sra_ids
 	# the output is pipe delimeted despite the mode tabs assertion
 	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
 
-target/biosample_srrs.txt: target/biosample_srrs.txt
+target/biosample_srrs.tsv: target/biosample_srrs.txt
 	# paramterize me! I'm harcoded!
 	python3 util/srrs_per_sra.py
 
