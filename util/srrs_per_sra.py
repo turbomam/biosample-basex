@@ -1,9 +1,9 @@
 import pandas as pd
 
-per_srr_input = "../target/biosample_srrs.txt"
+per_srr_input = "target/biosample_srrs.txt"
 per_srr_col_delim = "|"
 per_srr_cols = ["sra", "srr"]
-per_sra_ouput = "../target/biosample_srrs.tsv"
+per_sra_ouput = "target/biosample_srrs.tsv"
 per_sra_srr_delim = "|"
 per_sra_col_delim = "\t"
 
