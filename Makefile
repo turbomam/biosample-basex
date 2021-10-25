@@ -125,7 +125,7 @@ target/SRA_Run_Members.tab:
 	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
 
 # an index on biosample_basex.db.non_harmonized_attributes.emp500_title will help LATER ON, too
-target/biosample_srrs.txt: target/SRA_Run_Members.tab
+target/biosample_srrs.db: target/SRA_Run_Members.tab
 	sqlite3 $@ ".mode tabs" ".import $< SRA_Run_Members" ""
 	sqlite3 $@ 'CREATE INDEX Sample_idx on SRA_Run_Members("Sample")' ''
 
