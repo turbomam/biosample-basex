@@ -136,7 +136,24 @@ target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	cp $< $@
 	chmod 777 $@
 
+biosample_srrs.txt:
+	sqlite3 \
+	  "attach 'biosample_basex.db' as bb ; attach 'SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id" > $@
+
 # index biosample_basex.db.non_harmonized_attributes.emp500_title?
+
+# attach 'SRA_Run_Members.db' as srm;
+
+# select
+# 	sra_id,
+# 	srm.non_harmonized_attributes.Run
+# from
+# 	non_harmonized_attributes
+# left join srm.non_harmonized_attributes on
+# 	srm.non_harmonized_attributes.Sample = non_harmonized_attributes.sra_id
+# where
+# 	emp500_title is not null
+# 	and emp500_title != '';
 
 # select
 # 	taxonomy_name,
