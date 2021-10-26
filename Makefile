@@ -124,9 +124,8 @@ target/all_biosample_attributes_values.tsv:
 # SRRs, esdpecially for EMP 500 samples
 
 
-srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs
-
-
+srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv
+	
 srrs_clean:
 	rm -rf target/SRA_Run_Members.tab target/SRA_Run_Members.db target/biosample_srrs.txt target/biosample_srrs.tsv target/SRA_Run_Members.db.gz 
 
@@ -166,12 +165,24 @@ propigate_srrs: ingest_biosample_srrs
 	# although that's moot here since we're just updating
 	sqlite3  ".mode tabs" "attach 'target/SRA_Run_Members.db' as srm; attach 'target/biosample_basex.db' as bb; UPDATE bb.non_harmonized_attributes set  srr_ids = srrs.srrs FROM ( SELECT sra, srrs from srm.biosample_srrs) AS srrs WHERE sra_id = srrs.sra" ''
 
+# depends on propigate_srrs and evertyhing downstream of that
+target/emp_500_with_srrs_harmonized_only.tsv:
+	sqlite3 target/biosample_basex.db ".mode tabs" "select * from biosample_basex_merged bbm where from_emp_500 = 1" "" > $@
+
+/global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv: target/emp_500_with_srrs_harmonized_only.tsv
+	cp $< $@
+	chmod 777 $@
+
 target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	gzip -c $< > $@
 
 /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
 	cp $< $@
 	chmod 777 $@
+
+# gzip -c target/biosample_basex.db > target/biosample_basex_emp_500_srrs.db.gz
+cp target/biosample_basex_emp_500_srrs.db.gz /global/cfs/cdirs/m3513/www/biosample
+chmod -R 777 /global/cfs/cdirs/m3513/www/biosample/*
 
 # select
 # 	sra_id,
