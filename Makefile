@@ -137,7 +137,7 @@ target/SRA_Run_Members.db: target/SRA_Run_Members.tab
 biosample_emp500_srr_indexing: 
 	sqlite3 target/biosample_basex.db 'drop index if exists biosample_sra_id_idx' ''
 	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
-	-sqlite3 target/biosample_basex.db 'alter table non_harmonized_attributes add from_emp_500 as (emp500_title is not null and emp500_title != '')' ''
+	-sqlite3 target/biosample_basex.db "alter table non_harmonized_attributes add from_emp_500 as (emp500_title is not null and emp500_title != '')" ''
 	sqlite3 target/biosample_basex.db 'drop index if exists from_emp_500_idx' ''
 	sqlite3 target/biosample_basex.db 'CREATE INDEX from_emp_500_idx on non_harmonized_attributes("from_emp_500")' ''
 
