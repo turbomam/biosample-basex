@@ -10,7 +10,7 @@
 
 # add steps for zipping sSQLite database and deleting it in clean step
 
-.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite srrs_emp_500_etc srrs_clean biosample_emp500_srr_indexing ingest_biosample_srrs propigate_srrs
 
 all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
 
@@ -122,6 +122,10 @@ target/all_biosample_attributes_values.tsv:
 # ---
 
 # SRRs, esdpecially for EMP 500 samples
+
+
+srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs
+
 
 srrs_clean:
 	rm -rf target/SRA_Run_Members.tab target/SRA_Run_Members.db target/biosample_srrs.txt target/biosample_srrs.tsv target/SRA_Run_Members.db.gz 
