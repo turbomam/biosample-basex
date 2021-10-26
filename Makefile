@@ -157,7 +157,9 @@ ingest_biosample_srrs: target/biosample_srrs.tsv
 
 propigate_srrs: ingest_biosample_srrs
 	-sqlite3 target/biosample_basex.db 'alter table non_harmonized_attributes add srr_ids;' ''
-	sqlite3 "attach 'target/SRA_Run_Members.db' as srm; attach 'target/biosample_basex.db' as bb; UPDATE bb.non_harmonized_attributes set  srr_ids = srrs.srrs FROM ( SELECT sra, srrs from srm.biosample_srrs) AS srrs WHERE sra_id = srrs.sra" ''
+	# scary magic: without .mode tabs, Error: unable to open database
+	# adding .mode tabs eliminates that error but doesn't seem to generate tabular output
+	sqlite3  ".mode tabs" "attach 'target/SRA_Run_Members.db' as srm; attach 'target/biosample_basex.db' as bb; UPDATE bb.non_harmonized_attributes set  srr_ids = srrs.srrs FROM ( SELECT sra, srrs from srm.biosample_srrs) AS srrs WHERE sra_id = srrs.sra" ''
 
 target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 	gzip -c $< > $@
