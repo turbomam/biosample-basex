@@ -197,9 +197,9 @@ return
   $primary_id
 }</primary_id>
 
-< xref>{
-  $ xref
-}</ xref>
+<xref>{
+  $xref
+}</xref>
 
 <sra_id>{
   $sraid

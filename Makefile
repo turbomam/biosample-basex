@@ -10,7 +10,7 @@
 
 # add steps for zipping sSQLite database and deleting it in clean step
 
-.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite srrs_emp_500_etc srrs_clean biosample_emp500_srr_indexing ingest_biosample_srrs propigate_srrs
 
 all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
 
@@ -108,6 +108,8 @@ target/biosample_basex.db.gz:
 	chmod 777 $@
 
 # factor out this hardcoded path
+# available at https://portal.nersc.gov/project/m3513/biosample
+# https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
 /global/cfs/cdirs/m3513/www/biosample/biosample_basex.db.gz: target/biosample_basex.db.gz
 	cp $< $@
 	chmod 777 $@
@@ -116,6 +118,144 @@ target/biosample_basex.db.gz:
 
 target/all_biosample_attributes_values.tsv:
 	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
+
+# ---
+
+# SRRs, esdpecially for EMP 500 samples
+
+srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv
+
+srrs_clean:
+	rm -rf target/SRA_Run_Members.tab target/SRA_Run_Members.db target/biosample_srrs.txt target/biosample_srrs.tsv target/SRA_Run_Members.db.gz 
+
+target/SRA_Run_Members.tab:
+	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
+
+target/SRA_Run_Members.db: target/SRA_Run_Members.tab
+	sqlite3 $@ ".mode tabs" ".import $< SRA_Run_Members" ""
+	sqlite3 $@ 'drop index if exists Sample_idx' ''
+	sqlite3 $@ 'CREATE INDEX Sample_idx on SRA_Run_Members("Sample")' ''
+
+biosample_emp500_srr_indexing: 
+	sqlite3 target/biosample_basex.db 'drop index if exists biosample_sra_id_idx' ''
+	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
+	-sqlite3 target/biosample_basex.db "alter table non_harmonized_attributes add from_emp_500 as (emp500_title is not null and emp500_title != '')" ''
+	sqlite3 target/biosample_basex.db 'drop index if exists from_emp_500_idx' ''
+	sqlite3 target/biosample_basex.db 'CREATE INDEX from_emp_500_idx on non_harmonized_attributes("from_emp_500")' ''
+
+target/biosample_srrs.txt: target/SRA_Run_Members.db biosample_emp500_srr_indexing
+	# the output is pipe delimeted despite the mode tabs assertion
+	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
+
+# could have just written this to target/SRA_Run_Members.db
+target/biosample_srrs.tsv: target/biosample_srrs.txt
+	# paramterize me! I'm harcoded!
+	python3 util/srrs_per_sra.py
+
+ingest_biosample_srrs: target/biosample_srrs.tsv
+	sqlite3 target/SRA_Run_Members.db ".mode tabs" ".import $< biosample_srrs" ""
+	sqlite3 target/SRA_Run_Members.db 'drop index if exists biosample_sra_id_idx' ''
+	sqlite3 target/SRA_Run_Members.db 'CREATE INDEX biosample_sra_id_idx on biosample_srrs("sra")' ''
+
+propigate_srrs: ingest_biosample_srrs
+	-sqlite3 target/biosample_basex.db 'alter table non_harmonized_attributes add srr_ids;' ''
+	# scary magic: without .mode tabs, Error: unable to open database
+	# adding .mode tabs eliminates that error but doesn't seem to generate tabular output
+	# although that's moot here since we're just updating
+	sqlite3  ".mode tabs" "attach 'target/SRA_Run_Members.db' as srm; attach 'target/biosample_basex.db' as bb; UPDATE bb.non_harmonized_attributes set  srr_ids = srrs.srrs FROM ( SELECT sra, srrs from srm.biosample_srrs) AS srrs WHERE sra_id = srrs.sra" ''
+
+# depends on propigate_srrs and evertyhing downstream of that
+target/emp_500_with_srrs_harmonized_only.tsv:
+	sqlite3 target/biosample_basex.db ".mode tabs" ".headers ON" "select * from biosample_basex_merged bbm where from_emp_500 = 1" "" > $@
+
+/global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv: target/emp_500_with_srrs_harmonized_only.tsv
+	cp $< $@
+	chmod 777 $@
+
+target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
+	gzip -c $< > $@
+
+/global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
+	cp $< $@
+	chmod 777 $@
+
+# select
+# 	sra_id,
+# 	srm.non_harmonized_attributes.Run
+# from
+# 	non_harmonized_attributes
+# left join srm.non_harmonized_attributes on
+# 	srm.non_harmonized_attributes.Sample = non_harmonized_attributes.sra_id
+# where
+# 	emp500_title is not null
+# 	and emp500_title != '';
+
+# select
+# 	taxonomy_name,
+# 	count(1)
+# from
+# 	non_harmonized_attributes nha
+# where
+# 	emp500_title is not null
+# 	and emp500_title != ''
+# group by
+# 	taxonomy_name
+# order by
+# 	taxonomy_name;
+
+# |taxonomy_name|count(1)|
+# |-------------|--------|
+# |activated sludge metagenome|17|
+# |algae metagenome|49|
+# |bioreactor metagenome|9|
+# |coal metagenome|16|
+# |coral metagenome|20|
+# |freshwater sediment metagenome|47|
+# |gut metagenome|199|
+# |insect metagenome|28|
+# |lichen metagenome|12|
+# |marine metagenome|37|
+# |marine sediment metagenome|66|
+# |metagenome|2|
+# |microbial mat metagenome|1|
+# |mollusc metagenome|13|
+# |mouse skin metagenome|3|
+# |oil field metagenome|14|
+# |plant metagenome|15|
+# |salt marsh metagenome|24|
+# |sand metagenome|9|
+# |seawater metagenome|2|
+# |soil metagenome|189|
+# |sponge metagenome|57|
+# |stromatolite metagenome|1|
+
+# |taxonomy_name                 |count(1)|
+# |------------------------------|--------|
+# |gut metagenome                |199     |
+# |soil metagenome               |189     |
+# |marine sediment metagenome    |66      |
+# |sponge metagenome             |57      |
+# |algae metagenome              |49      |
+# |freshwater sediment metagenome|47      |
+# |marine metagenome             |37      |
+# |insect metagenome             |28      |
+# |salt marsh metagenome         |24      |
+# |coral metagenome              |20      |
+# |activated sludge metagenome   |17      |
+# |coal metagenome               |16      |
+# |plant metagenome              |15      |
+# |oil field metagenome          |14      |
+# |mollusc metagenome            |13      |
+# |lichen metagenome             |12      |
+# |bioreactor metagenome         |9       |
+# |sand metagenome               |9       |
+# |mouse skin metagenome         |3       |
+# |metagenome                    |2       |
+# |seawater metagenome           |2       |
+# |microbial mat metagenome      |1       |
+# |stromatolite metagenome       |1       |
+
+
 
 # ---
 

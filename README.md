@@ -32,3 +32,6 @@ https://basex.org/download/
 
 
 TODO: update for running on NERSC cori
+
+results can be foudn at https://portal.nersc.gov/project/m3513/biosample/
+
