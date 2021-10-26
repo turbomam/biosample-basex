@@ -166,7 +166,7 @@ propigate_srrs: ingest_biosample_srrs
 
 # depends on propigate_srrs and evertyhing downstream of that
 target/emp_500_with_srrs_harmonized_only.tsv:
-	sqlite3 target/biosample_basex.db ".mode tabs" "select * from biosample_basex_merged bbm where from_emp_500 = 1" "" > $@
+	sqlite3 target/biosample_basex.db ".mode tabs" ".headers ON" "select * from biosample_basex_merged bbm where from_emp_500 = 1" "" > $@
 
 /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv: target/emp_500_with_srrs_harmonized_only.tsv
 	cp $< $@
