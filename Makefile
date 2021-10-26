@@ -123,9 +123,8 @@ target/all_biosample_attributes_values.tsv:
 
 # SRRs, esdpecially for EMP 500 samples
 
-
 srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv
-	
+
 srrs_clean:
 	rm -rf target/SRA_Run_Members.tab target/SRA_Run_Members.db target/biosample_srrs.txt target/biosample_srrs.tsv target/SRA_Run_Members.db.gz 
 
@@ -179,10 +178,6 @@ target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
 /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
 	cp $< $@
 	chmod 777 $@
-
-# gzip -c target/biosample_basex.db > target/biosample_basex_emp_500_srrs.db.gz
-cp target/biosample_basex_emp_500_srrs.db.gz /global/cfs/cdirs/m3513/www/biosample
-chmod -R 777 /global/cfs/cdirs/m3513/www/biosample/*
 
 # select
 # 	sra_id,
