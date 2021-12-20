@@ -90,8 +90,6 @@ target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv w
 	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
 	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
 
-target/all_biosample_attributes_values_by_raw_id.tsv:
-	date ; time $(BASEXCMD) ./basex/bin/basex queries/all_biosample_attributes_values_by_raw_id.xq > $@
 
 # ---
 
