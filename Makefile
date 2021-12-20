@@ -90,6 +90,9 @@ target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv w
 	sqlite3 target/biosample_basex.db 'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_harmonized_attributes LEFT JOIN catted_wide_harmonized_attributes using("raw_id")' ''
 	sqlite3 target/biosample_basex.db "select * from biosample_basex_merged where raw_id > 9 and raw_id < 999 limit 3" > target/test_query_result.txt
 
+target/all_biosample_attributes_values_by_raw_id.tsv:
+	date ; time $(BASEXCMD) ./basex/bin/basex queries/all_biosample_attributes_values_by_raw_id.xq > $@
+
 # ---
 
 # depends on target/biosample_basex.db and a previous-generation harmonized_table.db
@@ -116,8 +119,9 @@ target/biosample_basex.db.gz:
 
 # ---
 
-target/all_biosample_attributes_values.tsv:
-	date ; time $(BASEXCMD) queries/all_biosample_attributes_values.xq > $@
+target/all_biosample_attributes_values_by_raw_id.tsv:
+	date ; time $(BASEXCMD) queries/all_biosample_attributes_values_by_raw_id.xq > $@
+	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/all_biosample_attributes_values_by_raw_id.tsv all_attribs" ""
 
 # ---
 
@@ -133,61 +137,61 @@ target/all_biosample_attributes_values.tsv:
 # and Bin's previous work at  XXX
 
 
-srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv
+# srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv
 
-srrs_clean:
-	rm -rf target/SRA_Run_Members.tab target/SRA_Run_Members.db target/biosample_srrs.txt target/biosample_srrs.tsv target/SRA_Run_Members.db.gz 
+# srrs_clean:
+# 	rm -rf target/SRA_Run_Members.tab target/SRA_Run_Members.db target/biosample_srrs.txt target/biosample_srrs.tsv target/SRA_Run_Members.db.gz 
 
-target/SRA_Run_Members.tab:
-	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
+# target/SRA_Run_Members.tab:
+# 	curl https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Run_Members.tab --output $@
 
-target/SRA_Run_Members.db: target/SRA_Run_Members.tab
-	sqlite3 $@ ".mode tabs" ".import $< SRA_Run_Members" ""
-	sqlite3 $@ 'drop index if exists Sample_idx' ''
-	sqlite3 $@ 'CREATE INDEX Sample_idx on SRA_Run_Members("Sample")' ''
+# target/SRA_Run_Members.db: target/SRA_Run_Members.tab
+# 	sqlite3 $@ ".mode tabs" ".import $< SRA_Run_Members" ""
+# 	sqlite3 $@ 'drop index if exists Sample_idx' ''
+# 	sqlite3 $@ 'CREATE INDEX Sample_idx on SRA_Run_Members("Sample")' ''
 
-biosample_emp500_srr_indexing: 
-	sqlite3 target/biosample_basex.db 'drop index if exists biosample_sra_id_idx' ''
-	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
-	-sqlite3 target/biosample_basex.db "alter table non_harmonized_attributes add from_emp_500 as (emp500_title is not null and emp500_title != '')" ''
-	sqlite3 target/biosample_basex.db 'drop index if exists from_emp_500_idx' ''
-	sqlite3 target/biosample_basex.db 'CREATE INDEX from_emp_500_idx on non_harmonized_attributes("from_emp_500")' ''
+# biosample_emp500_srr_indexing: 
+# 	sqlite3 target/biosample_basex.db 'drop index if exists biosample_sra_id_idx' ''
+# 	sqlite3 target/biosample_basex.db 'CREATE INDEX biosample_sra_id_idx on non_harmonized_attributes("sra_id")' ''
+# 	-sqlite3 target/biosample_basex.db "alter table non_harmonized_attributes add from_emp_500 as (emp500_title is not null and emp500_title != '')" ''
+# 	sqlite3 target/biosample_basex.db 'drop index if exists from_emp_500_idx' ''
+# 	sqlite3 target/biosample_basex.db 'CREATE INDEX from_emp_500_idx on non_harmonized_attributes("from_emp_500")' ''
 
-target/biosample_srrs.txt: target/SRA_Run_Members.db biosample_emp500_srr_indexing
-	# the output is pipe delimeted despite the mode tabs assertion
-	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
+# target/biosample_srrs.txt: target/SRA_Run_Members.db biosample_emp500_srr_indexing
+# 	# the output is pipe delimeted despite the mode tabs assertion
+# 	sqlite3 ".mode tabs" "attach 'target/biosample_basex.db' as bb ; attach 'target/SRA_Run_Members.db' as srm ; select nha.sra_id, rm.Run from bb.non_harmonized_attributes nha left join srm.SRA_Run_Members rm on rm.Sample = nha.sra_id where rm.Run is not null order by nha.sra_id, rm.Run" "" > $@
 
-# could have just written this to target/SRA_Run_Members.db
-target/biosample_srrs.tsv: target/biosample_srrs.txt
-	# paramterize me! I'm harcoded!
-	python3 util/srrs_per_sra.py
+# # could have just written this to target/SRA_Run_Members.db
+# target/biosample_srrs.tsv: target/biosample_srrs.txt
+# 	# paramterize me! I'm harcoded!
+# 	python3 util/srrs_per_sra.py
 
-ingest_biosample_srrs: target/biosample_srrs.tsv
-	sqlite3 target/SRA_Run_Members.db ".mode tabs" ".import $< biosample_srrs" ""
-	sqlite3 target/SRA_Run_Members.db 'drop index if exists biosample_sra_id_idx' ''
-	sqlite3 target/SRA_Run_Members.db 'CREATE INDEX biosample_sra_id_idx on biosample_srrs("sra")' ''
+# ingest_biosample_srrs: target/biosample_srrs.tsv
+# 	sqlite3 target/SRA_Run_Members.db ".mode tabs" ".import $< biosample_srrs" ""
+# 	sqlite3 target/SRA_Run_Members.db 'drop index if exists biosample_sra_id_idx' ''
+# 	sqlite3 target/SRA_Run_Members.db 'CREATE INDEX biosample_sra_id_idx on biosample_srrs("sra")' ''
 
-propigate_srrs: ingest_biosample_srrs
-	-sqlite3 target/biosample_basex.db 'alter table non_harmonized_attributes add srr_ids;' ''
-	# scary magic: without .mode tabs, Error: unable to open database
-	# adding .mode tabs eliminates that error but doesn't seem to generate tabular output
-	# although that's moot here since we're just updating
-	sqlite3  ".mode tabs" "attach 'target/SRA_Run_Members.db' as srm; attach 'target/biosample_basex.db' as bb; UPDATE bb.non_harmonized_attributes set  srr_ids = srrs.srrs FROM ( SELECT sra, srrs from srm.biosample_srrs) AS srrs WHERE sra_id = srrs.sra" ''
+# propigate_srrs: ingest_biosample_srrs
+# 	-sqlite3 target/biosample_basex.db 'alter table non_harmonized_attributes add srr_ids;' ''
+# 	# scary magic: without .mode tabs, Error: unable to open database
+# 	# adding .mode tabs eliminates that error but doesn't seem to generate tabular output
+# 	# although that's moot here since we're just updating
+# 	sqlite3  ".mode tabs" "attach 'target/SRA_Run_Members.db' as srm; attach 'target/biosample_basex.db' as bb; UPDATE bb.non_harmonized_attributes set  srr_ids = srrs.srrs FROM ( SELECT sra, srrs from srm.biosample_srrs) AS srrs WHERE sra_id = srrs.sra" ''
 
-# depends on propigate_srrs and evertyhing downstream of that
-target/emp_500_with_srrs_harmonized_only.tsv:
-	sqlite3 target/biosample_basex.db ".mode tabs" ".headers ON" "select * from biosample_basex_merged bbm where from_emp_500 = 1" "" > $@
+# # depends on propigate_srrs and evertyhing downstream of that
+# target/emp_500_with_srrs_harmonized_only.tsv:
+# 	sqlite3 target/biosample_basex.db ".mode tabs" ".headers ON" "select * from biosample_basex_merged bbm where from_emp_500 = 1" "" > $@
 
-/global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv: target/emp_500_with_srrs_harmonized_only.tsv
-	cp $< $@
-	chmod 777 $@
+# /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv: target/emp_500_with_srrs_harmonized_only.tsv
+# 	cp $< $@
+# 	chmod 777 $@
 
-target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
-	gzip -c $< > $@
+# target/SRA_Run_Members.db.gz: target/SRA_Run_Members.db
+# 	gzip -c $< > $@
 
-/global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
-	cp $< $@
-	chmod 777 $@
+# /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz: target/SRA_Run_Members.db.gz
+# 	cp $< $@
+# 	chmod 777 $@
 
 # select
 # 	sra_id,
