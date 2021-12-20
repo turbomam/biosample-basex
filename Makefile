@@ -289,6 +289,11 @@ count_clean:
 target/count_biosamples.tsv:
 	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
 
+target/list_id_dbs.tsv:
+	date ; time $(BASEXCMD) queries/list_id_dbs.xq > $@
+
+
+
 # ---
 
 # deprecated in favor of chunk_harmonized_attributes_long shell script
