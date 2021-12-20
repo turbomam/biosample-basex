@@ -289,6 +289,7 @@ target/count_biosamples.tsv:
 
 target/list_id_dbs.tsv:
 	date ; time $(BASEXCMD) queries/list_id_dbs.xq > $@
+	sort target/list_id_dbs.tsv | uniq -c | sort -rn > target/list_id_dbs_counted.tsv
 
 
 
