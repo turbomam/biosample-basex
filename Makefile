@@ -123,6 +123,16 @@ target/all_biosample_attributes_values.tsv:
 
 # SRRs, esdpecially for EMP 500 samples
 
+# Bin Hu
+# For EMP500, we may need to exclude some samples based on their taxonomy names. 
+# Below is the list that I would like to EXCLUDE. Does this look right? 
+# 'plant metagenome', 'gut metagenome',  'algae metagenome', 'mouse skin metagenome', 'insect metagenome'
+
+# compare to my previous emp500_study_id_biosample_attributes_wide
+#   https://docs.google.com/spreadsheets/d/1vk2S63uczLdkL5zHJ_JX_J9bAhbQ9G3JHrKkWfEIuMc/edit#gid=1621069737
+# and Bin's previous work at  XXX
+
+
 srrs_emp_500_etc: srrs_clean /global/cfs/cdirs/m3513/www/biosample/SRA_Run_Members.db.gz propigate_srrs /global/cfs/cdirs/m3513/www/biosample/emp_500_with_srrs_harmonized_only.tsv
 
 srrs_clean:

@@ -5,4 +5,6 @@ target
 venv
 basex
 extras
+.ipynb_checkpoints
+notebooks/.ipynb_checkpoints
 
