@@ -14,9 +14,7 @@ return
 
 <csv><record> 
 
-<raw_id>{
-    $id
-}</raw_id>
+
 
 <type>{
     $ltype
@@ -28,6 +26,12 @@ return
 
 </record></csv>
 
-(: <label>{
+(:
+<raw_id>{
+    $id
+}</raw_id>
+
+ <label>{
     $llab
-}</label> :)
+}</label>
+ :)
