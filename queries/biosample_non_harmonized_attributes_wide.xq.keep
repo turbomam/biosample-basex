@@ -1,8 +1,6 @@
 declare option output:method "csv";
 declare option output:csv "header=yes, separator=tab";
 
-(: see https://github.com/turbomam/biosample-basex/issues/8 :)
-
 let $delim := "|||"
 
 for $bs in doc(
@@ -74,12 +72,6 @@ let $doi := fn:normalize-space(
 )
 
 let $entrez_link := $bs/Links/Link[@type="entrez"]
-
-let $bp_link := $bs/Links/Link[@type='entrez' and @target='bioproject']
-
-let $bp_ids := fn:normalize-space(
-  string-join($bp_link,$delim))
-
 
 let $entrez_links := fn:normalize-space(
   string-join(
@@ -205,15 +197,28 @@ return
   $primary_id
 }</primary_id>
 
+<xref>{
+  $xref
+}</xref>
+
 <sra_id>{
   $sraid
 }</sra_id>
 
 
-<bp_id>{
-  $bp_ids
-}</bp_id>
+<dna_source>{
+  $dna_source
+}</dna_source>
 
+<doi>{
+  $doi
+}</doi>
+
+<entrez_links>
+{
+  $entrez_links
+}
+</entrez_links>
 
 <model>{
   $model
@@ -251,28 +256,6 @@ return
 }</paragraph>
 
 
-</csv></result>
-
-(:
-
-<doi>{
-  $doi
-}</doi>
-
-<xref>{
-  $xref
-}</xref>
-
-<entrez_links>
-{
-  $entrez_links
-}
-</entrez_links>
-
-<dna_source>{
-  $dna_source
-}</dna_source>
-
 <emp500_principal_investigator>
 {$emp500_principal_investigator}
 </emp500_principal_investigator>
@@ -285,5 +268,6 @@ return
 {$emp500_title}
 </emp500_title>
 
-:)
+
+</csv></result>
 
