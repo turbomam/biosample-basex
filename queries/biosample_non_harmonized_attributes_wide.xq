@@ -41,13 +41,13 @@ concat(
   )
 )
 
-let $ xref := fn:normalize-space(
+(: let $ xref := fn:normalize-space(
   string-join(
     $bs/Ids/Id/concat(
       @db,':',.
     ),$delim
   )
-)
+) :)
 
 
 let $sraid :=  fn:normalize-space(
@@ -58,7 +58,7 @@ let $sraid :=  fn:normalize-space(
   )
 )
 
-let $dna_source := fn:normalize-space(
+(: let $dna_source := fn:normalize-space(
   string-join(
     data(
       $bs/Links/Link[@type="url" and @label="DNA Source"]
@@ -73,7 +73,7 @@ let $doi := fn:normalize-space(
   )
 )
 
-let $entrez_link := $bs/Links/Link[@type="entrez"]
+let $entrez_link := $bs/Links/Link[@type="entrez"] :)
 
 let $bp_link := $bs/Links/Link[@type='entrez' and @target='bioproject']
 
@@ -81,13 +81,13 @@ let $bp_ids := fn:normalize-space(
   string-join($bp_link,$delim))
 
 
-let $entrez_links := fn:normalize-space(
+(: let $entrez_links := fn:normalize-space(
   string-join(
     $entrez_link/concat(
       @target,':',@label,":",.
     ),$delim
   )
-)
+) :)
 
 let $model := fn:normalize-space(
   string-join(
@@ -157,7 +157,7 @@ let $title := fn:normalize-space(
 )
 
 
-let $emp500_principal_investigator := fn:normalize-space(
+(: let $emp500_principal_investigator := fn:normalize-space(
   string-join(
     data(
       $bs/Attributes/Attribute[@attribute_name='emp500_principal_investigator']
@@ -179,7 +179,7 @@ let $emp500_title := fn:normalize-space(
       $bs/Attributes/Attribute[@attribute_name='emp500_title']
     ),$delim
   )
-)
+) :)
 
 return
 

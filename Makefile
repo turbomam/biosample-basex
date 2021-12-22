@@ -7,17 +7,28 @@
 # make a document about which terms (harmonized attribute, non-harmonized attribute or non-attriubte) go into queries/biosample_non-attribute_plus_emp500_wide.xq
 #   and make all attributes/harmonized attributes options for the long/EAV query?
 
-
 # add steps for zipping sSQLite database and deleting it in clean step
 
-.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite srrs_emp_500_etc srrs_clean biosample_emp500_srr_indexing ingest_biosample_srrs propigate_srrs
+# 2021-12-22: 24290820 biosamples
+# roughly 25000000
+# split at 12500001
 
-all: clean target/biosample_set.xml biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
+# assumes that the specified id is present in the input
+del_from = 12500001
+biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
+
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite
+# srrs_emp_500_etc srrs_clean biosample_emp500_srr_indexing ingest_biosample_srrs propigate_srrs
+
+split: clean target/biosample_set.xml target/biosample_set_under_$(del_from).xml target/biosample_set_over_$(del_from).xml
+
+all:  split biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
 	rm -rf downloads/*.gz
 	# rm -rf target/*
+	rm -f target/biosample_set_under_$(del_from)*.xml
 	rm -rf target/chunks_long/*.tsv
 	rm -rf target/chunks_wide/*.tsv
 	rm -rf target/*.tsv
@@ -48,6 +59,33 @@ downloads/biosample_set.xml.gz:
 # roughly 2 minutes
 target/biosample_set.xml: downloads/biosample_set.xml.gz
 	gunzip -c $< > $@
+
+
+target/biosample_set_under_$(del_from)_noclose.xml: target/biosample_set.xml
+	# two minutes when retrieving 12500000 lines
+	date
+	sed '/^<BioSample.*id="$(del_from)"/q'  $< > $@
+	# below might not require deletion of trailing line
+	# not that that's a slow step
+	#sed '/^<BioSample.*id="$(del_from)"/,$$d'  $< > $@
+	date
+
+target/biosample_set_under_$(del_from).xml: target/biosample_set_under_$(del_from)_noclose.xml
+	# sed's q operator leaves the matching line
+	# this deletes the unwanted matching line
+	# note $$ escaping within make
+	sed -i '$$d' $<
+	# another two minutes when retrieving 12500000 lines
+	cat $< biosample_set_closer.txt > $@
+	rm -f $<
+
+target/biosample_set_over_$(del_from)_noopen.xml: target/biosample_set.xml
+	sed -n '/^<BioSample.*id="$(del_from)"/,$$p'  $< > $@
+
+target/biosample_set_over_$(del_from).xml: target/biosample_set_over_$(del_from)_noopen.xml
+	cat biosample_set_opener.txt $< > $@
+	rm -f $<
+
 
 # ~ 90 minutes on cori @ Xmx  = 96 GB RAM. Xmx may not matter much for load. But indexing?
 # du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
