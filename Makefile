@@ -17,7 +17,7 @@
 del_from = 12500001
 biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
 
-.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite split
 # srrs_emp_500_etc srrs_clean biosample_emp500_srr_indexing ingest_biosample_srrs propigate_srrs
 
 split: clean target/biosample_set.xml target/biosample_set_under_$(del_from).xml target/biosample_set_over_$(del_from).xml
@@ -90,7 +90,8 @@ target/biosample_set_over_$(del_from).xml: target/biosample_set_over_$(del_from)
 # ~ 90 minutes on cori @ Xmx  = 96 GB RAM. Xmx may not matter much for load. But indexing?
 # du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
 biosample-basex: target/biosample_set.xml
-	$(BASEXCMD) -c 'CREATE DB biosample_set target/biosample_set.xml'
+	$(BASEXCMD) -c 'CREATE DB biosample_set_1 target/biosample_set_under_$(del_from).xml'
+	$(BASEXCMD) -c 'CREATE DB biosample_set_2 target/biosample_set_over_$(del_from).xml'
 
 # ---
 
