@@ -5,9 +5,10 @@ declare option output:csv "header=yes, separator=tab";
 
 let $delim := "|||"
 
-for $bs in doc(
-  'biosample_set'
-)/BioSampleSet/BioSample
+for $db in db:list()
+  let $coll := db:open($db)
+
+for $bs in $coll/BioSampleSet/BioSample
 
 let $accession :=  fn:normalize-space(
   string-join(
@@ -41,14 +42,6 @@ concat(
   )
 )
 
-(: let $ xref := fn:normalize-space(
-  string-join(
-    $bs/Ids/Id/concat(
-      @db,':',.
-    ),$delim
-  )
-) :)
-
 
 let $sraid :=  fn:normalize-space(
   string-join(
@@ -58,36 +51,11 @@ let $sraid :=  fn:normalize-space(
   )
 )
 
-(: let $dna_source := fn:normalize-space(
-  string-join(
-    data(
-      $bs/Links/Link[@type="url" and @label="DNA Source"]
-    ),$delim
-  )
-)
-let $doi := fn:normalize-space(
-  string-join(
-    data(
-      $bs/Links/Link[@label="DOI"]
-    ),$delim
-  )
-)
-
-let $entrez_link := $bs/Links/Link[@type="entrez"] :)
-
 let $bp_link := $bs/Links/Link[@type='entrez' and @target='bioproject']
 
 let $bp_ids := fn:normalize-space(
   string-join($bp_link,$delim))
 
-
-(: let $entrez_links := fn:normalize-space(
-  string-join(
-    $entrez_link/concat(
-      @target,':',@label,":",.
-    ),$delim
-  )
-) :)
 
 let $model := fn:normalize-space(
   string-join(
@@ -155,31 +123,6 @@ let $title := fn:normalize-space(
     ),$delim
   )
 )
-
-
-(: let $emp500_principal_investigator := fn:normalize-space(
-  string-join(
-    data(
-      $bs/Attributes/Attribute[@attribute_name='emp500_principal_investigator']
-    ),$delim
-  )
-)
-
-let $emp500_study_id := fn:normalize-space(
-  string-join(
-    data(
-      $bs/Attributes/Attribute[@attribute_name='emp500_study_id']
-    ),$delim
-  )
-)
-
-let $emp500_title := fn:normalize-space(
-  string-join(
-    data(
-      $bs/Attributes/Attribute[@attribute_name='emp500_title']
-    ),$delim
-  )
-) :)
 
 return
 
@@ -252,38 +195,4 @@ return
 
 
 </csv></result>
-
-(:
-
-<doi>{
-  $doi
-}</doi>
-
-<xref>{
-  $xref
-}</xref>
-
-<entrez_links>
-{
-  $entrez_links
-}
-</entrez_links>
-
-<dna_source>{
-  $dna_source
-}</dna_source>
-
-<emp500_principal_investigator>
-{$emp500_principal_investigator}
-</emp500_principal_investigator>
-
-<emp500_study_id>
-{$emp500_study_id}
-</emp500_study_id>
-
-<emp500_title>
-{$emp500_title}
-</emp500_title>
-
-:)
 
