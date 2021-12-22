@@ -1,4 +1,6 @@
-# paramterize the basex path so multiple people can use this
+#./basex/bin/basex -c 'list' | sed '2d' | sed 's/[[:space:]]\{1,\}/\t/g' > basex_list.tsv
+
+# parameterize the basex path so multiple people can use this
 # cori requires: 'module load python'
 
 # currently only intended to create SQLite db file
