@@ -39,8 +39,15 @@ clean:
 	rm -rf target/*.gz
 
 
-export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
-export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
+#export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
+#export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
+
+export BASEXCMD=basex
+
+# just require that basex binaries are on the path?
+# and use the default data directory?
+# remmber that we will be looping over all databases for some queries
+# add where and look for pattern?
 
 # work on file and variable naming conventions
 # capitalization
@@ -76,7 +83,7 @@ target/biosample_set_under_$(del_from).xml: target/biosample_set_under_$(del_fro
 	# sed's q operator leaves the matching line
 	# this deletes the unwanted matching line
 	# note $$ escaping within make
-	sed -i '$$d' $<
+	sed -i.bak '$$d' $<
 	# another two minutes when retrieving 12500000 lines
 	cat $< biosample_set_closer.txt > $@
 	rm -f $<
