@@ -19,12 +19,42 @@
 del_from = 12500001
 biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
 
-.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite split
+.PHONY: all biosample-basex chunk_harmonized_attributes_long clean count_clean wide_chunks wide_ha_chunks_to_sqlite split temp
 # srrs_emp_500_etc srrs_clean biosample_emp500_srr_indexing ingest_biosample_srrs propigate_srrs
 
 split: clean target/biosample_set.xml target/biosample_set_under_$(del_from).xml target/biosample_set_over_$(del_from).xml
 
-all:  split biosample-basex target/biosample_non_harmonized_attributes_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
+#all:  split biosample-basex target/biosample_non_attribute_metadata_wide.tsv chunk_harmonized_attributes_long chunk_harmonized_attributes_long wide_chunks wide_ha_chunks_to_sqlite target/biosample_basex.db target/biosample_basex.db.gz
+
+# ---
+
+# split biosample-basex
+
+# target/all_biosample_attributes_values_by_raw_id.tsv
+#   queries BaseX and populates SQlite but doesn't index
+# target/biosample_non_attribute_metadata_wide.tsv
+#   queries BaseX but doesn't populate SQLite
+
+# should delete db, drop tables or truncate tables first
+dev:
+# make a backup?
+	rm -f target/biosample_basex.db
+#	# may need to aggregate downstream (only one attribute of the same name for a given biosample)
+	sqlite3 target/biosample_basex.db < all_attribs.sql
+#	# make this a unique index?
+	sqlite3 target/biosample_basex.db < non_attribute_metadata.sql
+#	date ; time $(BASEXCMD) queries/all_biosample_attributes_values_by_raw_id.xq > target/all_biosample_attributes_values_by_raw_id.tsv
+#	date ; time $(BASEXCMD) queries/biosample_non_attribute_metadata_wide.xq > target/biosample_non_attribute_metadata_wide.tsv
+	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/all_biosample_attributes_values_by_raw_id.tsv all_attribs" ""
+	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_attribute_metadata_wide.tsv non_attribute_metadata" ""
+
+#	sqlite3 target/biosample_basex.db 'CREATE INDEX non_attribute_metadata_raw_id_idx on non_attribute_metadata("raw_id")' ''
+
+#	sqlite3 target/biosample_basex.db 'CREATE INDEX all_attribs_idx on all_attribs("harmonized_name", "raw_id", "attribute_name")' ''
+
+# now query for max id
+# query for all sorted unique harmonized attribute names
+# get
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
@@ -105,8 +135,8 @@ biosample-basex: target/biosample_set.xml
 # ---
 
 # 35 minutes
-target/biosample_non_harmonized_attributes_wide.tsv:
-	date ; time $(BASEXCMD) queries/biosample_non_harmonized_attributes_wide.xq > $@
+target/biosample_non_attribute_metadata_wide.tsv:
+	date ; time $(BASEXCMD) queries/biosample_non_attribute_metadata_wide.xq > $@
 
 # ---
 
@@ -129,9 +159,9 @@ wide_ha_chunks_to_sqlite: wide_chunks
 
 # how far do we want to go with dependencies?
 # esp when they are phony?
-target/biosample_basex.db: target/biosample_non_harmonized_attributes_wide.tsv wide_ha_chunks_to_sqlite
-	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_harmonized_attributes_wide.tsv non_harmonized_attributes" ""
-	sqlite3 target/biosample_basex.db 'CREATE INDEX non_harmonized_attributes_raw_id_idx on non_harmonized_attributes("raw_id")' ''
+target/biosample_basex.db: target/biosample_non_attribute_metadata_wide.tsv wide_ha_chunks_to_sqlite
+	sqlite3 target/biosample_basex.db ".mode tabs" ".import target/biosample_non_attribute_metadata_wide.tsv non_attribute_metadata" ""
+	sqlite3 target/biosample_basex.db 'CREATE INDEX non_attribute_metadata_raw_id_idx on non_attribute_metadata("raw_id")' ''
 	sqlite3 target/biosample_basex.db 'CREATE INDEX catted_wide_harmonized_attributes_raw_id_idx on catted_wide_harmonized_attributes("raw_id")' ''
 	# what kind of join? full outer tricky in sqlite?
 	# gets some nulls in harmonized attribute columns
@@ -335,17 +365,11 @@ count_clean:
 target/count_biosamples.tsv:
 	date ; time $(BASEXCMD) queries/count_biosamples.xq | tee $@
 
-target/list_id_dbs.tsv:
-	date ; time $(BASEXCMD) queries/list_id_dbs.xq > $@
-	sort target/list_id_dbs.tsv | uniq -c | sort -rn > target/list_id_dbs_counted.tsv
+#target/list_id_dbs.tsv:
+#	date ; time $(BASEXCMD) queries/list_id_dbs.xq > $@
+#	sort target/list_id_dbs.tsv | uniq -c | sort -rn > target/list_id_dbs_counted.tsv
 
-
-
-# ---
-
-# deprecated in favor of chunk_harmonized_attributes_long shell script
-target/biosample_harmonized_attributes_long.tsv:
-	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
-
-# ---
+## deprecated in favor of chunk_harmonized_attributes_long shell script
+#target/biosample_harmonized_attributes_long.tsv:
+#	date ; time $(BASEXCMD) queries/biosample_harmonized_attributes_long.xq > $@
 
