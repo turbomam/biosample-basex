@@ -3,7 +3,7 @@
 CREATE TABLE non_attribute_metadata(
   "id" TEXT,
   "accession" TEXT,
-  "raw_id" INTEGER,
+  "raw_id" INTEGER PRIMARY KEY,
   "primary_id" TEXT,
   "sra_id" TEXT,
   "bp_id" TEXT,
@@ -18,4 +18,6 @@ CREATE TABLE non_attribute_metadata(
   "paragraph" TEXT
 );
 
-CREATE INDEX non_attribute_metadata_raw_id_idx on non_attribute_metadata("raw_id");
+--  INTEGER PRIMARY KEY,
+
+--CREATE INDEX non_attribute_metadata_raw_id_idx on non_attribute_metadata("raw_id");

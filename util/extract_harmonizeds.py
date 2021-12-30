@@ -7,9 +7,9 @@ import pandas as pd
 # click
 # logger
 
-database_file = '../target/biosample_basex.db'
+database_file = 'target/biosample_basex.db'
 # 320 054 875 rows about 24 341 464 biosamples
-chunk_size = 10000
+chunk_size = 1000000
 
 conn = sqlite3.connect(database_file)
 
