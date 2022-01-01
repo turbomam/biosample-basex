@@ -55,7 +55,7 @@ target/biosample_basex.db:
 	sqlite3 target/biosample_basex.db < harmonized_wide_raw_id_idx.sql
 	sqlite3 target/biosample_basex.db < harmonized_wide_env_package_idx.sql
 	sqlite3 target/biosample_basex.db < env_package_repair_ddl.sql
-	sqlite3 target/biosample_basex.db ".mode tabs" ".import --skip 1 target/env_package_repair_curated.tsv env_package_repair" ""
+	sqlite3 target/biosample_basex.db ".mode tabs" ".import --skip 1 env_package_repair_curated.tsv env_package_repair" ""
 	sqlite3 target/biosample_basex.db < harmonized_wide_repaired_ddl.sql
 
 target/env_package_repair_new.tsv: target/biosample_basex.db
