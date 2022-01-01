@@ -36,7 +36,7 @@ check_env:
 	echo ${final_sqlite_gz_dest}
 
 clean:
-	# not wiping or overwriting BaseX database as part of 'clean'
+	${BASEXCMD} -c 'drop db biosample_set_*'
 	rm -f downloads/*.gz
 	rm -f target/*.db
 	rm -f target/*.tsv
