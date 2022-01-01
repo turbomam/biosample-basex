@@ -1,10 +1,10 @@
-downloads
-target
 .DS_Store
+.env
 .idea
-venv
-basex
-extras
 .ipynb_checkpoints
+basex
+downloads
+extras
 notebooks/.ipynb_checkpoints
-
+target
+venv

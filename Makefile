@@ -1,8 +1,14 @@
-del_from = 12500001
-biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
-BASEXCMD = basex
+## using .env for
+#del_from = 12500001
+#biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
+#BASEXCMD = ???
 
-# rearrange xq and sql files
+ifneq (,$(wildcard ./.env))
+    include .env
+    export
+endif
+
+# ---
 
 ##export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
 ##export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
@@ -11,13 +17,20 @@ BASEXCMD = basex
 ## and use the default data directory?
 ## remember that we will be looping over all databases for some queries
 
+# rearrange xq and sql file folders
+
 ## work on file and variable naming conventions
 ## capitalization
 ## count X by Y
 
-.PHONY: all clean biosample-basex
+.PHONY: all clean biosample-basex check_env
 
-all: clean biosample-basex target/biosample_basex.db
+all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv
+
+check_env:
+	echo ${del_from}
+	echo ${biosample_url}
+	echo ${BASEXCMD}
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
