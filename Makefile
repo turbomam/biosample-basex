@@ -75,17 +75,17 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 target/biosample_set_under_$(del_from)_noclose.xml: target/biosample_set.xml
 	# two minutes when retrieving 12500000 lines
 	date
-	sed '/^<BioSample.*id="$(del_from)"/q'  $< > $@
+	#sed '/^<BioSample.*id="$(del_from)"/q'  $< > $@
 	# below might not require deletion of trailing line
 	# not that that's a slow step
-	#sed '/^<BioSample.*id="$(del_from)"/,$$d'  $< > $@
+	sed '/^<BioSample.*id="$(del_from)"/,$$d'  $< > $@
 	date
 
 target/biosample_set_under_$(del_from).xml: target/biosample_set_under_$(del_from)_noclose.xml
 	# sed's q operator leaves the matching line
 	# this deletes the unwanted matching line
 	# note $$ escaping within make
-	sed -i.bak '$$d' $<
+	#sed -i.bak '$$d' $<
 	# another two minutes when retrieving 12500000 lines
 	cat $< biosample_set_closer.txt > $@
 	rm -f $<
