@@ -25,9 +25,12 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: all clean biosample-basex check_env final_sqlite_gz_dest
+.PHONY: all clean biosample-basex check_env final_sqlite_gz_dest reports
 
 all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz
+# doesn't include final_sqlite_gz_dest
+
+reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv
 
 check_env:
 	echo ${del_from}
@@ -117,3 +120,16 @@ target/biosample_basex.db.gz:
 final_sqlite_gz_dest: target/biosample_basex.db.gz
 	cp ${final_sqlite_gz_dest} ${final_sqlite_gz_dest}
 	chmod 777 ${final_sqlite_gz_dest}
+
+reports/grow_facil_pattern.tsv:
+	python util/investigate_unharmonized.py \
+		--pattern %grow%facil% \
+		--database_file target/biosample_basex.db \
+		--output_file $@
+
+reports/sam_coll_meth_pattern.tsv:
+	python util/investigate_unharmonized.py \
+		--pattern %sam%coll%meth% \
+		--database_file target/biosample_basex.db \
+		--output_file $@
+
