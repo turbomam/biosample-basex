@@ -183,22 +183,9 @@ target/biosample_basex.db: target/biosample_non_attribute_metadata_wide.tsv wide
 target/column_differences.txt:
 	python util/column_differences.py > $@
 
-# ---
-# depends on target/biosample_basex.db and wide_ha_chunks_to_sqlite, 
-#   but want to be careful about adding duplicate rows 
-#   or nuking the rows that are added live by wide_ha_chunks_to_sqlite
-#   although they are stagews as wide chunks, too
-target/biosample_basex.db.gz: 
-	# depends on target/biosample_basex.db
-	gzip -c target/biosample_basex.db > $@
-	chmod 777 $@
 
-# factor out this hardcoded path
-# available at https://portal.nersc.gov/project/m3513/biosample
-# https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
-/global/cfs/cdirs/m3513/www/biosample/biosample_basex.db.gz: target/biosample_basex.db.gz
-	cp $< $@
-	chmod 777 $@
+
+
 
 # ---
 

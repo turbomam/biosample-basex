@@ -10,6 +10,8 @@ endif
 
 # ---
 
+# https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
+
 ##export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
 ##export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
 
@@ -23,14 +25,15 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: all clean biosample-basex check_env
+.PHONY: all clean biosample-basex check_env final_sqlite_gz_dest
 
-all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv
+all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz
 
 check_env:
 	echo ${del_from}
 	echo ${biosample_url}
 	echo ${BASEXCMD}
+	echo ${final_sqlite_gz_dest}
 
 clean:
 	# not wiping or overwriting BaseX database as part of 'clean'
@@ -100,3 +103,17 @@ target/biosample_set_over_$(del_from).xml: target/biosample_set_over_$(del_from)
 biosample-basex: target/biosample_set_under_$(del_from).xml target/biosample_set_over_$(del_from).xml
 	$(BASEXCMD) -c 'CREATE DB biosample_set_1 target/biosample_set_under_$(del_from).xml'
 	$(BASEXCMD) -c 'CREATE DB biosample_set_2 target/biosample_set_over_$(del_from).xml'
+
+# ----
+
+# depends on target/biosample_basex.db
+#   but want to be careful about adding duplicate rows to SQLite
+#   or nuking any rows
+target/biosample_basex.db.gz:
+	gzip -c target/biosample_basex.db > $@
+	chmod 777 $@
+
+# on cori, /global/cfs/cdirs/m3513/www/biosample is exposed at https://portal.nersc.gov/project/m3513/biosample
+final_sqlite_gz_dest: target/biosample_basex.db.gz
+	cp ${final_sqlite_gz_dest} ${final_sqlite_gz_dest}
+	chmod 777 ${final_sqlite_gz_dest}
