@@ -8,7 +8,7 @@ import click
 @click.command()
 @click.option('--pattern', required=True, help='attribute name patten using SQL %,_, etc.')
 @click.option('--database_file', type=click.Path(exists=True), default="target/biosample_basex.db", show_default=True)
-@click.option('--output_file', type=click.Path(), default="target/investigate_unharmonized.tsv", show_default=True)
+@click.option('--output_file', type=click.Path(), default="reports/investigate_unharmonized.tsv", show_default=True)
 def investigate_unharmonized(pattern, database_file, output_file):
     """Find rows in all_attribs where the attribute_name matches the pattern."""
     conn = sqlite3.connect(database_file)
