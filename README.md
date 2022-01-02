@@ -30,7 +30,6 @@ https://docs.basex.org/wiki/Main_Page
 https://basex.org/download/
 
 
-results can be foudn at https://portal.nersc.gov/project/m3513/biosample/
 ## NERSC cori specific notes
 
 - `cd /global/cfs/cdirs/m3513/endurable/biosample`
@@ -50,4 +49,9 @@ results can be foudn at https://portal.nersc.gov/project/m3513/biosample/
     - On cori, this makes common Python paackages like `pandas` available. On other systems, users should create a `venv` virtual environment, enter it, and run `pip install -r requirments.txt`
 - cd `biosample-basex/`
 - `make all`
+
+----
+
 - 2022-01-02 15:20
+
+results can be found at https://portal.nersc.gov/project/m3513/biosample/
