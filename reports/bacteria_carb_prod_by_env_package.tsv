@@ -1,0 +1,384 @@
+env_package	bacteria_carb_prod	count
+		22131770
+host-associated		77039
+human-gut		60830
+water		21267
+miscellaneous natural or artificial environment		16433
+soil		16352
+human-skin		14771
+built environment		14600
+human-oral		11917
+		9520
+sediment		7590
+human-associated		7148
+plant-associated		3623
+microbial mat_biofilm		3057
+wastewater_sludge		1289
+human-vaginal		1124
+	NA	597
+air		472
+	not applicable	187
+	not collected	106
+	missing	55
+	0.002 µgC/L/day	37
+	0.003 µgC/L/day	19
+	0.001 µgC/L/day	17
+	0.008 µgC/L/day	15
+water	112.48 pmol leu/L/hr	10
+water	78.48 pmol leu/L/hr	10
+	647 pmol leu/L/hr	10
+	4886 pmol leu/L/hr	10
+water	79.80 pmol leu/L/hr	10
+water	139.68 pmol leu/L/hr	10
+water	327.96 pmol leu/L/hr	10
+water	16.11 pmol leu/L/hr	10
+	0.011 µgC/L/day	10
+	965 pmol leu/L/hr	7
+	1079 pmol leu/L/hr	7
+	0.192 µgC/L/day	6
+	0.14 µgC/L/day	6
+	1693 pmol leu/L/hr	6
+	0.032 µgC/L/day	6
+	0.034 µgC/L/day	6
+	0.021 µgC/L/day	6
+	0.007 µgC/L/day	6
+	0.005 µgC/L/day	5
+	0.023 µgC/L/day	5
+	0.018 µgC/L/day	4
+	1135 pmol leu/L/hr	4
+	0.006 µgC/L/day	4
+	0.37819472687577105	2
+	0.45498419153318587	2
+	0.5166686756751315	2
+	0.5126164825098142	2
+	0.5093698787758062	2
+	0.5062882846985922	2
+	0.5016094719714096	2
+	0.48193942666750855	2
+	0.466837330281145	2
+	0.40726585337443605	2
+	0.41762705907526826	2
+	0.37548991466390963	2
+	0.4057665465593926	2
+	0.40402245526980274	2
+	0.4015188946735598	2
+	0.3693398245350252	2
+	0.3954541852205041	2
+	0.37298206908112336	2
+	0.38660795967089867	2
+	0.40283077253776706	2
+	0.32896087008882263	2
+	0.35895730022208705	2
+	0.346243481630997	2
+	0.2226560936149413	2
+	0.2199858821776188	2
+	0.21703023570309832	2
+	0.2088239817274195	2
+	0.2080106762926119	2
+	0.20490466575774802	2
+	0.20357901283876245	2
+	0.20184561396936973	2
+	0.1946573859369113	2
+	0.18458833262978078	2
+	0.17301260090016066	2
+	0.17116681875858472	2
+	0.17111252574609367	2
+	0.16806728538836127	2
+	0.1677063233347111	2
+	0.16559028164643633	2
+	0.1654301743178279	2
+	0.22725584311865252	2
+	0.2339339167051026	2
+	0.24068466292168333	2
+	0.28093663296626625	2
+	0.335525943051841	2
+	0.3320920541133725	2
+	0.5464420430773946	2
+	0.3256820834863102	2
+	0.2855414676486196	2
+	0.28448336816991865	2
+	0.28431361528963756	2
+	0.27700972311943095	2
+	0.24368816117798642	2
+	0.270402435884229	2
+	0.2687674538300547	2
+	0.2687351817162398	2
+	0.26553945203745916	2
+	0.25395791873286555	2
+	0.25343674601149374	2
+	0.24702168200559085	2
+	0.5210769476509397	2
+	0.2182438579542532	2
+	0.5533911957567685	2
+	0.9827427106257415	2
+	0.9984263707300592	2
+	0.9998056601655616	2
+	1.0051571569179365	2
+	1.0114310066089296	2
+	1.0381758844997362	2
+	1.0431089547483796	2
+	1.070997765565859	2
+	1.0924194784999852	2
+	1.1021341575450636	2
+	1.1246934428756965	2
+	1.142457897299816	2
+	1.2277236797320898	2
+	1.2883879444899928	2
+	1.298259151021229	2
+	1.3669065009254862	2
+	1.3917291837395187	2
+	1.400648679091736	2
+	1.4070199918132902	2
+	1.4463412176747503	2
+	1.4750825520160633	2
+	1.4989493246043097	2
+	1.5559800205069838	2
+	1.5562085685747173	2
+	1.5717316514461732	2
+	1.584329276847562	2
+	1.6036194200283311	2
+	1.771041414607792	2
+	N/A	2
+	unknown	2
+	0.9896429843106694	2
+	0.9625964331880832	2
+	0.5638710312307491	2
+	0.9598186791276829	2
+	0.575997456996127	2
+	0.5859582519745784	2
+	0.6099745040667713	2
+	0.6162152985564137	2
+	0.6490365515736374	2
+	0.6547104460656384	2
+	0.6621947610488558	2
+	0.6910352151663762	2
+	0.7039771206513475	2
+	0.7179965600577323	2
+	0.7493190705761374	2
+	0.751282419886247	2
+	0.7636506899205806	2
+	0.15666763018280955	2
+	0.7773263480901026	2
+	0.7797329975151998	2
+	0.7991551735874085	2
+	0.8092006262634548	2
+	0.8310671304243009	2
+	0.8332627694173739	2
+	0.8543143538532763	2
+	0.8625874595922166	2
+	0.8643402168674411	2
+	0.865707032120403	2
+	0.8899535059813827	2
+	0.9323199704508159	2
+	0.9324810767024232	2
+	0.9518163471681957	2
+	0.9522929687523353	2
+	0.16362677873743972	2
+	0.20459644854312214	2
+	0.03187054440622189	2
+	0.06361485374998355	2
+	0.04073878138285659	2
+	0.04129140556546901	2
+	0.044106422270369566	2
+	0.04514245940225788	2
+	0.0454936037080995	2
+	0.04674753691282141	2
+	0.04820822246557932	2
+	0.04834106028580705	2
+	0.04979488946106546	2
+	0.049830340362348596	2
+	0.05012938524068057	2
+	0.05089228176573085	2
+	0.05111944589139727	2
+	0.05151814515304082	2
+	0.05209870696634039	2
+	0.05224759768636147	2
+	0.05273367044757408	2
+	0.05300905179455674	2
+	0.053989029803385914	2
+	0.0386287997400311	2
+	0.03700039010219691	2
+	0.03638652239201927	2
+	0.027757358615315458	2
+	0.15607633345345984	2
+	0.006099035615750429	2
+	0.007968263423718999	2
+	0.014248559612706655	2
+	0.017051463932949616	2
+	0.018285393005343358	2
+	0.020252914609657495	2
+	0.02403918576616478	2
+	0.02803179434947167	2
+	0.033950532459334944	2
+	0.02985755226885603	2
+	0.030195654187091008	2
+	0.03129969636711657	2
+	0.031345404991147414	2
+	0.03157669925343787	2
+	0.03352899976067805	2
+	0.03379891652606509	2
+	0.03383314294401599	2
+	0.06237048682216381	2
+	0.04946028169459723	2
+	0.0672788182233305	2
+	0.12592966106340384	2
+	0.09842021212803276	2
+	0.10001312266946724	2
+	0.10065374970255637	2
+	0.11328948663850352	2
+	0.11695020495579979	2
+	0.11773486213997143	2
+	0.11837939479889069	2
+	0.12554379289739215	2
+	0.06770665741775554	2
+	0.09428858774694024	2
+	0.13562319201666734	2
+	0.13739223732770894	2
+	0.13785264037480968	2
+	0.13847797221948036	2
+	0.14715439725028617	2
+	0.1489275465478448	2
+	0.153793871198174	2
+	0.15495181944888503	2
+	0.09761443470787894	2
+	0.10713292689835031	2
+	0.09073274021798064	2
+	0.07999858996681394	2
+	0.06781972336701965	2
+	0.07019047457486556	2
+	0.07260785868791692	2
+	0.07424124799685697	2
+	0.07477247797755784	2
+	0.08909589156283192	2
+	0.07732988814752446	2
+	0.07743536187038581	2
+	0.07789879420972541	2
+	0.07649092202470348	2
+	0.0809789719869572	2
+	0.08133652850380817	2
+	0.08185388608127582	2
+	0.08209779028833047	2
+	0.08271642292229493	2
+	0.08030659296592121	2
+	Sea Water_Summer_Nayarit_Isla Isabel	1
+	Pocillopora verrucosa_Winter_Nayarit_Isla Isabel	1
+	Pocillopora verrucosa_Winter_Colima_Carrizales	1
+	Pocillopora verrucosa_Winter_Colima_Punto B	1
+	Sea Water_Summer_Jalisco_Cuastecomatito	1
+	Pocillopora verrucosa_Winter_Jalisco_Bahia Chamela	1
+	Pocillopora verrucosa_Winter_Jalisco_Cuastecomatito	1
+	Sea Water_Summer_Colima_Carrizales	1
+	Pocillopora verrucosa_Winter_Nayarit_Islas Marietas	1
+	Sea Water_Cancn_Quintana Roo	1
+	Sea Water_Summer_Colima_Punto B	1
+	Pocillopora verrucosa_Summer_Nayarit_Isla Isabel	1
+	Sea Water_Summer_Jalisco_Bahia Chamela	1
+	Pocillopora verrucosa_Summer_Nayarit_Islas Marietas	1
+	Pocillopora damicornis_Summer_Jalisco_Bahia Chamela	1
+	Pocillopora verrucosa_Summer_Jalisco_Cuastecomatito	1
+	Pocillopora verrucosa_Summer_Jalisco_Bahia Chamela	1
+	Pocillopora verrucosa_Summer_Colima_Punto B	1
+	Pocillopora verrucosa_Summer_Colima_Carrizales	1
+	Pocillopora damicornis_Winter_Nayarit_Islas Marietas	1
+	Pocillopora damicornis_Winter_Nayarit_Isla Isabel	1
+	Pocillopora damicornis_Winter_Jalisco_Cuastecomatito	1
+	Pocillopora damicornis_Winter_Jalisco_Bahia Chamela	1
+	Pocillopora damicornis_Winter_Colima_Punto B	1
+	Pocillopora damicornis_Winter_Colima_Carrizales	1
+	Pocillopora damicornis_Summer_Nayarit_Islas Marietas	1
+	Pocillopora damicornis_Summer_Nayarit_Isla Isabel	1
+	Pocillopora damicornis_Summer_Jalisco_Cuastecomatito	1
+	Sea Water_Veracruz_Veracruz	1
+	Sea Water_Summer_Nayarit_Islas Marietas	1
+	0.16154864662858884	1
+	Sea Water_Winter_Colima_Carrizales	1
+	Sea Water_Winter_Colima_Punto B	1
+microbial mat_biofilm	0.365128428	1
+	polyacrylamide decomposer	1
+	Pocillopora damicornis_Summer_Colima_Carrizales	1
+	not known	1
+microbial mat_biofilm	0.366993808	1
+microbial mat_biofilm	0.412415356	1
+microbial mat_biofilm	0.420691445	1
+	Sediment_Xcalak_Quintana Roo	1
+	Sediment_Winter_Nayarit_Islas Marietas	1
+	Sediment_Winter_Nayarit_Isla Isabel	1
+	Sediment_Winter_Jalisco_Cuastecomatito	1
+	Sediment_Winter_Jalisco_Bahia Chamela	1
+	Sediment_Winter_Colima_Punto B	1
+	Sediment_Winter_Colima_Carrizales	1
+	Sediment_Veracruz_Veracruz	1
+	Sediment_Summer_Nayarit_Islas Marietas	1
+	Sediment_Summer_Nayarit_Isla Isabel	1
+	Sediment_Summer_Jalisco_Cuastecomatito	1
+	Sediment_Summer_Jalisco_Bahia Chamela	1
+	Sediment_Summer_Colima_Punto B	1
+	Sediment_Summer_Colima_Carrizales	1
+	Sediment_Cancn_Quintana Roo	1
+	Sea Water_Xcalak_Quintana Roo	1
+	Sea Water_Winter_Nayarit_Islas Marietas	1
+	Sea Water_Winter_Nayarit_Isla Isabel	1
+	Sea Water_Winter_Jalisco_Cuastecomatito	1
+	Sea Water_Winter_Jalisco_Bahia Chamela	1
+	Pocillopora damicornis_Summer_Colima_Punto B	1
+microbial mat_biofilm	1.323686047	1
+microbial mat_biofilm	0.427978171	1
+microbial mat_biofilm	0.453281383	1
+microbial mat_biofilm	0.939413305	1
+	1.1608916011498855	1
+microbial mat_biofilm	0.975397067	1
+microbial mat_biofilm	1.017006709	1
+microbial mat_biofilm	1.04971598	1
+microbial mat_biofilm	1.125161886	1
+microbial mat_biofilm	1.199326688	1
+microbial mat_biofilm	1.204820581	1
+microbial mat_biofilm	1.2132157	1
+microbial mat_biofilm	1.24365833	1
+microbial mat_biofilm	1.330294622	1
+microbial mat_biofilm	1.333693598	1
+microbial mat_biofilm	1.339080925	1
+microbial mat_biofilm	1.383570048	1
+microbial mat_biofilm	1.388621954	1
+microbial mat_biofilm	1.425481847	1
+microbial mat_biofilm	1.485051794	1
+microbial mat_biofilm	1.490051156	1
+microbial mat_biofilm	1.505178918	1
+microbial mat_biofilm	1.56588927	1
+microbial mat_biofilm	1.727041013	1
+microbial mat_biofilm	1.740058668	1
+microbial mat_biofilm	1.999327806	1
+microbial mat_biofilm	e;N/A	1
+microbial mat_biofilm	0.270092168	1
+microbial mat_biofilm	0.350702987	1
+	0.19028266058579063	1
+microbial mat_biofilm	0.917170846	1
+microbial mat_biofilm	0.820502795	1
+microbial mat_biofilm	0.814663065	1
+microbial mat_biofilm	0.526638738	1
+	Acropora palmata_Xcalak_Quintana Roo	1
+	Acropora palmata_Veracruz_Veracruz	1
+	Acropora palmata_Cancn_Quintana Roo	1
+	Acropora palmata enfermo_Xcalak_Quintana Roo	1
+	Acropora palmata enfermo_Veracruz_Veracruz	1
+	Acropora palmata enfermo_Cancn_Quintana Roo	1
+	Acropora cervicornis_Xcalak_Quintana Roo	1
+	Acropora cervicornis_Cancn_Quintana Roo	1
+microbial mat_biofilm	0.482829168	1
+	8.4-4.9 ngC/ml	1
+microbial mat_biofilm	0.491807048	1
+microbial mat_biofilm	0.508996123	1
+microbial mat_biofilm	0.531487438	1
+microbial mat_biofilm	0.710730033	1
+microbial mat_biofilm	0.534520764	1
+microbial mat_biofilm	0.54560072	1
+microbial mat_biofilm	0.546557579	1
+microbial mat_biofilm	0.580346452	1
+microbial mat_biofilm	0.591664997	1
+microbial mat_biofilm	0.599636087	1
+microbial mat_biofilm	0.641083057	1
+microbial mat_biofilm	0.672113789	1
+microbial mat_biofilm	0.675157684	1
+microbial mat_biofilm	0.687287352	1
+microbial mat_biofilm	0.688378167	1
+microbial mat_biofilm	0.699612157	1
+microbial mat_biofilm	0.285819322	1

@@ -1,0 +1,1831 @@
+env_package	experimental_factor	count
+		22114300
+host-associated		75815
+human-gut		60783
+water		20908
+miscellaneous natural or artificial environment		16241
+soil		15842
+human-skin		14771
+built environment		14600
+human-oral		11917
+		9496
+human-associated		7148
+sediment	gene|marine metagenome|uncultured microorganism|uncultured organism|ecotype|biological replicate|technical replicate|interspecies interaction between organisms	3917
+sediment		3670
+plant-associated		3616
+microbial mat_biofilm		3081
+wastewater_sludge		1250
+	human-associated	1169
+human-vaginal		1124
+	human-gut	1061
+	duplicate sample(s):NA	823
+	non-irrigated	686
+	irrigated	660
+	menstrual phase	626
+	follicular phase	473
+air		472
+	luteal phase	470
+soil	diversity gradient	394
+	Control	372
+	disease status	331
+	Radiation exposure	272
+	Illumina native fastq format	262
+	Impact of indomethacin on the gut microbiota	250
+	experimental factor	224
+	10 % Glycerol	201
+	environmental stability	183
+	microbiome	178
+	sex,sampling site,inflammatory bowel disease,clinical treatment,population,human gut metagenome,health trait	176
+	control	162
+host-associated	specimen	150
+	Impact of Misoprostol on the gut microbiota	132
+	Impact of dietary Zn on the gut microbiota	131
+	genetic variation, bacterial disease	123
+host-associated	TB	119
+host-associated	radiation level	112
+	normal	112
+	OBI_0000281	106
+	Impact of Helicobacter pylori and iron diet on gastric microbiota	103
+	irritable bowel syndrome	99
+miscellaneous natural or artificial environment	experimental stage, pre-Bd-exposure	96
+miscellaneous natural or artificial environment	experimental stage, post-Bd-exposure	96
+	missing	94
+	allogenic FMT	91
+	Replicate 2	85
+	Replicate 3	82
+	Replicate 1	80
+	watering	80
+	temperature	79
+	Stress	78
+	Season	72
+	OBI_0000248	71
+	PD	71
+	time series	70
+	Warming	64
+	inoculated with powdery mildew (Golovinomyces orontii)	62
+	Drought	62
+water	seasonal/depth	61
+	Age	60
+water	RNAlater	60
+water	HgCl	60
+water	DNAgard	60
+host-associated	uninfected	59
+	control;not inoculated	58
+host-associated	none, natural samples	57
+water	PBuffer	56
+	Adding urea or not, distance from root	55
+	symptomatic	53
+	Solids-removed thin stillage fed, 6 d SRT, 35C, pH 5.5	52
+	PAAL-SAP	52
+	demultiplexed sequence data	51
+	Long-term exposure experiment in a seawater flow trough system located on Helgoland run with Helgoland Roads North Sea water (Resilience of North Sea phytoplankton spring bloom dynamics: An analysis of long-term data at Helgoland Roads Wiltshire et al_2008,PANGAEA 2004 and http://www.pangaea.de).	50
+	hatch_pre	49
+	1 year old	48
+host-associated	Uninfected	48
+human-gut	FUT2	47
+	Impact of dietary Mn on the gut microbiota	47
+	Soil FR2	46
+	wild_pre	46
+	day84	45
+host-associated	BMT, APC-ERT	45
+	drink warm water	43
+	drink cold water	39
+water	Formalin	39
+	genotype	38
+	Refreshed starter top	38
+host-associated	genotype EFO:0000513	37
+	Healthy.control	37
+	autologous FMT	37
+	phytoplasma infection	37
+	rearing growth stage	36
+	Unrefreshed starter bottom	36
+	Incubated under ambient light conditions	36
+	harvesting growth stage	36
+	10 years old	36
+	larvae growth stage	36
+	Case	36
+	Hands	36
+	night- restricted feeding	36
+	daytime feeding	36
+	dilbit-coating	36
+	electrical conductivity	35
+	gut microbiome	34
+	Incubated under dim light conditions	33
+	solid retention time of 6 days	32
+	soil-reared MTF infected Apo	32
+	HT_Female	32
+	soil-reared MTF infected Sc50	32
+	soil-reared MTF infected Sc10	31
+	freeze-drying, storage time, storage temperature	30
+	coral-colony-samp	30
+	Poop-wound	30
+	NonResponder.Pre.FMT	30
+	soil-reared CDS infected Sc10	30
+	control faeces	29
+	soil-reared CDS infected Apo	29
+	soil-reared MTF uninfected	29
+	alga	28
+	Control-wound	28
+	gamma irradiation and soil powder inoculation	28
+	C_Spouse	28
+	Control-poop	28
+	soil-reared CDS uninfected	28
+	soil-reared CDS infected Sc50	27
+	lime	26
+	Thin stillage fed, 6 d SRT, 35C, pH 5.5	26
+	NonResponder.Post.FMT	26
+	ancestral	26
+	Donor	25
+	Alternating anaerobic and microareobic bioreactor condition	25
+	Spey population (wild)	24
+	Towy population (wild)	24
+	no residues	24
+	Nitrate	24
+	TB	24
+soil	salinity	24
+	Tweed population (wild)	24
+	not Endophyte infection	24
+host-associated	TB_HRZ	24
+	banana monoculture	24
+	MHS population (hatchery)	24
+	fallow	24
+	juvenile growth stage	24
+	adding banana residue	24
+	adding pineapple residue	24
+	Ammonium	24
+	CNSS population (hatchery)	24
+	HT_Male	24
+	Frome population (wild)	24
+	FL	24
+	Endophyte infection	24
+	Cynrig population (hatchery)	24
+	banana-pineapple rotation	24
+	control gut	23
+host-associated	not provided	22
+	medium	22
+	TB_HRZ	22
+soil	Biogeographical study	22
+	Con_Female	21
+	day14	21
+	NCG 0.05	20
+wastewater_sludge	efo:EFO_0000369, triclosan: 1 mg/L for 7 h	20
+host-associated	17_wks	20
+host-associated	9_wks	20
+water	T0_ref	20
+wastewater_sludge	efo:EFO_0000369	19
+	Con_Male	19
+	substrate	19
+	4 COLD	18
+	Soil CAM1	18
+	Soil CAM2	18
+	carbon dioxide	18
+	Soil SEN2	18
+	hatch>wild	18
+	NCG 0.5	17
+	Solids-removed thin stillage fed, 6 d SRT, 55C, pH 5.0	17
+	Solids-removed thin stillage fed, 1 d SRT, 35C, pH 5.5	17
+	IR64 cultivar within Conservation Agriculture	16
+	Whitestone	16
+	Wytham	16
+	Zhonghua cultivar under Conservation Agriculture	16
+	MD	16
+	Zhonghua cultivar within Conservation Agriculture	16
+	Soil IT2	16
+	Zhonghua cultivar within Conventional Tillage	16
+host-associated	WT Before-cohousing	16
+	IR64 cultivar under Conservation Agriculture	16
+	IR64 cultivar under Conventional Tillage	16
+	UD	16
+	IR504 cultivar within Conventional Tillage	16
+	IR504 cultivar within Conservation Agriculture	16
+	IR504 cultivar under Conventional Tillage	16
+	IR504 cultivar under Conservation Agriculture	16
+	in situ	16
+host-associated	KO Before-cohousing	16
+	Garth	16
+	hatch>hatch	16
+	wild>enr	16
+	hatch>enr	16
+	Usk	16
+	Zhonghua cultivar under Conventional Tillage	16
+	Azucena cultivar within Conventional Tillage	16
+	Azucena cultivar within Conservation Agriculture	16
+	After 28 days of high-fat diet	16
+	wild>hatch	16
+	Azucena cultivar under Conventional Tillage	16
+	Azucena cultivar under Conservation Agriculture	16
+	Tintern	16
+	SD	16
+	hindguts	15
+	Reference	15
+	PLF3	15
+	control midgut	15
+	Acorn	15
+	Seedling	15
+	control hindgut	15
+	h2 midgut	15
+	h2 hindgut	15
+	Seedbank	15
+	h1 hindgut	15
+	midguts	15
+	crops	15
+	PC	15
+	Bareroot	15
+	PLF4	15
+	RLF4	15
+	BalledBurlapped	15
+	C	15
+	h1 midgut	15
+	RLF3	15
+	High Nitrate	14
+host-associated	BMT_Ldlrko_23ko_to_wt	14
+	After 0 days of high-fat diet	14
+	ethanol extract of I. obliquus	14
+soil	soil type	14
+	I. obliquus polysaccharide	14
+	Lake 0m, t = -24h	14
+	Responder.Pre.FMT	14
+	size fractionation < 1 micrometer	14
+	IR64 cultivar within Conventional Tillage	14
+	unfiltered control	14
+	asymptomatic	14
+	wild>wild	14
+	AlgP	13
+	PecP	13
+	diarrhea faeces	13
+	Not applicable	13
+host-associated	BMT_Ldlrko_wt_to_wt	13
+	diarrheic faeces	12
+	Bagley	12
+	r	12
+	coculture with Laminarionema elsbetiae	12
+	pit fermentation day30	12
+	pit fermentation day5	12
+	Soil FR1	12
+	rh	12
+	s	12
+	visibly not charred	12
+	salt stress	12
+	Responder.Post.FMT	12
+	Replicate 4	12
+	pit fermentation day15	12
+	heap fermentation day1	12
+	pit fermentation day10	12
+	pit fermentation day0	12
+	Original	12
+	UV treated	12
+	Lake 5m, t = -24h	12
+	infrabuccal pockets	12
+	t	12
+	heap fermentation day3	12
+	l	12
+	visibly charred	12
+host-associated	Parents	12
+	150-N	12
+host-associated	BMT_23ko_to_ldlrko_plus_mIL22Ig	12
+	10℃	12
+	0-N	12
+	300-N	12
+soil	Two sites (low, high soil N) by two tree species (Douglas-fir, red alder) in three replicate blocks per site	12
+host-associated	postHRZ	12
+water	Not provided	12
+host-associated	52_wks Jax	12
+	20℃	12
+	softwood pellet biochar	11
+	inoculated willow biochar	11
+	inoculated softwood pellet biochar	11
+host-associated	52_wks Tac	11
+	Time	11
+	willow biochar	11
+	Nomal Chow Diet	11
+	water	11
+	Month_7	10
+	Month_3	10
+	banana intercropping with sesban	10
+	Month_10	10
+	banana intercropping with trifolium	10
+	banana intercropping with vicia villosa	10
+	banana monocropping	10
+	Month_1	10
+	24 m from transect origin	10
+	Healthy plants before heading stage	10
+	25 m from transect origin	10
+	Month_4	10
+	Month_8	10
+	Month_5	10
+	non-IBD	10
+	cold	10
+	Soil SEN1	10
+	DH	10
+	soil-reared CDS infected Sf	10
+	Month_9	10
+	Month_6	10
+	Soil IT1	10
+	5 m from transect origin	10
+	4 m from transect origin	10
+	Blank	10
+	HH	10
+	Warm (+8)	10
+	Warm (+3)	10
+soil	Nutrients and longitude	10
+	Normal	10
+	Insomnia	10
+	13 m from transect origin	10
+	17 m from transect origin	10
+	soil-reared CDS infected Sw	10
+	2 m from transect origin	10
+	HK	10
+	19 m from transect origin	10
+	banana intercropping with melilotus officinalis	10
+	Control (0)	10
+	soil-reared MTF infected Sf	10
+	soil-reared MTF infected Sw	10
+	temp	10
+	banana intercropping with crotalaria	10
+	DK	10
+	1 m from transect origin	10
+	No treatment	9
+	10 m from transect origin	9
+	14 m from transect origin	9
+	1000M KH2PO4	9
+	5M KH2PO4	9
+	1.5 hour	9
+	Month_2	9
+	11 m from transect origin	9
+	Month_12	9
+	Water	9
+	Fishmeal	9
+	CTR	9
+	7 m from transect origin	9
+	Fishmeal-free	9
+soil	Aridity	9
+	9 m from transect origin	9
+	16 hour	9
+	9 hour	9
+	16 m from transect origin	9
+host-associated	4_wks	9
+	time	9
+host-associated	8_wks	9
+	0_5cm_1	9
+water	N/A	9
+	22 m from transect origin	9
+host-associated	blank	9
+	Month_11	9
+water	Two bacterial B12-auxotrophs, isolated near Helgoland (DE), grow in co-culture without the addition of B12. The transcriptome of the co-culture was compared to those withdrawn of respective mono-cultures when B12 was amended	9
+	0 hour	9
+water	depth and time	9
+	Shrub soil	9
+host-associated	BMT_wt_to_ldlrko_plus_mIL22Ig	9
+host-associated	WT 1 month separately-housing	8
+	Fertilized-WR	8
+	OpenTopChamber-WR	8
+	0 ng Chlamydia spike-in	8
+	UC	8
+	diarrhea	8
+	10 ng Chlamydia spike-in	8
+	control ileum	8
+	Cr-treated gut	8
+	Fertilized-SR	8
+	Incubation 2.5mg/L H2O2, t = 48h	8
+	OpenTopChamber-SR	8
+	H2 incubated	8
+	1 ng Chlamydia spike-in	8
+	disease	8
+	antibiotics Lycium barbarum1.5%	8
+host-associated	WT 3 month separately-housing	8
+	antibiotics	8
+	Incubation 2.5mg/L H2O2, t = 24h	8
+	norma	8
+	Lake 5m, t = 48h	8
+	Control-SR	8
+	Lake 0m, t = 48h	8
+	Lake 0m, t = 5h	8
+	Lake 0m, t = 96h	8
+	Lake 5m, t = 24h	8
+	High Fat Diet	8
+	CD	8
+	Lake 5m, t = 5h	8
+	OpenTopChamber, Fertlized-WR	8
+	larvae	8
+host-associated	KO 3 month separately-housing	8
+	5 ng Chlamydia spike-in	8
+host-associated	KO 2 month separately-housing	8
+	Lake 5m, t = 96h	8
+	6 m from transect origin	8
+host-associated	KO 1 month separately-housing	8
+	Control-WR	8
+	21 m from transect origin	8
+	Lake 0m, t = 24h	8
+	20 m from transect origin	8
+	OpenTopChamber, Fertlized-SR	8
+	12 m from transect origin	8
+	Incubation 10mg/L H2O2, t = 96h	8
+	Incubation 10mg/L H2O2, t = 48h	8
+	Incubation 10mg/L H2O2, t = 24h	8
+	Incubation 0mg/L H2O2, t = 96h	8
+	health	8
+	Incubation 0mg/L H2O2, t = 48h	8
+	Incubation 0mg/L H2O2, t = 24h	8
+	18 m from transect origin	8
+host-associated	KO After-cohousing	8
+	inoculated	8
+host-associated	KO	8
+	3 m from transect origin	7
+	High Ammonium	7
+	Incubation 2.5mg/L H2O2, t = 96h	7
+	8 m from transect origin	7
+host-associated	None	7
+host-associated	Post_natal_P17	7
+host-associated	Post_natal_P7	7
+host-associated	WT 2 month separately-housing	7
+	15 m from transect origin	7
+	Methanogenic n-alkanes microcosms	6
+soil	pot trial control	6
+	RSV20	6
+soil	pot trial inorganic fertiliser	6
+	RSV10	6
+	Nitrate-reducing PAHs microcosms	6
+	Nitrate-reducing n-alkanes microcosms	6
+	Qinghai lake	6
+	Nitrogen, Phosphorus	6
+	RSV50	6
+	Qaidam lake	6
+	ASD4	6
+	14 days before cannulation surgery	6
+	VNMAA	6
+	Paper mulberry silage	6
+	Paper mulberry material	6
+soil	pot trial organic fertiliser	6
+	Ningxiang	6
+	1 day before cannulation surgery	6
+	Group Control	6
+	Methanogenic	6
+	MTC	6
+	Low Nitrate	6
+	Low Ammonium	6
+	3 days before cannulation surgery	6
+	Grass soil	6
+	Group 5FU	6
+	Group Polysaccharides	6
+	Methanogenic PAHs microcosms	6
+	Group Union	6
+	High N	6
+	23 m from transect origin	6
+	High phosphorus	6
+	Sulfate-reducing	6
+	Sulfate-reducing PAHs microcosms	6
+	Sulfate-reducing n-alkanes microcosms	6
+	Nitrate-reducing	6
+	ASD6	6
+	Ferric-reducing	6
+	stage3 under sterility	6
+	D2	6
+	D24	6
+	D4	6
+	D6	6
+	low salt	6
+	normal diet	6
+	normal diet and SCE	6
+	normal month1	6
+	normal month12	6
+	phosphorus	6
+	salmon	6
+	disease gut	6
+	small gravel	6
+	soil	6
+	stage1 under fertility	6
+	stage1 under sterility	6
+	stage2 under sterility	6
+	dietary protein level with 9.64%	6
+	stage3 under fertility	6
+	D17	6
+	D11	6
+	D0	6
+	Cd5	6
+	high salt	6
+	Control N	6
+	large gravel	6
+	Con	6
+	Changsha	6
+	Changde	6
+	Cephalexin	6
+	Cd6	6
+	fungal of young yak	6
+	low N	6
+	fungal of old yak	6
+	Cd4	6
+	Cd3	6
+	fungal of adult yak	6
+	Cd2	6
+	Cd1	6
+	XYD0	6
+	low Lycium barbarum	6
+	dietary protein level with 13.87%	6
+	stage2 under fertility	6
+	high Lycium barbarum	6
+	bacterial of adult yak	6
+	uninfected	6
+microbial mat_biofilm	marine water	6
+	Ferric-reducing n-alkanes microcosms	6
+	Ferric-reducing PAHs microcosms	6
+microbial mat_biofilm	heterotrophic_biofilm	6
+	ASD0	6
+	ASD11	6
+microbial mat_biofilm	biofilm	6
+	ASD17	6
+	ASD2	6
+host-associated	benchControl	6
+	ASD24	6
+	Aerobic	6
+host-associated	human_control	6
+	bacterial of young yak	6
+microbial mat_biofilm	probiotic_biofilm	6
+	uncontaminated	6
+	alcohol diet and SCE	6
+	treat gut	6
+	XYD11	6
+	treat 24h under alkali stress	6
+	treat 6h under alkali stress	6
+	dietary protein level with 12.48%	6
+	dietary protein level with 11.25%	6
+host-associated	WT After-cohousing	6
+	XYD17	6
+	XYD2	6
+	XYD24	6
+	XYD4	6
+	XYD6	6
+	Xiangyin	6
+	alcohol diet	6
+	bacterial of old yak	6
+host-associated	KO 8w after separation	5
+host-associated	BDL	5
+	therapeutic	5
+host-associated	Control (CNT)	5
+	toxic	5
+host-associated	KO Seperately-housing 3-day DSS	5
+	Lactobacillus plantarum	5
+	sleep deprivation with single does melatonin supplementation	5
+	sleep deprivation with double does melatonin supplementation	5
+	sleep deprivation	5
+host-associated	Ctr	5
+host-associated	KO 11w after separation	5
+host-associated	DN	5
+host-associated	DSS	5
+host-associated	32_wks Tac	5
+host-associated	32_wks Jax	5
+host-associated	10_wks Tac	5
+	no salmon	5
+host-associated	10_wks Jax	5
+	XOS1	5
+host-associated	KO Seperately-housing 5-day DSS	5
+	disease jejunum	5
+	disease duodenum	5
+	disease colon	5
+	Replicate 2, Dilution 4	5
+	Replicate 2, Dilution 5	5
+	Replicate 2, Dilution 6	5
+	Replicate 2, Dilution 7	5
+	Replicate 3, Dilution 1	5
+	Replicate 3, Dilution 2	5
+	Replicate 3, Dilution 3	5
+	Replicate 3, Dilution 4	5
+	Replicate 3, Dilution 5	5
+	Replicate 3, Dilution 6	5
+	Replicate 3, Dilution 7	5
+	Restraint stress	5
+	Restraint stress with melatonin supplementation	5
+	S1-AO	5
+	S1-CON	5
+	S1-LR	5
+	S2-CON	5
+	S2-LR	5
+	S3-AO	5
+	S3-CON	5
+	S3-LR	5
+	control jejunum	5
+host-associated	WT Seperately-housing Pre-DSS	5
+	control duodenum	5
+	control colon	5
+	disease ileum	5
+	Replicate 2, Dilution 3	5
+host-associated	KO Seperately-housing Pre-DSS	5
+	Replicate 2, Dilution 2	5
+host-associated	LIP	5
+host-associated	LIP ABX combination	5
+host-associated	LIP Doripenem	5
+host-associated	LIP Metronidazole	5
+host-associated	LIP Neomycin	5
+host-associated	LIP Vancomycin	5
+host-associated	LiverNeo	5
+host-associated	Neo	5
+	grzaing stage	5
+	Papain	5
+	Papain + Lactobacillus plantarum	5
+	feedlot feeding day 7	5
+	Phosphorus	5
+	feedlot feeding day 16	5
+	feedlot feeding day 11	5
+	feedlot feeding day 1	5
+host-associated	Sham	5
+host-associated	Vanco	5
+host-associated	WT	5
+	Replicate 1, Dilution 1	5
+	Replicate 1, Dilution 2	5
+	Replicate 1, Dilution 3	5
+	Replicate 1, Dilution 4	5
+	Replicate 1, Dilution 5	5
+	Replicate 1, Dilution 6	5
+	Replicate 1, Dilution 7	5
+	Replicate 2, Dilution 1	5
+	feedlot feeding day 4	5
+	S2-AO	5
+	Diseased plants at heading stage	5
+	Healthy plants at heading stage	5
+	Elymus sibiricus soil	5
+	Alfalfa soil	5
+	arch_amoA_HS_DNA_9	4
+	arch_amoA_HS_DNA_11	4
+	arch_amoA_HS_DNA_10	4
+	arch_amoA_HS_DNA	4
+	10 oC	4
+	Field 1_plot 1	4
+	Field 1_plot 2	4
+	Field 1_plot 3	4
+	Field 1_plot 4	4
+	low phosphorus	4
+host-associated	WT 4w after separation	4
+	PMA 2	4
+	HR	4
+	RZ	4
+	pit B-4-2 fermentation day30	4
+	pit B-4-2 fermentation day2	4
+	pit B-4-2 fermentation day15	4
+	pit B-4-2 fermentation day10	4
+	pit B-1-9 fermentation day5	4
+	pit B-1-9 fermentation day30	4
+	pit B-1-9 fermentation day2	4
+	PMA 3	4
+	PMA 1	4
+	pit A-4-24 fermentation day5	4
+	arch_amoA_US_DNA_11	4
+host-associated	WT 6w after separation	4
+	arch_amoA_US_cDNA_9	4
+	arch_amoA_US_cDNA_7.6	4
+	arch_amoA_US_cDNA_11	4
+	arch_amoA_US_cDNA_10	4
+	arch_amoA_US_cDNA	4
+	arch_amoA_US_DNA_9	4
+	second regular operation	4
+	arch_amoA_US_DNA_7.6	4
+	arch_amoA_US_DNA_10	4
+	100% moist 10 °C	4
+	arch_amoA_US_DNA	4
+	arch_amoA_HS_cDNA_9	4
+	arch_amoA_HS_cDNA_11	4
+	PCK 1	4
+	PCK 2	4
+	PCK 3	4
+	arch_amoA_HS_cDNA_10	4
+	arch_amoA_HS_cDNA	4
+	100% moist 20 °C	4
+	pit B-1-9 fermentation day15	4
+	R	4
+	baicalin group	4
+	SE5	4
+	glucose medium	4
+	model group	4
+	The third instar larvae	4
+	The second instar larvae	4
+	The first instar larvae	4
+	ethanol medium	4
+	TB_Z	4
+	TB_RZ	4
+	TB_R	4
+	SE6	4
+	pit A-2-22 fermentation day0	4
+	SJ20	4
+	SJ40	4
+	SJ80	4
+	SJCK	4
+	TB_HZ	4
+	TB_HR	4
+	TB_H	4
+	T0	4
+	Solids-removed thin stillage fed, 1 d SRT, 55C, pH 5.0	4
+	Unfractioned, QIAamp DNA Stool	4
+	pit A-2-22 fermentation day10	4
+	Field 2_plot 1	4
+	Field 3_plot 2	4
+	Field 2_plot 2	4
+	pit A-4-24 fermentation day30	4
+	Field 2_plot 3	4
+	H	4
+	pit A-4-24 fermentation day15	4
+	Field 2_plot 4	4
+	pit A-4-24 fermentation day0	4
+	pit A-2-22 fermentation day5	4
+	Field 3_plot 1	4
+	Field 3_plot 3	4
+	pit A-2-22 fermentation day15	4
+	Field 3_plot 4	4
+	DNA-SIP samples from the heavy fraction in incubations amended with 13C-bicarbonate, sulfur and lepidocrocite	4
+host-associated	WT 3w after separation	4
+	DE5	4
+	With mussel	4
+	Flour	4
+	donor	4
+	pit A-2-22 fermentation day30	4
+	pit A-2-22 fermentation day2	4
+	Z	4
+	Diseased 4	4
+	BH2MA 2	4
+	Healthy 1	4
+host-associated	KO After-cohousing Pre-DSS	4
+	BH3CK 1	4
+host-associated	WT Seperately-housing 5-day DSS	4
+	Healthy 4	4
+	BH2CK 1	4
+	Healthy 3	4
+	Healthy 2	4
+	BH3CK 2	4
+	Healthy 5	4
+	BH3CK 3	4
+	BH1CK 2	4
+	BH1CK 1	4
+	HZ	4
+	25 oC	4
+	70% moist 10 °C	4
+host-associated	WT Seperately-housing 3-day DSS	4
+	Diseased 1	4
+	BH1CK 3	4
+	BH3MA 2	4
+host-associated	KO After-cohousing 5-day DSS	4
+	BH2CK 2	4
+	BH2CK 3	4
+	BH1MA 3	4
+	BH1MA 2	4
+	BH2MA 1	4
+	BH1MA 1	4
+	20 oC	4
+	histamine	4
+host-associated	KO 9w after separation	4
+host-associated	KO After-cohousing 3-day DSS	4
+	Healthy 9	4
+	Healthy 8	4
+	control group	4
+	Healthy 7	4
+	Healthy 6	4
+	BH2MA 3	4
+	BH3MA 1	4
+	Diseased 2	4
+	Juvenile	4
+	Diseased 9	4
+	Diseased 7	4
+	lactic acid medium	4
+	ck	4
+host-associated	KO 4w after separation	4
+	Diseased 8	4
+	Adult	4
+	Diseased 6	4
+host-associated	WT After-cohousing 3-day DSS	4
+host-associated	KO 6w after separation	4
+	high fat	4
+host-associated	WT After-cohousing 5-day DSS	4
+	Diseased 3	4
+	70% moist 20 °C	4
+host-associated	WT After-cohousing Pre-DSS	4
+	BH3MA 3	4
+	Diseased 5	4
+	No mussel	4
+	15 oC	4
+	T5	3
+	milk replacer day45	3
+	T4	3
+	eugenol treated	3
+	T6	3
+	end 10-13% NO	3
+	T3	3
+	milk replacer day75	3
+host-associated	Post_natal_P16	3
+	mutant with 24h 300mmol/l mannitol	3
+	end ammonium removal	3
+	milk replacer day10	3
+	T2	3
+	milk replacer day25	3
+	T1	3
+	milk replacer day15	3
+	Corn meal 10 addition	3
+	middle salt	3
+	medium matrine	3
+	Under 25cm_1	3
+	Under 25cm_2	3
+	Under 25cm_3	3
+	medium amoxicillin	3
+	gre stable 10	3
+	maturity	3
+host-associated	gametocytes 144 h post-infection	3
+	Corn	3
+	normal day15	3
+	no alizarin red treament	3
+	Corn meal 20 addition	3
+	high N 10-20cm soil depth	3
+	high N 5-10cm soil depth	3
+	high N P 0-5cm soil depth	3
+	high N P 10-20cm soil depth	3
+	high N P 5-10cm soil depth	3
+	fermented 0d	3
+	Corn meal material	3
+	Corn meal silage	3
+	high amoxicillin	3
+	3785m 1	3
+host-associated	Post_natal_P9	3
+	high matrine	3
+	escherichia coli gut	3
+	Tall Fescue near rhizosphere	3
+	Tall Fescue middle rhizosphere	3
+	high N 0-5cm soil depth	3
+	field Baoding	3
+	field Hancheng	3
+	normal day75	3
+	Corn meal 30 addition	3
+	first regular operation	3
+	normal day10	3
+	Tall Fescue far rhizosphere	3
+	normal day25	3
+	normal day45	3
+	field Tianshui	3
+	normal with 24h 300mmol/l mannitol	3
+	field Tianjin	3
+	normal in the Linzhi	3
+	normal in the Rikaze	3
+	normal in the Shannan	3
+	field Taiyuan	3
+	field Linfen	3
+	fermented 30d	3
+	3289m 2	3
+	VANM	3
+	alizarin red treament 10 hours	3
+	Indian mustard far rhizosphere	3
+	low amoxicillin	3
+	low fat	3
+	ambient sw	3
+	alizarin red treament 7 hours	3
+	alizarin red treament 3 hours	3
+	alizarin red treament 14 hours	3
+	low matrine	3
+host-associated	KO 3w after separation	3
+	low temperature 3d	3
+	DNA-SIP samples from the light fraction in incubations amended with 13C-bicarbonate, cellulose and lepidocrocite	3
+	Simultaneous-2	3
+	Z pit day30 fungi	3
+	Z pit day30 bacteria	3
+	Z pit day3 fungi	3
+	Z pit day3 bacteria	3
+	arch_amoA_HS_DNA_7.6	3
+	laboratory nonviruliferous	3
+	Following 48 Freeze-Thaw Cycles	3
+	channel under hydraulic retention time of 74 min	3
+	3289m 1	3
+host-associated	soil type	3
+	beginning 1-5% NO	3
+	beginning ammonium removal	3
+	blank control PAHs microcosms	3
+	blank control n-alkanes microcosms	3
+	channel under hydraulic retention time of 456 min	3
+	ck 0-5cm soil depth	3
+	laboratory viruliferous 10d	3
+	arch_amoA_HS_cDNA_7.6	3
+	ck 10-20cm soil depth	3
+	ck 5-10cm soil depth	3
+	lactobacillus gut	3
+	lactobacillus escherichia coli gut	3
+	laboratory viruliferous 5d	3
+	laboratory viruliferous 20d	3
+	Z pit day15 fungi	3
+	Z pit day15 bacteria	3
+	Z day5 fungi	3
+	Wheat	3
+	Control temperature	3
+	3785m 3	3
+	3785m 2	3
+	3289m 3	3
+	high salt 7d	3
+	high salt 3d	3
+sediment	time	3
+	Flavobacterium psychrophilum-3d	3
+	Z day5 bacteria	3
+	Flavobacterium psychrophilum-7d	3
+	high salt 1d	3
+	gre variable 5	3
+	gre variable 15	3
+	gre variable 10	3
+	gre stable 5	3
+	gre stable 15	3
+	Y day1 bacteria	3
+	Y day1 fungi	3
+	Y day3 bacteria	3
+	Y day3 fungi	3
+	Z day3 fungi	3
+	Z day3 bacteria	3
+	Z day1 fungi	3
+	Z day1 bacteria	3
+	4	3
+	Yersinia ruckeri	3
+	YR-hlyB	3
+	Y pit day30 fungi	3
+	Y pit day30 bacteria	3
+	Y pit day3 fungi	3
+	Y pit day3 bacteria	3
+	Y pit day15 fungi	3
+	Y pit day15 bacteria	3
+	Y day5 fungi	3
+	Y day5 bacteria	3
+	150mM NaCl 72h	3
+host-associated	excysted sporozoites	3
+	Paper mulberry plus corn bran	3
+	100mM NS 1d	3
+	P 5-10cm soil depth	3
+	P 10-20cm soil depth	3
+	P 0-5cm soil depth	3
+	100mM NS 5d	3
+	seeding	3
+	sew stable 5	3
+water	water_elevtemp_elevCO2	3
+	SMFC-1	3
+	sew variable 10	3
+	SMFC-2	3
+water	water_elevtemp	3
+	sew variable 15	3
+	sew variable 5	3
+	pit B-1-9 fermentation day10	3
+	6_15cm_1	3
+	Replicate 1, run 2	3
+	1	3
+	Replicate 2, run 2	3
+	Replicate 2, run 1	3
+	pit A-4-24 fermentation day2	3
+water	water_elevCO2	3
+	100mM NS 3d	3
+water	water_presentday	3
+	Separate-2	3
+	pH	3
+	Replicate 1, Dilution 8	3
+	HRZ	3
+	Replicate 3, run 1	3
+	Replicate 3, run 2	3
+	polluted in the Linzhi	3
+	polluted in the Rikaze	3
+	polluted in the Shannan	3
+	Prior to Freeze-Thaw Cycling	3
+	pupae	3
+	Rice bran	3
+	Rice bran 10 addition	3
+	Rice bran 20 addition	3
+	Rice bran 30 addition	3
+	Rice bran material	3
+	Rice bran silage	3
+host-associated	GF	3
+host-associated	Diet	3
+	Paper mulberry plus wheat bran	3
+	Ryegrass-vegetated soil	3
+	Paper mulberry plus rice bran	3
+	Replicate 3, Dilution 8	3
+	pit A-4-24 fermentation day10	3
+	Replicate 1, run 1	3
+	Replicate 2, Dilution 8	3
+	150mM NaCl 3d	3
+	Low temperature three day	3
+	Low temperature one day	3
+	Low temperature four day	3
+	150mM NaCl 1d	3
+	NR-2	3
+	150mM NaCl 24h	3
+	2185m 3	3
+	2185m 2	3
+	2185m 1	3
+	Simultaneous-1	3
+	150mM NaCl 12h	3
+	2	3
+	thiram ileum	3
+	unplanted soil	3
+	warming	3
+	warming and N addition	3
+	workers	3
+	150mM NaCl 7d	3
+	Indian mustard near rhizosphere	3
+	Indian mustard middle rhizosphere	3
+	Low temperature two day	3
+	pit B-4-2 fermentation day5	3
+	N 10-20cm soil depth	3
+	Bare soil	3
+	N P 5-10cm soil depth	3
+	N P 10-20cm soil depth	3
+	N P 0-5cm soil depth	3
+	N 5-10cm soil depth	3
+	N 0-5cm soil depth	3
+	N addition	3
+	6_15cm_2	3
+	N/A	3
+	NA-2	3
+	NA-1	3
+	6_15cm_3	3
+	3	3
+	NR-1	3
+	swe stable 10	3
+	swe stable 15	3
+	Replicate 1, dilution 1, run 2	2
+	Replicate 1, dilution 2, run 2	2
+	Replicate 1, dilution 2, run 1	2
+	Site 1 15cm-deep 2	2
+	Replicate 2, dilution 3, run 1	2
+	Replicate 1, dilution 3, run 2	2
+	Replicate 2, dilution 3, run 2	2
+	Replicate 2, dilution 1, run 2	2
+	Replicate 1, dilution 1, run 1	2
+	Replicate 2, dilution 1, run 1	2
+	Replicate 1, dilution 3, run 1	2
+	Replicate 1, dilution 6, run 1	2
+	Replicate 1, dilution 4, run 1	2
+	Replicate 1, dilution 4, run 2	2
+	Replicate 1, dilution 5, run 1	2
+	Replicate 1, dilution 5, run 2	2
+	Replicate 1, dilution 6, run 2	2
+	Replicate 1, dilution 9, run 2	2
+	Replicate 1, dilution 7, run 1	2
+	Replicate 1, dilution 7, run 2	2
+	Replicate 1, dilution 8, run 2	2
+	Replicate 1, dilution 9, run 1	2
+	Replicate 2, dilution 2, run 1	2
+	Replicate 2, dilution 2, run 2	2
+	Replicate 1, dilution 8, run 1	2
+	Site 1 15cm-deep 1	2
+	Reigous water	2
+host-associated	merozoites 118 h post-infection	2
+	arch_amoA_cDNA_blank	2
+	Not UV treated	2
+	Bulk soil, ploughed with standard nitrogen fertilization and use of pesticides	2
+	Bulk soil, ploughed with reduced (50%) nitrogen fertilization	2
+	Dust	2
+	Bulk soil, cultivator tratment with standard nitrogen fertilization and use of pesticides	2
+	Bulk soil, cultivator tratment with reduced (50%) nitrogen fertilization	2
+host-associated	BMT_wt_to_Ldlrko_cage_7	2
+host-associated	Group2-WT	2
+	channel under hydraulic retention time of 130 min	2
+	chronic-water	2
+host-associated	KO 5w after separation	2
+	control-water	2
+host-associated	KO 7w after separation	2
+host-associated	23_wks	2
+host-associated	16_wks	2
+	PD_replicate	2
+	Replicate 2, dilution 4, run 2	2
+	arch_amoA_DNA_blank	2
+	HS1_7.6_DNA	2
+host-associated	Group1-WT	2
+plant-associated	kelpsurface_elevtemp_elevCO2	2
+plant-associated	kelpsurface_elevtemp	2
+plant-associated	kelpsurface_elevCO2	2
+microbial mat_biofilm	water_probiotic_biofilm	2
+	acute-water	2
+microbial mat_biofilm	water_heterotrophic_biofilm	2
+microbial mat_biofilm	seawater_initial	2
+	Puratos Tap Water Sample	2
+host-associated	Group1-Hetero	2
+	Polycaprolactone surface incubated for 8 weeks in seawater	2
+	raw	2
+	ambient seawater	2
+	FL_P	2
+	FL_A	2
+	Replicate 2, dilution 4, run 1	2
+	DNA Blank	2
+	Replicate 2, dilution 5, run 1	2
+	Site 3 5cm-deep 3	2
+water	control_start	2
+water	control_final	2
+water	ammonium	2
+	Soil pH	2
+water	urea	2
+soil	succession after disturbance	2
+host-associated	The proximal murine colon contains mucosal folds that are known to be associated with morphologically distinct microbes. To identify these microbes, we utilized the technique of laser capture microdissection to sample microbes associated with these folds (interfold region) and within the central lumen (digesta region). Tag pyrosequencing of 16S rRNA genes was used to compare microbial populations between interfold and digesta samples.	2
+	THP 3.1 g/kg	2
+	Root-affected soil, ploughed with standard nitrogen fertilization and use of pesticides	2
+	Root-affected soil, ploughed with reduced (50%) nitrogen fertilization	2
+	feces-samp	2
+host-associated	Group3-KO	2
+	Root-affected soil, cultivator treatment with standard nitrogen fertilization and use of pesticides	2
+	Root-affected soil, cultivator treatment with reduced (50%) nitrogen fertilization	2
+	Replicate 4, Dilution 7	2
+	Replicate 4, Dilution 6	2
+	Replicate 4, Dilution 5	2
+	Replicate 4, Dilution 4	2
+	Replicate 4, Dilution 3	2
+	Replicate 4, Dilution 2	2
+	Replicate 4, Dilution 1	2
+	Slurry enrichment	2
+	Site 3 5cm-deep 2	2
+host-associated	Group4-Hetero	2
+	Site 3 5cm-deep 1	2
+	Site 1 15cm-deep 3	2
+	Site 1 25cm-deep 1	2
+	Site 1 25cm-deep 2	2
+	Site 1 25cm-deep 3	2
+	Site 1 5cm-deep 1	2
+	Site 1 5cm-deep 2	2
+	Site 1 5cm-deep 3	2
+	Site 2 15cm-deep 1	2
+	Site 2 15cm-deep 2	2
+	Site 2 15cm-deep 3	2
+	Site 2 25cm-deep 1	2
+	Site 2 25cm-deep 3	2
+	Site 2 5cm-deep 1	2
+	Site 2 5cm-deep 2	2
+	Site 2 5cm-deep 3	2
+	Site 3 15cm-deep 1	2
+	Site 3 15cm-deep 2	2
+	Site 3 15cm-deep 3	2
+	Site 3 25cm-deep 1	2
+	Site 3 25cm-deep 2	2
+	Site 3 25cm-deep 3	2
+	none	2
+	Site 2 25cm-deep 2	2
+	Replicate 3, dilution 1, run 2	2
+	Replicate 3, dilution 6, run 2	2
+	Replicate 3, dilution 7, run 1	2
+	Replicate 2, dilution 8, run 2	2
+	Replicate 2, dilution 9, run 1	2
+	Replicate 2, dilution 9, run 2	2
+soil	Cont	2
+	Unfractioned, QIAamp Fast DNA Stool	2
+	Replicate 3, dilution 1, run 1	2
+	Replicate 3, dilution 6, run 1	2
+	Control_replicate	2
+	Replicate 3, dilution 2, run 1	2
+	Replicate 3, dilution 2, run 2	2
+	Replicate 3, dilution 3, run 1	2
+host-associated	KO 10w after separation	2
+	Replicate 3, dilution 5, run 2	2
+	Replicate 3, dilution 3, run 2	2
+	Replicate 3, dilution 4, run 1	2
+	Replicate 3, dilution 7, run 2	2
+	Replicate 2, dilution 8, run 1	2
+	Replicate 2, dilution 7, run 2	2
+	Replicate 3, dilution 5, run 1	2
+	Replicate 3, dilution 9, run 2	2
+	Replicate 2, dilution 7, run 1	2
+	Replicate 3, dilution 9, run 1	2
+	Replicate 2, dilution 5, run 2	2
+	Replicate 3, dilution 4, run 2	2
+host-associated	Group4-KO	2
+	Replicate 2, dilution 6, run 1	2
+	Replicate 3, dilution 8, run 2	2
+	Replicate 3, dilution 8, run 1	2
+	Replicate 2, dilution 6, run 2	2
+	duplicate sample(s):RTEF6619	1
+	duplicate sample(s):RTEF6614	1
+	duplicate sample(s):RTEF6620	1
+	duplicate sample(s):RTEF6510	1
+	duplicate sample(s):RTEF2672773	1
+	duplicate sample(s):RTEF6511	1
+	duplicate sample(s):RTEF2672775	1
+	duplicate sample(s):RTEF2672774	1
+	Control_Group14	1
+	duplicate sample(s):RTEF6501	1
+	duplicate sample(s):RTEF6613	1
+	duplicate sample(s):RTEF6536	1
+	duplicate sample(s):RTEF6537	1
+	duplicate sample(s):RTEF2672771	1
+	Control_Group9	1
+	duplicate sample(s):RTEF2685918	1
+	duplicate sample(s):RTEF2672769	1
+	duplicate sample(s):RTEF2672730	1
+	Control_Group5	1
+	Control_Group4	1
+	Control_Group3	1
+	Control_Group2	1
+	duplicate sample(s):RTEF2672721	1
+	Control_Group7	1
+	duplicate sample(s):RTEF2672729	1
+	duplicate sample(s):RTEF343494	1
+	duplicate sample(s):RTEF2672768	1
+	duplicate sample(s):RTEF343495	1
+	duplicate sample(s):RTEF6639	1
+	Control_Group8	1
+	Control_Group12	1
+	Control_Group13	1
+	duplicate sample(s):RTEF2672759	1
+	duplicate sample(s):RTEF6502	1
+	duplicate sample(s):RTEF6637	1
+	duplicate sample(s):RTEF2672784	1
+	duplicate sample(s):RTEF6640	1
+	DB1B	1
+	duplicate sample(s):RTEF558557	1
+	duplicate sample(s):RTEF540968	1
+	duplicate sample(s):RTEF540967	1
+	DB2B	1
+	duplicate sample(s):RTEF2685693	1
+	duplicate sample(s):RTEF540919	1
+	duplicate sample(s):RTEF2685744	1
+	duplicate sample(s):RTEF2685857	1
+	duplicate sample(s):RTEF2685858	1
+	duplicate sample(s):RTEF540918	1
+	duplicate sample(s):RTEF540424	1
+	duplicate sample(s):RTEF343339	1
+	duplicate sample(s):RTEF558558	1
+	Cynrig water (hatchery)	1
+	duplicate sample(s):RTEF540423	1
+	duplicate sample(s):RTEF343557	1
+	duplicate sample(s):RTEF343556	1
+	duplicate sample(s):RTEF343538	1
+	full fluorescent light	1
+	duplicate sample(s):RTEF343338	1
+	duplicate sample(s):RTEF2685919	1
+	Control_Group18	1
+	duplicate sample(s):RTEF343537	1
+	filtered blue light	1
+	Control_Group6	1
+	duplicate sample(s):RTEF2685653	1
+	duplicate sample(s):RTEF2672783	1
+	duplicate sample(s):RTEF6475	1
+	Control_Group15	1
+	duplicate sample(s):RTEF6641	1
+	duplicate sample(s):RTEF6642	1
+	duplicate sample(s):RTEF6643	1
+	filtered red light	1
+	duplicate sample(s):RTEF6494	1
+	duplicate sample(s):RTEF2672785	1
+	duplicate sample(s):RTEF2672834	1
+	duplicate sample(s):RTEF2685598	1
+	duplicate sample(s):RTEF2685599	1
+	duplicate sample(s):RTEF2685649	1
+	duplicate sample(s):RTEF6461	1
+	duplicate sample(s):RTEF6391	1
+	duplicate sample(s):RTEF6460	1
+	duplicate sample(s):RTEF6663	1
+	duplicate sample(s):RTEF6664	1
+	Control_Group16	1
+	duplicate sample(s):RTEF2685650	1
+	Control_Group17	1
+	eggs	1
+	DBF1F	1
+	duplicate sample(s):RTEF6457	1
+	duplicate sample(s):RTEF6392	1
+	DB3B	1
+	duplicate sample(s):RTEF2685655	1
+	normal8	1
+	Control_Group11	1
+	Control_Group10	1
+	open precipitation bag 2 replicate 1	1
+	open precipitation bag 2 replicate 2	1
+	open precipitation bag 2 replicate 3	1
+	open precipitation bag 3 replicate 1	1
+	open precipitation bag 3 replicate 2	1
+	open precipitation bag 3 replicate 3	1
+	open precipitation bag 4 replicate 1	1
+	open precipitation bag 4 replicate 2	1
+	open precipitation bag 4 replicate 3	1
+	open precipitation bag 5 replicate 1	1
+	open precipitation bag 5 replicate 2	1
+	open precipitation bag 5 replicate 3	1
+	open precipitation bag 6 replicate 1	1
+	open precipitation bag 6 replicate 2	1
+	open precipitation bag 6 replicate 3	1
+	open precipitation bag 1replicate 3	1
+	open precipitation bag 1 replicate 2	1
+	open precipitation bag 1 replicate 1	1
+	open ambient bag 6 replicate 1	1
+	open ambient bag 4 replicate 1	1
+	open ambient bag 4 replicate 2	1
+	open ambient bag 4 replicate 3	1
+	open ambient bag 5 replicate 1	1
+	open ambient bag 5 replicate 2	1
+	open ambient bag 5 replicate 3	1
+	open ambient bag 6 replicate 2	1
+	open ambient bag 8 replicate 3	1
+	open ambient bag 6 replicate 3	1
+	open ambient bag 7 replicate 1	1
+	open ambient bag 7 replicate 2	1
+	open ambient bag 7 replicate 3	1
+	open ambient bag 8 replicate 1	1
+	open ambient bag 8 replicate 2	1
+	open precipitation bag 7 replicate 1	1
+	open precipitation bag 7 replicate 2	1
+	open precipitation bag 7 replicate 3	1
+host-associated	BMT_23ko_to_Ldlrko_PBS_cage_2	1
+	Blank_1_cDNA	1
+host-associated	BMT_wt_to_ldlrko_PBS_cage_1	1
+	Blank_1_DNA	1
+	Biomass charcoal	1
+host-associated	BMT_wt_to_Ldlrko_PBS_cage_3	1
+host-associated	BMT_wt_to_Ldlrko_PBS_cage_2	1
+host-associated	BMT_23ko_to_Ldlrko_PBS_cage_1	1
+	Blank_2_cDNA	1
+host-associated	BMT_23ko_to_Ldlrko_PBS	1
+	Bactera were grown in three minimal salt media supplemented with a single pollutant per mediun i.e., toluene, naphthalene and petrol	1
+	stochastic cell encapsulation, growth medium	1
+	Anaerobic Returned Sludge	1
+	Ampicillin Induction	1
+	Ampicillin Control	1
+	Blank_2_DNA	1
+	small subunit ribosomal RNA gene partial sequence; internal transcribed spacer 4 and 5.8S ribosomal RNA gene, complete sequence; and internal transcribed spacer 5	1
+	open precipitation bag 8 replicate 1	1
+host-associated	Group2-Hetero	1
+	open precipitation bag 8 replicate 2	1
+	open precipitation bag 8 replicate 3	1
+	CKD13	1
+host-associated	Group3-Hetero	1
+	pit B-1-9 fermentation day0	1
+host-associated	Group2-KO	1
+host-associated	Group1-KO	1
+	CKD1	1
+	room temperature	1
+	CKD12	1
+	CKD11	1
+	CKD10	1
+	sampling site (efo:EFO_0000688)	1
+	selection for large multicellular size	1
+	open ambient bag 3 replicate 3	1
+	open ambient bag 3 replicate 2	1
+	open ambient bag 3 replicate 1	1
+	low temperature treatment16	1
+	low temperature treatment10	1
+	low temperature treatment11	1
+	low temperature treatment12	1
+	low temperature treatment13	1
+	low temperature treatment14	1
+	low temperature treatment15	1
+	low temperature treatment17	1
+	CKD7	1
+	low temperature treatment2	1
+	low temperature treatment3	1
+	low temperature treatment4	1
+	low temperature treatment5	1
+	low temperature treatment6	1
+	low temperature treatment7	1
+	low temperature treatment1	1
+	CKD8	1
+	low temperature treatment9	1
+	inoculum replicate 6	1
+	Control_Group1	1
+	inoculum replicate 1	1
+	inoculum replicate 2	1
+	inoculum replicate 3	1
+	inoculum replicate 4	1
+	inoculum replicate 5	1
+	inoculum replicate 7	1
+	CKD9	1
+	inoculum replicate 8	1
+	internal transcribed spacer 4, ribosomal DNA, and internal transcribed spacer 5	1
+	Contaminated Soil	1
+	Ciprofloxacin Induction	1
+	Ciprofloxacin Control	1
+	CNSS water (hatchery)	1
+	low temperature treatment8	1
+host-associated	KO 13w after separation	1
+	open ambient bag 2 replicate 3	1
+	duplicate sample(s):RTEF2672716	1
+	normal2	1
+	normal3	1
+	normal4	1
+	normal5	1
+	normal6	1
+	normal7	1
+	not applicable	1
+	CKD14	1
+	not known	1
+	open ambient bag 1 replicate 1	1
+	open ambient bag 1 replicate 2	1
+	open ambient bag 1replicate 3	1
+	open ambient bag 2 replicate 1	1
+	open ambient bag 2 replicate 2	1
+	normal1	1
+	CKD15	1
+host-associated	KO 12w after separation	1
+host-associated	Group4-WT	1
+	medium/negative cotrol	1
+	CKD6	1
+	CKD5	1
+	CKD4	1
+	negative_DNA	1
+	negative_cDNA	1
+	no lab treatment	1
+	CKD16	1
+	no light	1
+	CKD3	1
+	CKD2	1
+	CKD18	1
+host-associated	Group3-WT	1
+	CKD17	1
+	duplicate sample(s):RTEF2672720	1
+	closed ambient bag 5 replicate 3	1
+	duplicate sample(s):RTEF2672715	1
+water	Lysogenic virus induction (mitomycin C) from marine Vibrio cholerae VN-3213. Reads from phage concentrate elution	1
+	GA-CKD7	1
+	GA-CKD6	1
+	GA-CKD5	1
+	GA-CKD4	1
+	GA-CKD3	1
+	GA-CKD2	1
+water	Lysogenic virus induction (mitomycin C) from potentially pathogenic Vibrio parahaemolyticus VN-3218, isolated from North Sea. Reads from phage concentrate elution.	1
+water	Lysogenic virus induction (mitomycin C) from marine Vibrio parahaemolyticus VN-3220. Reads from phage concentrate elution	1
+water	Lysogenic virus induction (mitomycin C) from marine Vibrio parahaemolyticus VN-3212. Reads from phage concentrate elution	1
+	Spey water (wild)	1
+	GA-CKD18	1
+	Serratia rubidaea MF8054 strain originally isolated from food processing factory	1
+	GA-CKD17	1
+	GA-CKD16	1
+	Sustaining Partial nitrification in a simulated case of salt intrusion into a coastal wastewater treatment plant	1
+	TB1B	1
+	TB2B	1
+	TB3B	1
+	TBF1F	1
+	TBF2F	1
+	TBF3F	1
+	GA-CKD15	1
+	GA-CKD8	1
+	Sediment LS9	1
+	THP 17 g/kg	1
+	GA_Supplementation16	1
+	GA_Supplementation9	1
+	GA_Supplementation8	1
+	GA_Supplementation7	1
+	GA_Supplementation6	1
+	GA_Supplementation5	1
+	GA_Supplementation4	1
+	GA_Supplementation3	1
+	GA_Supplementation2	1
+	GA_Supplementation18	1
+	GA_Supplementation17	1
+	GA_Supplementation15	1
+	Sediment 3	1
+	GA_Supplementation14	1
+	GA_Supplementation13	1
+	GA_Supplementation12	1
+	GA_Supplementation11	1
+	GA_Supplementation10	1
+	GA_Supplementation1	1
+	GA-CKD9	1
+	Second gravity fraction, QIAamp DNA Stool	1
+	Sediment 1	1
+	Sediment 2	1
+	THP 12 g/kg	1
+	THP 22 g/kg	1
+	duplicate sample(s):RTEF2672714	1
+	US3_7.6_DNA	1
+	US2_7.6_DNA	1
+	US2_7.6_cDNA	1
+	US2_9_DNA	1
+	US2_9_cDNA	1
+	US2_DNA	1
+	US2_cDNA	1
+	Frome water (wild)	1
+	US3_10_cDNA	1
+	US3_11_DNA	1
+	US3_11_cDNA	1
+	US3_7.6_cDNA	1
+	US2_11_DNA	1
+	US3_9_DNA	1
+	US3_9_cDNA	1
+	US3_DNA	1
+	US3_cDNA	1
+	US4_10_DNA	1
+	US4_10_cDNA	1
+	US4_11_DNA	1
+	US4_11_cDNA	1
+	US4_7.6_DNA	1
+	US4_7.6_cDNA	1
+	US2_11_cDNA	1
+	US2_10_cDNA	1
+	THP 44 g/kg	1
+	GA-CKD10	1
+	THP 6.8 g/kg	1
+	GA-CKD14	1
+	Third gravity fraction, QIAamp DNA Stool	1
+	Throughfall exclusion	1
+	GA-CKD13	1
+	GA-CKD12	1
+soil	Veg	1
+	Towy water (wild)	1
+	GA-CKD11	1
+	Tweed water (wild)	1
+	GA-CKD1	1
+	US2_10_DNA	1
+	US1_10_DNA	1
+	US1_10_cDNA	1
+	US1_11_DNA	1
+	US1_11_cDNA	1
+	US1_7.6_DNA	1
+	US1_7.6_cDNA	1
+	US1_9_DNA	1
+	US1_9_cDNA	1
+	US1_DNA	1
+	US1_cDNA	1
+	Genome-MPET Library. 10000ng starting material, 15 PCR cycles	1
+	Genome-MPET Library. 5000ng starting material, 13 PCR cycles	1
+	Genome-MPET Library. 5000ng starting material, 15 PCR cycles	1
+	Month_26	1
+	MHS water (hatchery)	1
+	MT1	1
+	MT2	1
+	MT3	1
+	Mitomycin C Control	1
+	Mitomycin C Induction	1
+	HS4_cDNA	1
+	Month_19	1
+	HS4_DNA	1
+	Month_20	1
+	HS4_9_cDNA	1
+	High carbon to nitrogen ratio	1
+	HS4_9_DNA	1
+	HS4_7.6_cDNA	1
+	HS4_7.6_DNA	1
+	HS4_11_cDNA	1
+	HS4_11_DNA	1
+	HS4_10_cDNA	1
+	HS4_10_DNA	1
+	HS3_cDNA	1
+	HS3_DNA	1
+	HS3_9_cDNA	1
+	Low carbon to nitrogen ratio	1
+	LXF3F	1
+	Genome-PET Library. Genomic DNA extraction was done at GSC	1
+	LKF2F	1
+	LC1B	1
+	LC2B	1
+	LC3B	1
+	LCF1F	1
+	LCF2F	1
+	LCF3F	1
+	LK1B	1
+	LK2B	1
+	LK3B	1
+	LKF1F	1
+	LKF3F	1
+	LXF2F	1
+	LQ1B	1
+	LQ2B	1
+	LQ3B	1
+	LQF1F	1
+	LQF2F	1
+	LQF3F	1
+	LX1B	1
+	LX2B	1
+	LX3B	1
+	LXF1F	1
+	HS3_9_DNA	1
+	HS3_11_cDNA	1
+	HS3_11_DNA	1
+	H-61	1
+	Q8	1
+	Q9	1
+	HS1_10_cDNA	1
+	HS1_10_DNA	1
+	H-73	1
+	H-72	1
+	H-71	1
+	1.0 L sample size	1
+	H-63	1
+	H-62	1
+	H-53	1
+	HS3_10_cDNA	1
+	H-52	1
+	H-51	1
+	H-43	1
+	H-42	1
+	H-41	1
+	H-33	1
+	H-32	1
+	H-31	1
+	Genome-PET Library. Genomic DNA was prepared by collaborator. with post PCR purification	1
+	Genome-PET Library. Genomic DNA was prepared by collaborator	1
+	Q7	1
+	Q10	1
+	Pressure	1
+	HS1_11_DNA	1
+	HS3_10_DNA	1
+	HS2_cDNA	1
+	HS2_DNA	1
+	Norfloxacin Control	1
+	Norfloxacin Induction	1
+	HS2_9_cDNA	1
+	HS2_9_DNA	1
+	HS2_7.6_cDNA	1
+	HS2_7.6_DNA	1
+	Oil Sludge	1
+	HS2_11_cDNA	1
+	HS2_11_DNA	1
+	HS2_10_cDNA	1
+	HS2_10_DNA	1
+	HS1_cDNA	1
+	HS1_DNA	1
+	HS1_9_cDNA	1
+	HS1_9_DNA	1
+	Parent EFO: http://www.ebi.ac.uk/efo/EFO_0001032. cDNA EFO: http://www.ebi.ac.uk/efo/EFO_0004187	1
+	HS1_11_cDNA	1
+	Polycaprolactone biodegradation experiment	1
+	US4_9_DNA	1
+	US4_9_cDNA	1
+	US4_DNA	1
+	duplicate sample(s):RTEF2672333	1
+	duplicate sample(s):RTEF2664737	1
+	duplicate sample(s):RTEF2664742	1
+	duplicate sample(s):RTEF2664743	1
+	duplicate sample(s):RTEF2664747	1
+	duplicate sample(s):RTEF2664748	1
+	duplicate sample(s):RTEF2664758	1
+	duplicate sample(s):RTEF2664759	1
+	duplicate sample(s):RTEF2664786	1
+	duplicate sample(s):RTEF2664797	1
+	duplicate sample(s):RTEF2664806	1
+	duplicate sample(s):RTEF2672366	1
+	duplicate sample(s):RTEF2664725	1
+	duplicate sample(s):RTEF2672367	1
+	duplicate sample(s):RTEF2672394	1
+	duplicate sample(s):RTEF2672395	1
+	duplicate sample(s):RTEF2672433	1
+	duplicate sample(s):RTEF2672435	1
+	duplicate sample(s):RTEF2672436	1
+	duplicate sample(s):RTEF2672437	1
+	duplicate sample(s):RTEF2672438	1
+	duplicate sample(s):RTEF2672439	1
+	duplicate sample(s):RTEF2672440	1
+	duplicate sample(s):RTEF2664736	1
+	duplicate sample(s):RTEF2664719	1
+	duplicate sample(s):RTEF2664560	1
+	duplicate sample(s):RTEF2664690	1
+	duplicate sample(s):RTEF2664585	1
+	duplicate sample(s):RTEF2664586	1
+	duplicate sample(s):RTEF2664595	1
+	duplicate sample(s):RTEF2664601	1
+	duplicate sample(s):RTEF2664602	1
+	duplicate sample(s):RTEF2664622	1
+	duplicate sample(s):RTEF2664623	1
+	duplicate sample(s):RTEF2664666	1
+	duplicate sample(s):RTEF2664667	1
+	duplicate sample(s):RTEF2664689	1
+	duplicate sample(s):RTEF2664691	1
+	duplicate sample(s):RTEF2664718	1
+	duplicate sample(s):RTEF2664694	1
+	duplicate sample(s):RTEF2664695	1
+	duplicate sample(s):RTEF2664696	1
+	duplicate sample(s):RTEF2664697	1
+	duplicate sample(s):RTEF2664700	1
+	duplicate sample(s):RTEF2664701	1
+	duplicate sample(s):RTEF2664702	1
+	duplicate sample(s):RTEF2664703	1
+	duplicate sample(s):RTEF2664706	1
+	duplicate sample(s):RTEF2664712	1
+	duplicate sample(s):RTEF2672461	1
+	duplicate sample(s):RTEF2672463	1
+	duplicate sample(s):RTEF2672466	1
+	duplicate sample(s):RTEF2672641	1
+	duplicate sample(s):RTEF2672591	1
+	duplicate sample(s):RTEF2672592	1
+	duplicate sample(s):RTEF2672596	1
+	duplicate sample(s):RTEF2672597	1
+	duplicate sample(s):RTEF2672628	1
+	duplicate sample(s):RTEF2672629	1
+	duplicate sample(s):RTEF2672634	1
+	duplicate sample(s):RTEF2672635	1
+	duplicate sample(s):RTEF2672638	1
+	duplicate sample(s):RTEF2672639	1
+	duplicate sample(s):RTEF2672642	1
+	duplicate sample(s):RTEF2672467	1
+	duplicate sample(s):RTEF2672649	1
+	duplicate sample(s):RTEF2672650	1
+	duplicate sample(s):RTEF2672651	1
+	duplicate sample(s):RTEF2672657	1
+	duplicate sample(s):RTEF2672659	1
+	duplicate sample(s):RTEF2672660	1
+	duplicate sample(s):RTEF2672675	1
+	duplicate sample(s):RTEF2672676	1
+	duplicate sample(s):RTEF2672700	1
+	duplicate sample(s):RTEF2672701	1
+	duplicate sample(s):RTEF2672575	1
+	duplicate sample(s):RTEF2672574	1
+	duplicate sample(s):RTEF2672569	1
+	duplicate sample(s):RTEF2672566	1
+	duplicate sample(s):RTEF2672492	1
+	duplicate sample(s):RTEF2672493	1
+	duplicate sample(s):RTEF2672495	1
+	duplicate sample(s):RTEF2672496	1
+	duplicate sample(s):RTEF2672510	1
+	duplicate sample(s):RTEF2672511	1
+	duplicate sample(s):RTEF2672512	1
+	duplicate sample(s):RTEF2672513	1
+	duplicate sample(s):RTEF2672515	1
+	duplicate sample(s):RTEF2672516	1
+	duplicate sample(s):RTEF2672518	1
+	duplicate sample(s):RTEF2672519	1
+	duplicate sample(s):RTEF2672521	1
+	duplicate sample(s):RTEF2672522	1
+	duplicate sample(s):RTEF2672530	1
+	duplicate sample(s):RTEF2672531	1
+	duplicate sample(s):RTEF2672534	1
+	duplicate sample(s):RTEF2672535	1
+	duplicate sample(s):RTEF2672558	1
+	duplicate sample(s):RTEF2672559	1
+	duplicate sample(s):RTEF2672564	1
+	duplicate sample(s):RTEF2664568	1
+	duplicate sample(s):RTEF2664550	1
+	US4_cDNA	1
+	closed ambient bag 2 replicate 2	1
+	FJ3	1
+	arch_amoA_DNA_neg	1
+	arch_amoA_cDNA_neg	1
+	FJ2	1
+	FJ1	1
+	channel under hydraulic retention time of 200 min	1
+	closed ambient bag 1 replicate 1	1
+	closed ambient bag 1 replicate 2	1
+	closed ambient bag 1replicate 3	1
+	closed ambient bag 2 replicate 1	1
+	closed ambient bag 2 replicate 3	1
+	ZQF2F	1
+	closed ambient bag 3 replicate 2	1
+	closed ambient bag 3 replicate 3	1
+	closed ambient bag 4 replicate 1	1
+	closed ambient bag 4 replicate 2	1
+	closed ambient bag 4 replicate 3	1
+	closed ambient bag 5 replicate 1	1
+	closed ambient bag 5 replicate 2	1
+	closed ambient bag 6 replicate 1	1
+	closed ambient bag 6 replicate 2	1
+	closed ambient bag 6 replicate 3	1
+	ZQF3F	1
+	ZQF1F	1
+	duplicate sample(s):RTEF2664549	1
+	First gravity fraction, QIAamp DNA Stool	1
+soil	ContVeg and Cont	1
+	Unfractioned, QIAamp DNA Microbiome	1
+soil	ContVeg	1
+	Urban River Sediment	1
+	WL1	1
+	WL2	1
+	WL3	1
+	WY1	1
+	WY2	1
+	WY3	1
+plant-associated	kelpsurface_presentday	1
+	ZQ3B	1
+	Filtered	1
+	XOS2	1
+	XOS3	1
+	XOS4	1
+	XOS5	1
+	XOS6	1
+	XOS7	1
+	XOS8	1
+	ZQ1B	1
+	ZQ2B	1
+	closed ambient bag 7 replicate 1	1
+	closed ambient bag 7 replicate 2	1
+	closed ambient bag 7 replicate 3	1
+	DCF2F	1
+	closed precipitation bag 8 replicate 3	1
+	DSF3F	1
+	DSF2F	1
+	DSF1F	1
+	DS3B	1
+host-associated	WT 9w after separation	1
+host-associated	WT 8w after separation	1
+	DS2B	1
+	DS1B	1
+	DCF3F	1
+	DCF1F	1
+	closed ambient bag 8 replicate 1	1
+	DC3B	1
+	DC2B	1
+	DC1B	1
+	DBF3F	1
+host-associated	WT 11w after separation	1
+	DBF2F	1
+	duplicate sample(s):RTEF1562759	1
+	duplicate sample(s):RTEF2447791	1
+	duplicate sample(s):RTEF2664540	1
+	duplicate sample(s):RTEF2664546	1
+	closed precipitation bag 8 replicate 2	1
+	closed precipitation bag 8 replicate 1	1
+	closed precipitation bag 7 replicate 3	1
+	closed precipitation bag 7 replicate 2	1
+	closed ambient bag 8 replicate 2	1
+	closed ambient bag 8 replicate 3	1
+	closed precipitation bag 1 replicate 1	1
+	closed precipitation bag 1 replicate 2	1
+	closed precipitation bag 1replicate 3	1
+	closed precipitation bag 2 replicate 1	1
+	closed precipitation bag 2 replicate 2	1
+	closed precipitation bag 2 replicate 3	1
+	closed precipitation bag 3 replicate 1	1
+	closed precipitation bag 3 replicate 2	1
+	closed precipitation bag 3 replicate 3	1
+	closed precipitation bag 4 replicate 1	1
+	closed precipitation bag 4 replicate 2	1
+	closed precipitation bag 4 replicate 3	1
+	closed precipitation bag 5 replicate 1	1
+	closed precipitation bag 5 replicate 2	1
+	closed precipitation bag 5 replicate 3	1
+	closed precipitation bag 6 replicate 1	1
+	closed precipitation bag 6 replicate 2	1
+	closed precipitation bag 6 replicate 3	1
+	closed precipitation bag 7 replicate 1	1
+	US3_10_DNA	1
