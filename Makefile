@@ -25,12 +25,15 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: all clean biosample-basex check_env final_sqlite_gz_dest reports
+.PHONY: all clean biosample-basex check_env final_sqlite_gz_dest reports ha_highlights_reports
 
-all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz
+all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz reports
 # doesn't include final_sqlite_gz_dest
 
-reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv
+reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv \
+	ha_highlights_reports \
+	basex_list.txt \
+	biosample_set_1_info_index.txt biosample_set_2_info_index.txt
 
 check_env:
 	echo ${del_from}
@@ -132,4 +135,20 @@ reports/sam_coll_meth_pattern.tsv:
 		--pattern %sam%coll%meth% \
 		--database_file target/biosample_basex.db \
 		--output_file $@
+
+ha_highlights_reports:
+	python util/ha_highlights.py \
+		--database_file target/biosample_basex.db \
+		--output_dir reports
+
+basex_list.txt:
+	$(BASEXCMD) -c "list" > $@
+
+# hardcoded db and target
+biosample_set_1_info_index.txt:
+	$(BASEXCMD) -c "open biosample_set_1 ; info index" > $@
+
+# hardcoded db and target
+biosample_set_2_info_index.txt:
+	$(BASEXCMD) -c "open biosample_set_2 ; info index" > $@
 

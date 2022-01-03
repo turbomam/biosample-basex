@@ -1,0 +1,1974 @@
+20416631 BioSample
+13774128 SRA
+5699167 dbGaP
+2339196 GEO
+ 483911 CDC-OAMD
+ 206470 EDLB-CDC
+ 103791 DOE Joint Genome Institute
+ 100560 PHE
+  58828 CFSAN
+  45611 Broad_GCID
+  39321 GSS
+  28878 EST
+  25388 BGI
+  23433 ModMedMicOxford
+  19479 Coriell
+  15669 University of Michigan
+  15385 BioSD
+  15174 Wellcome Sanger Institute
+  13578 Sample name
+   9999 BI
+   9503 SEARCH
+   8404 UMIGS
+   6852 GenBank
+   6502 UPENNBL
+   6397 JCVI
+   4642 GenomeTrakr
+   3990 HMRI-DID
+   3593 ATCC
+   3518 WUGSC
+   3320 University of British Columbia
+   3258 LIPM-INRA-CNRS
+   2839 NARMS
+   2785 GNE
+   2583 1000G
+   2466 UWML
+   2397 DSMZ
+   2225 UWGS-RW
+   2071 PulseNet
+   1920 MSU-BUELL
+   1891 JGI
+   1820 USDA-ARS
+   1807 University of California
+   1715 NIAID Bioinformatics and Computational Biosciences Branch
+   1714 Laboratory of Medical Microbiology, Vaccine and Infectious Disease Institute, University of Antwerp
+   1578 City-Of-Hope
+   1551 Queen Mary University of London
+   1548 HapMap
+   1471 Texas A and M University
+   1441 Ghent University
+   1416 EDBL-CDC
+   1399 UMR1347 Agroecology
+   1275 hmp2
+   1248 University of Oregon
+   1230 University Hospital Basel
+   1155 BioCI
+   1111 MBL
+   1027 EDLB_CDC
+    991 University of Kiel
+    946 NCBI
+    919 WRAIR-MRSN
+    895 CSISP
+    885 cdc-nchhstp-ghost
+    811 TARA_demonstrator_data_hub
+    807 German Federal Institute for Risk Assessment
+    795 cdc-pdd
+    772 cdc-ncezid-mdb
+    770 USGS
+    749 Cornell University
+    733 Oklahoma State University
+    713 King's College London
+    651 PulseNet1
+    643 NCGR
+    631 University of California San Diego Microbiome Initiative
+    626 University of Jyvaskyla
+    614 Baylor College of Medicine
+    611 CGS-GL
+    603 HAGSC
+    588 BCM
+    580 CGS-RM
+    553 University of Lausanne
+    546 University of Calgary
+    510 George Washington University
+    479 University of Southern California
+    473 Stanford University
+    467 Uppsala University
+    449 Tampere University of Technology
+    445 The Wellcome Trust Sanger Institute
+    437 Helmholtz Zentrum Munchen
+    426 CENTRE FOR GEOGENETICS
+    410 Nestle Institutes of Health Sciences SA
+    407 Hope College
+    398 Bioinformatics and Computational Biosciences Branch - Translational Bioinformatics Program
+    390 Nestle Research Center
+    382 CREA-GB
+    374 Chinese University of Hong Kong
+    365 University of Chicago 
+    360 University of Maryland Center for Environmental Sc
+    328 University of Basel
+    323 Oak Ridge National Laboratory
+    320 National Cheng Kung University
+    319 Louisiana State University
+    310 University of California San Diego
+    298 University of Tennessee
+    289 sjtu
+    287 UC Davis
+    286 The Chinese University of Hong Kong
+    279 Texas A&M University
+    277 China Agricultural University, College of Agricult
+    274 University of Montreal
+    271 NVRL
+    271 BCCAGSC
+    265 FISABIO - Public Health
+    264 University of Washington
+    260 The Salk Institute for Biological Studies
+    259 MSKCC
+    255 INRA
+    250 Vanderbilt University Medical Center
+    249 INSTITUT DE CIENCIES DEL MAR
+    246 GMI-MPB
+    245 University of Minnesota
+    245 Huazhong Agricultural University
+    236 Helmholtz Zentrum Muenchen
+    235 University of Pennsylvania and Children's Hospital of Philadelphia
+    234 CIBIO-INBIO RESEARCH CENTER IN BIODIVERSITY AND GENETIC RESOURCES
+    230 Vanderbilt University
+    225 Dankook University
+    220 NIAID
+    212 National Institutes of Health
+    210 University of Oulu
+    209 DALHOUSIE UNIVERSITY
+    205 LMVR NIAID NIH
+    204 University of California, Davis
+    204 Agriculture research organisation
+    201 NCI
+    195 Michigan State University
+    193 Seoul National University
+    192 NZFRI
+    189 The Ohio State University
+    188 WEIZMANN INSTITUE OF SCIENCE
+    188 Institute for Chemistry and Biology of the Marine Environment
+    187 University of Connecticut Health
+    187 MPIMG
+    181 niaid-bcbb-tbp
+    181 Kunming Institute of Zoology Chinese Academy of Sc
+    181 CCME
+    180 VIRGINIA TECH
+    177 WOODS HOLE OCEANOGRAPHIC INSTITUTION
+    177 University of Freiburg
+    177 THE ROSLIN INSTITUTE
+    175 University of Florida
+    175 Finnish Environment Institute
+    174 University of Chicago
+    174 Lab of medical microbiology, University of Antwerp
+    171 BDGP
+    168 Boyce Thompson Institute
+    163 Oregon State University
+    162 Colorado Center for Microbial Ecology, University of Colorado at Boulder
+    162 Centre for Arctic Gas Hydrate, Environment and Climate (The Arctic University of Norway, Tromso)
+    160 University of Sheffield
+    158 UIUC
+    157 MPIPZ
+    155 UNIVERSITY OF SYDNEY
+    155 HELICOS
+    153 UC-DPGP
+    152 University of Exeter
+    150 University of Connecticut Microbial Analysis, Resources, and Services
+    150 UC-COE
+    149 University of Wisconsin Madison
+    145 Loyola University Chicago
+    144 University of Oxford, Oxford, England, UK
+    144 SCILIFELAB STOCKHOLM
+    144 Howard University
+    142 University of Manchester
+    140 Colorado State University
+    138 Cold Spring Harbor Laboratory
+    136 The University of Manchester
+    136 HELLENIC CENTRE FOR MARINE RESEARCH
+    135 Rutgers University
+    134 Swedish University of Agricultural Sciences
+    134 Lethbridge Research Centre
+    133 INRAE
+    133 HMS_Kishony
+    131 University of Texas
+    131 Tampere University
+    131 Brenchley Lab/LVD/NIAID/NIH
+    129 UF-LM
+    129 TMHRI
+    127 UNIVERSITY OF GOETTINGEN
+    122 Forschungszentrum Julich GmbH, Institute of Bio- and Geosciences, 52428 Julich, Germany
+    121 Iowa State University
+    120 University of Illinois
+    119 University of Eastern Finland
+    116 WAGENINGEN UNIVERSITY
+    116 Universidade de Vigo
+    116 TAMU-SAML
+    116 GEOMAR
+    115 "Institute of Vegetables and Flowers, Chinese Academy of Agricultural Sciences"
+    114 Friedrich Schiller Universitat Jena, Germany
+    113 University of Copenhagen
+    113 Center for Microbial Communities
+    113 CEDAR
+    112 EMBL-EBI
+    112 Academic Centre for Dentistry Amsterdam
+    110 UT Austin
+    110 HUVH
+    110 BGI_PATH
+    109 University of Guelph
+    109 TGEN
+    108 CDC-PDD
+    107 Ziziphus jujuba
+    106 University of Chemistry and Technology, Prague
+    105 Observatoire Oceanologique de Banyuls
+    105 Laboratory of Cell Biology and Histology, Molecular Pathology Group, University of Antwerp
+    104 Max Planck Institute for Evolutionary Anthropology
+    104 Indiana University
+    104 Cornell
+    103 Yale University
+    103 UNIVERSITY OF HELSINKI
+    103 University of Georgia
+    102 Jeju National University
+    102 ESTACION EXPERIMENTAL DEL ZAIDIN (CSIC)
+    100 OSU-CGRB
+     98 G2L
+     97 UniversityofJyvaskyla
+     96 Laboratoire Arago
+     96 AUSTRALIAN NATIONAL UNIVERSITY
+     95 Department of Haematology, University of Cambridge Wellcome Trust Sanger Institute Medical Research 
+     95 BILS
+     94 University of Alaska Fairbanks
+     94 UCSF
+     94 Laboratory of Parasitic Diseases, NIAID, NIH
+     93 University of Veterinary Medicine, Vienna (Vetmeduni Vienna)
+     93 University of North 
+     93 Universidade Estadual de Londrina
+     91 EI
+     90 WASHINGTON UNIVERSITY IN ST LOUIS
+     90 UNIVERSITY OF TASMANIA
+     90 THE JACKSON LABORATORY
+     90 Laval University
+     90 Institute of Cardiometabolism And Nutrition
+     90 Center for Gut Microbiome and Nutrition Research, Washington University School of Medicine
+     89 University of California, Davis Genome Center
+     89 Senckenber Biodiversity and Climate Research Centre Frankfurt
+     89 Michigan State University, United States
+     89 GENOME INSTITRUTE OF SINGAPORE
+     89 Duke University
+     89 DUKE UNIV
+     87 ucsc-id
+     84 KAROLINSKA INSITUTET
+     83 Genome Information Sciences
+     82 center
+     81 UNC Chapel Hill
+     81 UC Berkeley
+     81 Max Planck Institute for Developmental Biology
+     81 ETH ZURICH
+     80 UNIVERSITY OF MANCHESTER
+     80 Genome Research Foundation
+     79 Mississippi State University
+     76 European Molecular Biology Laboratory
+     75 SDSU
+     75 Harvard University
+     74 University of Bergen
+     73 University of Nevada, Reno
+     73 University of Missouri
+     73 SLU
+     71 JCRB
+     70 Escola de Engenharia de São Carlos, Universidade de São Paulo - São Carlos, SP, Brazil
+     70 Centre for Arctic Gas Hydrate, Environment and Climate (UiT,Norway)
+     69 The Genome Analysis Centre
+     69 NMRC
+     69 cdc-sbrl
+     68 Univeristy of British Columbia
+     67 Unidad Mixta Universidad Valencia-CSISP
+     66 USDA FSIS
+     66 University of Neuchatel, Switzerland
+     66 University of Granada
+     66 Umass Medical School
+     66 CIT
+     66 Center for microbial ecology and technology, Ghent university
+     65 "University of California, Berkeley"
+     64 NISC
+     64 Biodiversity Research Center, Academia Sinica
+     63 INRA-LBE
+     62 UNIVERSIDAD DE OVIEDO
+     62 Charles Darwin University
+     61 Wetland Research and Training Centre Chilika India
+     61 Universidad de Concepcion, Chile
+     61 Finnish_Environment_Institute
+     59 Towson University
+     59 GReD - CNRS UMR 6293 - Inserm U1103
+     59 CCGB
+     59 Bioinformatics and Computational Biology Branch, OCICB, NIAID
+     57 Southern Medical University
+     57 FRIEDRICH SCHILLER UNIVERSITY JENA
+     56 University of Groningen
+     55 Wageningen University
+     54 Virginia Commonwealth University
+     54 UT-MGS
+     54 MSU
+     54 CUHK
+     53 University of Arizona
+     53 TU Graz
+     53 Institute for General Microbiology
+     53 Facultad de Veterinaria, Universidad Complutense
+     52 NHLBI-LMI
+     52 Federal University of Rio de Janeiro
+     51 UNIVERSITY OF WESTERN AUSTRALIA
+     51 Univeristy of Jyvaskyla
+     51 UCSD
+     51 NIAAA/NIH
+     51 Lifetech
+     51 Cleveland Clinic Foundation
+     50 UMR1347 Agroecology 
+     50 UBC
+     50 The University of Tokyo
+     50 NARMs
+     50 Nanjing University
+     50 Center for Microbial Ecology and Technology (CMET),Coupure Links 653, 9000 Ghent, Belgium
+     49 Zhejiang University of Technology
+     49 Wisconsin National Primate Research Center
+     49 THOMPSON RIVERS UNIVERSITY
+     49 Novogene Bioinformatics Technology CO.ltd
+     49 Leibniz Institute for Age Research - Fritz Lipmann
+     49 Institute
+     48 VHIR
+     48 University of Greifswald
+     48 Universite de Reims Champagne-Ardenne
+     48 QIBEBT
+     48 HAIB
+     48 Biological Institute, University of Copenhagen
+     48 ARO-agricultural research organization
+     47 San Diego State University
+     47 LANL Biosecurity and Public Health
+     46 University of California, Berkeley
+     46 Simon Fraser University
+     46 NATIONAL INSTITUTE OF HEALTH DR. RICARDO JORGE
+     46 Massachusetts Institute of Technology
+     45 University of Melbourne
+     45 Pennsylvania State University
+     45 Louisiana Sate University
+     45 Emory University
+     44 Nursing Research and Translational Science
+     44 Georg-August University of Goettingen
+     43 The Pennsylvania State University
+     43 Oak Ridge National Lab
+     43 NICHD
+     42 UOKNOR
+     42 University of Konstanz
+     42 University of Delaware
+     42 National University of Ireland, Galway
+     41 Uppsala Universoty
+     41 University of Tokyo
+     41 University of Massachusetts Medical School
+     41 University of Cambridge, Department of Plant Sciences
+     41 UBCDB-RL
+     41 PICB
+     41 Agroscope, Agroecology and Environment, Zurich
+     40 UPF
+     40 University of Utah
+     40 INRA (INRA Rennes)
+     40 Cooperative_Oxford_Lab/USDOC/NOAA/NOS/NCCOS
+     39 USDA Forest Service, United States of America
+     39 New Mexico State University
+     39 National Biobank of Thailand
+     39 INIAV
+     39 GLOBE Institute
+     38 University of Hawaii at Manoa
+     38 University of Aveiro
+     38 UBC Heart Lung Innovation Centre
+     38 The Roslin Institute
+     38 National Research Council of Canada
+     38 Kiel University
+     38 Auburn University
+     37 Woods Hole Oceanographic Institution
+     37 University of Colorado Denver Health Sciences Cent
+     37 Translational Genomics Research Institute-North
+     37 Montreal Clinical Research Institute (IRCM)
+     37 MIT
+     36 University of Mississippi
+     36 INDEAR
+     36 Free Universty of Bozen-Bolzano, Bozen-Bolzano, Italy
+     36 Dunnlab
+     36 Colorado School of Mines
+     35 Victoria University of Wellington, New Zealand
+     35 University of Oxford
+     35 The University of Chicago
+     35 ELIXIR Belgium
+     34 UW-Stam
+     34 UNIVERSITY OF CALIFORNIA - SAN DIEGO
+     34 Texas Children's Hospital
+     34 PacBio
+     34 Max Planck Institute for marine Microbiology
+     34 IRCCS Istituto Centro San Giovanni di Dio Fatebenefratelli
+     33 University of Wuerzburg, Germany
+     33 University of California, Riverside
+     33 Research Center for Epigenetic Disease, The Univer
+     33 Max Delbrueck Center
+     33 Chilean Antarctic Institute
+     33 Beijing Institute of Genomics
+     33 Agriculture & Agri-Food Canada
+     32 Stowers Institute
+     32 Heriot-Watt University
+     32 Hasselt University
+     31 Wuhan Botanical Garden, Chinese Academy of Science
+     31 UWGS-JS
+     31 Salk-E
+     31 Portland State University
+     31 Karlsruhe Institute of Technology
+     31 Institute of Biochemistry and Biophysics
+     31 IGA
+     30 Systems and Synthetic Biology Division, Department of Biology and Biological Engineering, Chalmers U
+     30 Oregon State University - Morgun/Shulzhenko lab
+     30 Johns Hopkins University School of Medicine Center
+     30 Istanbul Technical University
+     30 ETH Zurich
+     30 Duke-NUS postgraduate medical school
+     30 Chinese National Human Genome Center at Shanghai
+     29 University of Oklahoma
+     29 University of Colorado School of Medicine
+     29 Universidad de la Republica, Centro Universitario Regional Este
+     29 TzuChi University
+     29 CSIRO
+     29 CSHL
+     29 Brigham Young University
+     29 ARRIAM
+     28 YALE_SL
+     28 USDA/ARS/NADC/FSEPRU
+     28 University of Toronto
+     28 Texas Biomedical Research Institute
+     28 INRAE-LBE
+     28 CPQBA - UNICAMP
+     28 CIC BIOGUNE
+     28 Ben-Gurion Universitiy of the Negev
+     27 University of Wisconsin-Madison
+     27 Swedish Defence Research Agency
+     27 Soil and Environmental Microbial Ecology Group_North Carolina State University
+     27 ROBERT KOCH INSTITUTE
+     27 National Botanical Research Institute
+     27 McGill University
+     27 Helmholtz Zentrum M
+     27 Division of Small Animal Surgery and Orthopaedics, Department of clinical veterinary medicine, Vetsu
+     27 Department of Chemical and Biological Engineering,
+     26 University of Oldenburg
+     26 Technical University of Denmark
+     26 Rural development Administration
+     26 RIVM - National Institute for Public Health and the Environment
+     26 New York University
+     26 National Centre for Biological Sciences
+     26 MCDB, U of Colorado
+     26 MAX PLANCK INSTITUTE FOR MARINE MICROBIOLOGY
+     26 LECOB
+     26 Donald Danforth Plant Science Center
+     26 CNIO
+     26 British Antarctic Survey
+     25 UTGSFSCB-ML
+     25 USDA
+     25 University of Nebraska-Lincoln
+     25 University of Helsinki
+     25 The University of Hong Kong
+     25 Radboud University Nijmegen
+     25 Harvard School of Public Health
+     25 GEOME
+     25 GEOMAR- Helmholtz Center for Ocean Research
+     25 Bharathidasan University
+     24 UNIVERSITY OF SHEFFIELD, DEPARTMENT OF ANIMAL & PL
+     24 University of Queensland
+     24 University of Connecticut
+     24 MPG Operations
+     24 MBRI
+     24 Institute of Animal Nutrition and Botanics
+     24 Central Michigan University
+     24 Center of Marine Sciences - University of Algarve, Faro, Portugal
+     24 Cal. Inst. of Tech., Division of Biology
+     24 AIT Austrian Institute of Technology
+     23 your University or Center SCK-CEN
+     23 Washington State University
+     23 The Rockefeller University
+     23 SIH
+     23 Scripps Translational Science Institute
+     23 PHSA Labs
+     23 Max Planck Institute
+     23 Helicos BioSciences Corporation
+     23 Clark University
+     23 BIGCAS-KL
+     23 Agricultural Biotechnology Institute
+     22 VIB - KULeuven
+     22 UN-NHPGC
+     22 University of Vienna
+     22 University Leipzig
+     22 UC Berkeley / U Michigan
+     22 SC
+     22 OHSU
+     22 MIchigan State University
+     22 Max Planck Institue of Chemcial Ecology
+     22 Marine Biological Laboratory
+     22 Korean Institute of 
+     22 Kansas State University
+     22 HudsonAlpha
+     22 CRI
+     22 Caltech
+     21 University Paris-Sud
+     21 University-of-Alberta
+     21 UB-CSB
+     21 The Jackson Laboratory
+     21 OBSERVATOIRE OCEANOLOGIQUE DE BANYULS
+     21 Institute of Genetics, University of Bern, Switzerland
+     21 Hebrew University of Jerusalem
+     21 Department of Plant Sciences, University of Cambridge
+     21 Columbia University
+     21 ARO-Volcani Center
+     20 University of Münster
+     20 University Children's Hospital Zurich
+     20 Rockefeller University
+     20 Ragon Institute of MGH, MIT and Harvard
+     20 Quest Diagnostics
+     20 NIAID TB Portals Program
+     20 Institute of Biological, Environmental & Rural Sciences, Aberystwyth University
+     20 Imperial College
+     20 Helmholtz Centre for Infection Research
+     20 Harvard Medical School
+     20 Forestry and Forest 
+     20 FGC
+     20 Aarhus University
+     19 University of Maryland
+     19 University Health Network
+     19 UE-CEC
+     19 Public Health Laboratory Centre
+     19 PASTEUR-CA
+     19 NIAID NIH LMVR
+     19 Liverpool Clinical Laboratories
+     19 Institut National de la Recherche Agronomique
+     19 Institute of Biophysics, Academy of Sciences of th
+     19 IMPLAD
+     19 Fred Hutchinson Cancer Research Center
+     19 CENTRE FOR ECOLOGY AND HYDROLOGY
+     19 CEA, Commissariat a l'Energie Atomique et aux Energies Alternatives
+     19 Arizona State University
+     18 Weill Cornell
+     18 UT-Austin
+     18 Rutgers University - Newark
+     18 Research Center for 
+     18 PSU-DL
+     18 Peking University
+     18 Observatoire Oceanologique de banyuls
+     18 NCSU
+     18 MSU-RTSF
+     18 Department of Gynecology and Obstetrics, University Hospital of Essen, Germany
+     18 DDBJ
+     17 XTBG
+     17 UU-MOLEV
+     17 USC
+     17 University of Pennsylvania
+     17 "University of California, Irvine"
+     17 TOHOKUMED
+     17 The Rockefeller University Laboratory of Molecular and Cellular Neuroscience
+     17 Royal Belgian Institute of Natural Sciences
+     17 ROSLIN INSTITUTE, UNIVERSITY OF EDINBURGH
+     17 Public Health Wales (Cardiff)
+     17 Public Health Authority of the Slovak Republic
+     17 Monash University
+     17 MDH_PHL_IDL
+     17 KIZ
+     17 GATECH
+     17 Faculty of Life Science and Technology
+     17 Faculty of Environmental Engineering, College of U
+     17 Complete Genomics
+     17 CNRS
+     17 China Argricultural University
+     17 CESAM-UA
+     17 Ceres, Inc.
+     17 BRIC
+     17 ALFRED WEGENER INSTITUTE FOR POLAR AND MARINE RESEARCH
+     16 (Westphalian Wilhelms) University of Muenster, Germany
+     16 Weizmann Institute of Science
+     16 UPEI
+     16 University of Texas at Austin
+     16 UNIVERSITY OF DELAWARE
+     16 University of alberta
+     16 Universidad de Sevilla
+     16 UNIL
+     16 UC Riverside
+     16 UCL
+     16 The University of East Anglia
+     16 The University of Akron
+     16 Texas Tech University
+     16 PUERTA HIERRO HOSPITAL
+     16 Princeton University
+     16 OILCROP
+     16 Neuroscience Research Institute, UCSB
+     16 Molecular Parasitology Section, Laboratory of Parasitic Diseases, NIAID, NIH
+     16 Molecular Evolution INTA CSIC
+     16 Massachusetts General Hospital
+     16 Gwangju Institute of Science and Technology, South Korea
+     16 EMBL HEIDELBERG
+     16 DEPT OF MICROBIOLOGY
+     16 CUGI
+     16 Cold Spring Harbor Lab
+     16 Center for BioMedical and Environmental Genomics
+     16 Case Western Reserve University
+     16 BAYLOR COLLEGE OF MEDICINE
+     16 Academia Sinica
+     16 Aarhus University, Denmark
+     15 Virginia Tech
+     15 University of Alabama at Birmingham
+     15 NIA
+     15 NCB Naturalis
+     15 NAAS, RDA, Korea
+     15 MatzLab
+     15 Massey University
+     15 LNCC
+     15 Institut Pasteur
+     15 Institute of Biomedical Technologies, National Res
+     15 HZI
+     15 Georgia Institute of Technology
+     15 CRA-GPG
+     15 BYU-DNASC-UL
+     15 BGI-SHENZHEN
+     15 Argonne National Laboratory
+     15 Aberystwyth University
+     14 Zhejiang University
+     14 Van Andel Institute
+     14 Valladolid University
+     14 University of Valencia
+     14 University of Sonora
+     14 University of Maryland, College Park
+     14 University of Edinburgh
+     14 Sichuan University
+     14 NIPGR
+     14 Max Planck Institute for molecular Genetics
+     14 Karolinska Institute
+     14 Institute of Plant and Microbial Biology, Academia
+     14 IIB-INTECH UNSAM
+     14 IBET/ITQB
+     14 HKU
+     14 Georgetown University
+     14 Genome Institute of Singapore
+     14 ECBC
+     14 DOE JGI
+     14 Comav upv
+     14 College of Bioinformation, Chongqing University of
+     14 CIC bioGUNE
+     13 UTRECHT UNIVERSITY
+     13 University of Rome Tor Vergata
+     13 University of Iowa
+     13 University of Alberta
+     13 Università degli studi di Udine
+     13 Technion
+     13 Research Center Borstel
+     13 NIAMS
+     13 National institute of Biological Science, Beijing
+     13 National Institute of Allergy and Infectious Disea
+     13 MBL-UCPH
+     13 Department of Primary Industries
+     13 Centro Nacional de Análisis Genómico
+     13 Carnegie Institution of Washington
+     13 Broad Institute
+     12 WAGENINGEN UNIVERSITY (Bioinformatics)
+     12 UNLV
+     12 University of Virginia
+     12 UNIVERSITY OF VIENNA
+     12 University of Puerto Rico
+     12 University of Illinois at Urbana-Champaign
+     12 University of Chinese Academy of Sciences
+     12 University of California, San Diego
+     12 University College Cork
+     12 Tokyo UNIV.
+     12 Stanford University 
+     12 Seoul National University Veterinary Medicine
+     12 Northwest University
+     12 Lincoln University
+     12 King Abdullah University of Science and Technology
+     12 jhuang
+     12 INSTITUT NATIONAL DE LA RECHERCHE AGRONOMIQUE
+     12 Institute of Zoology
+     12 Institute of Zology,
+     12 Institute of Chemical Technology in Prague, Czech Republic
+     12 INGEBI-CONICET
+     12 Hiberna Corp
+     12 HHU Duesseldorf
+     12 Ghent University - Pharmaceutical Sciences
+     12 Fondazione Edmund Mach
+     12 College of Plant Protection southwest university
+     12 CIRAD
+     12 CHGCS
+     12 Center for Genomic Regulation
+     12 CeBiTec Bielefeld
+     12 cdc-ncezid-rzb
+     12 cdc-cgh-eislb
+     12 California Institute of Technology
+     12 BRGM
+     12 Bigelow Laboratory for Ocean Sciences
+     12 Anand Agricultural University
+     11 Weizmann Institute
+     11 Victor Chang Cardiac Research Institute
+     11 USDA ARS
+     11 Univ. of North Carol
+     11 University of Turin - DIVAPRA
+     11 University of Kentucky
+     11 Sheffield
+     11 School of Life Sciences, Sun Yat-sen University
+     11 RIVM
+     11 NHGRI
+     11 National university of Ireland Galway
+     11 Kyung Hee Univ.
+     11 Keygene
+     11 IMG-GOLD
+     11 Hunan Agricultural University
+     11 Guangdong Academy of Agricultural Sciences
+     11 GenomeTRAKR
+     11 ETH ZURICH D-BSSE
+     11 Department of Life Science, Chung-ang university
+     11 Delft University of Biotechnology
+     10 VCU
+     10 Utah State University
+     10 UPMC
+     10 University of Western Australia
+     10 University of Washington, Genome Sciences
+     10 University of Perpignan
+     10 University of Nottingham
+     10 University of North Carolina at Charlotte
+     10 University Of Manchester
+     10 University of Copenhagen, Faculty of Health and Medical Sciences
+     10 University of Adelaide
+     10 Univerity of Oslo
+     10 Univeristy of Oxford
+     10 TU Dortmund
+     10 Shanghai Ocean University
+     10 Scion
+     10 Roskilde University
+     10 Rockefeller Univ
+     10 Quadram Institute Bioscience
+     10 Nottingham Trent University
+     10 NIH
+     10 Newcastle University
+     10 National Center for Biological Sciences,NCBS-TIFR
+     10 Max Planck Institute for Terrestrial Microbiology
+     10 M. Achtman
+     10 LMVR.NIAID.NIH
+     10 James Cook University
+     10 Istituto Nazionale Genetica Molecolare Romeo ed Enrica Invernizzi, 20122 Milan, Italy.  Department o
+     10 Institute of Pathology
+     10 Institute of Hydrobiology, Chinese Academy of Scie
+     10 IGB, UIUC
+     10 IBV-CSIC
+     10 Harvard University Herbaria
+     10 Harbin Institute of Technology
+     10 Gwangju Institute of Science & Technology
+     10 GIRC
+     10 Facultat de Veterin*ria, Universitat Aut*noma de B
+     10 Erasmus MC-Sophia Children's Hospital
+     10 Dept of BCMP, Harvard Medical School
+     10 CNAP
+     10 BTLSMD
+     10 BIOTEC
+      9 Yonsei
+      9 Weill Cornell Medical College in Qatar
+      9 UWGS-FL
+      9 UNSW
+      9 University of Trieste
+      9 University of New Mexico
+      9 Université Laval
+      9 UMR FARE
+      9 UC-DBS
+      9 Tuskegee University
+      9 Stowers Institute for Medical Research
+      9 ST. LAURENT INSTITUTE
+      9 Stanford University School of Medicine
+      9 School of Life Science, Southwest University
+      9 Public Health Agency of Canada
+      9 National Cancer Centre Singapore
+      9 McMaster University
+      9 Ludwig-Maximilians-Universit*t M*nchen
+      9 KBUSLIRL
+      9 Institute of Ecology and Earth Sciences, University of Tartu, Estonia
+      9 Institute of Biological, Environmental and Rural Sciences, Aberystwyth University, United Kingdom
+      9 Hoffmann-La Roche Inc
+      9 Fudan University
+      9 Federal University of Minas Gerais
+      9 CSIR-IGIB
+      9 CIRI-Inserm-U1111
+      9 Chinese Academy of Agricultural Science
+      9 Children's Mercy Hosiptal
+      9 Brigham and Women's Hospital and Harvard Medical S
+      9 Beijing Genomics Institute-Shenzhen
+      8 VUB
+      8 UVA
+      8 USAMRICD
+      8 University of Wisconsin
+      8 University of South Florida
+      8 University of Milano-Bicocca
+      8 University of Milan
+      8 University of Gothenburg
+      8 University of California, San Francisco
+      8 UNIVERSITY OF CALIFORNIA - DAVIS
+      8 University of Birmin
+      8 Universidade Federal do Rio de Janeiro
+      8 UGAML
+      8 UGA Marine Sciences
+      8 UCDTILL
+      8 UA
+      8 Tulane Cancer Center
+      8 Tongji Univ
+      8 The University of Queensland
+      8 The Scripps Research Institute
+      8 Tel Aviv University
+      8 Teagasc
+      8 St George's, University of London
+      8 School of Biological Sciences, Chung-Ang Universit
+      8 Roslin Institute, University of Edinburgh
+      8 Roche
+      8 Polar Research Institute of China
+      8 PML
+      8 Plant Biology Depart
+      8 Partner Institute for Computational Biology
+      8 NBAGR
+      8 MPIPZ Cologne
+      8 Molecular Evolution INTA-CSIS
+      8 Molecular Evolution INTA-CSIC
+      8 Medical University Graz
+      8 MCRI
+      8 Max-Planck-Institute for Molecular Genetics
+      8 Matis ohf.
+      8 LANZHOU UNIVERSITY
+      8 Jilin Agriculture University
+      8 James Hutton Institute
+      8 Institute of Microbiology, Chinese Academy of Scie
+      8 Henan Agricultural University
+      8 HelmholtzZentrum Munchen
+      8 HELMHOLTZ CENTER FOR INFECTION RESEARCH
+      8 GENOME INSTITUTE OF SINGAPORE
+      8 Genentech B & CB Dept
+      8 FGCZ
+      8 Department of Pathology, University of Cambridge
+      8 Department of Human Genetics, University of Utah
+      8 Charité
+      8 Centro Nacional Patagonico
+      8 Centre for Water Quality and Algae Research, University of Sri Jayewardenepura
+      8 Beth Israel Deaconess Medical Center
+      8 Ben-Gurion University
+      8 AUBURN UNIVERSITY
+      7 Zhejiang Chinese Medical university
+      7 Virginia Bioinformatics Institute
+      7 Vienna Institute of 
+      7 Vetsuisse Faculty Zurich, Switzerland
+      7 URMITE
+      7 University of Toronto Mississauga
+      7 University of Oslo
+      7 University of Liverpool
+      7 Università degli Studi di Verona
+      7 UC, Irvine
+      7 The Wistar Institute
+      7 The University of Melbourne
+      7 The Sainsbury Laboratory
+      7 Texas State University
+      7 St.Laurent Institute
+      7 SIMR
+      7 Shanghai Medical School, Fudan University
+      7 Shanghai Jiao Tong University
+      7 Shandong Agricultural University
+      7 Seoul National University College of Medicine
+      7 Ruhr-University Bochum
+      7 Research Institute of Forestry, Chinese Academy of
+      7 Purdue University
+      7 PSU-MA
+      7 Penn State
+      7 NYAG
+      7 nci
+      7 Monash Univeristy
+      7 MDH-PHL-IDL
+      7 MARBILAB
+      7 LSBI
+      7 Leibniz Universit*t Hannover
+      7 Lanzhou University
+      7 Karolinska Institutet
+      7 Intituto Nacional de Salud Publica
+      7 Institute of Plant Physiology and Ecology, China
+      7 hunnan normal university
+      7 HSRC
+      7 HMP-DACC
+      7 Heidelberg University
+      7 Harvard Medical School, Department of Genetics
+      7 Harvard Medical School - CBMI
+      7 Gregor Mendel Institute
+      7 FUNCTIONAL GENOMICS CENTER ZURICH
+      7 Fred Hutchinson Canc
+      7 Epithelial Carcinogenesis Group
+      7 CNGB
+      7 Characterization of febrile disease landscape in Cambodia via metagenomic pathogen sequencing
+      7 CGBIU
+      7 Carnegie Mellon University
+      7 Biocant
+      7 Alabama A&M University
+      7 1090 Vienna Austria
+      6 Zoologisches Forschungsmuseum Alexander Koenig
+      6 WYOBUERKLE
+      6 WSU-CMMG
+      6 WoldLab
+      6 Wenzhou Medical College
+      6 Virology Department, Sheffield Teaching Hospitals NHS Foundation Trust/Department of Infection, Immu
+      6 URMITE CNRS UMR 6236
+      6 University of Victoria
+      6 University of Texas 
+      6 University of Stirling
+      6 University of South 
+      6 University of Rennes 1
+      6 University of Nordland
+      6 University of New South Wales
+      6 University of Naples Federico II
+      6 University of Massachusetts
+      6 University of Hamburg
+      6 University of Genoa
+      6 UNIVERSITY OF ESSEX
+      6 United States Department of Agriculture
+      6 UCSB
+      6 UC Santa Cruz
+      6 UC San Diego
+      6 UCLA_MCDB
+      6 UCLA
+      6 TUCF
+      6 sysu
+      6 Sun Yat-sen University
+      6 Stockholm University
+      6 SEOUL NAT'L UNIV.
+      6 Science for Life laboratory
+      6 School of Bioscience and Bioengineering, South Chi
+      6 Research Technology 
+      6 Queen's University
+      6 Parco Tecnologico Padano
+      6 North Carolina State University
+      6 NIH/NICHD/PDEGEN/SN
+      6 NICHD/PDEGEN
+      6 Mississippi State University - Institute for Genom
+      6 MDC Berlin
+      6 Max-Delbrueck-Center for Molecular Medicine
+      6 Massachusetts Eye and Ear Infirmary
+      6 KRIBB
+      6 Johannes Gutenberg University Mainz
+      6 JAX
+      6 Institute of applied ecology
+      6 Illinois State University
+      6 IGB Berlin
+      6 Heinrich-Pette-Institute, Leibniz-Institute for experimental Virology
+      6 Gydle, Inc.
+      6 Genedenovo
+      6 Embrapa Genetic Resources and Biotechnology
+      6 Eawag
+      6 dept of biology, university of padova
+      6 Dangchenyuan
+      6 CNRS - UPMC
+      6 CIBIO
+      6 China Agritural University
+      6 Central Research Institute for Dryland Agriculture
+      6 Center for Microbial Ecology at Michigan State University
+      6 Center for Geogenetics, Natural History Museum of 
+      6 CAU
+      6 Catalan Institute for Water Research (ICRA)
+      6 CAMERA
+      6 Botany of Institute,CAS
+      6 Bielefeld University
+      6 Austrlian National University
+      6 Arizona Cancer Center
+      6 ABRCAS
+      5 Yonsei University
+      5 Yale School of Public Health
+      5 WU_ABGC
+      5 Whitehead Institute of Biomedical Research
+      5 Whitehead Institute
+      5 West of Scotland Specialist Virology Centre, NHSGGC / MRC-University of Glasgow Centre for Virus Res
+      5 Virology Department, Royal Infirmary of Edinburgh, NHS Lothian / School of Biological Sciences, Univ
+      5 Virginia Bioinformat
+      5 U.S. Geological Survey, National Research Program, Eastern Branch
+      5 USDA-ARS-BCIRL
+      5 University of Veterinary Medicine Vienna
+      5 University of Pretoria
+      5 University of Padua
+      5 University of Nebraska
+      5 University of minnesota
+      5 University of California Berkeley
+      5 Università degli Studi di Torino
+      5 UC-Berkeley
+      5 TSRI
+      5 The Walter and Eliza Hall Institute of Medical Res
+      5 The Hospital for Sick Children, Genetics and Genome Biology University of Toronto, Department of Mol
+      5 Stanford
+      5 SJTU
+      5 Shanghai Jiaotong University
+      5 Shanghai Institute of Plant Physiology and Ecology
+      5 Saechsische Akademie der Wissenschaften zu Leipzig
+      5 RNG
+      5 QCMG
+      5 Penn State University
+      5 Pacific Biosciences
+      5 Ocean University of China
+      5 NRCC-Biotechnology Research Institute
+      5 Norwegian University of Life Sciences
+      5 NIH-NICHD-DK
+      5 NHGRI/GTB
+      5 NCBI-WGS
+      5 National Center for Genetic engineering and Biotechnology
+      5 MGEL
+      5 Merck
+      5 Max Planck Institute for Marine Microbiology
+      5 majorbio
+      5 liaoning ocean and fisheries science research inst
+      5 Leibniz Institute for Baltic Sea Research
+      5 LANGEBIO-CINVESTAV
+      5 KSU-FEL
+      5 korea polar research institute
+      5 institut genetique et microbiologie
+      5 Institute of Pharmaceutical Sciences
+      5 Institute of Microbial Technology
+      5 Institute of Friut Science
+      5 Institute of Biophysics
+      5 Institute of bioorganic chemistry of the Russian A
+      5 institute of bioinformatics and applied biotechnol
+      5 Institute for Molecular Medicine Finland, Universi
+      5 Institut de Génétique et Microbiologie
+      5 Inner Mongolia University
+      5 IMB-UZH
+      5 Hong Kong University of Science and Technology, China
+      5 HKUST
+      5 Helicos BioSciences
+      5 Heirich-Heine-University Düsseldorf
+      5 Guangxi Institute of Fisheries
+      5 Functional Genomics 
+      5 Escola Superior de Biotecnologia-UCP
+      5 Ecole Polytechnique 
+      5 DukeCHGV
+      5 Dalian Jiaotong University
+      5 CRG
+      5 Chinese Academy of Tropical Agricultural Sciences
+      5 CAS-MPG Partner Institute for Computational Biolog
+      5 CAS
+      5 Boehringer Ingelheim Pharma GmbH & Co KG
+      5 BANGOR-MEFGL
+      4 zhejiang university
+      4 ZF-screens B.V.
+      4 Yellow Sea Fisheries Research Institute, Chinese A
+      4 Yale university
+      4 Wuhan University
+      4 Wright State University
+      4 Western Washington University
+      4 VU University Amsterdam
+      4 VU AMSTERDAM
+      4 Virginia tech
+      4 UW-Madison
+      4 U. Washington
+      4 UT Brown IMM
+      4 Uppsala University, Department of Ecology and Gene
+      4 Unversity of Washington
+      4 University of Western Ontario
+      4 University of Waterloo
+      4 University of St Andrews
+      4 University of South Carolina
+      4 University of Pittsburgh
+      4 University of New Hampshire
+      4 University of Malaya, Malaysia
+      4 University of Glasgow
+      4 University of Cambridge
+      4 University of California - San Francisco
+      4 University of California Davis
+      4 University of California at Davis
+      4 University of Barcelona
+      4 UNIVERSITY OF AMSTERDAM
+      4 University of Amsterdam
+      4 Universiti Kebangsaan Malaysia
+      4 UNICAMP
+      4 Umea Plant Science Centre
+      4 UColD_Med
+      4 UC Davis Genome Center
+      4 UC BERKELEY
+      4 Tulane University He
+      4 The University of Iowa
+      4 The Samuel Roberts Noble Foundation
+      4 Sun yat-sen univeristy
+      4 South    China Botanical Garden, Chinese Academy o
+      4 Sichuan Agricultural University
+      4 Shenzhen University
+      4 Shemyakin-Ovchinnikov Institute of Bioorganic Chem
+      4 SEOUL NATIONAL UNIVERSITY
+      4 seoul national university
+      4 Scripps Institution 
+      4 Santa Clara University
+      4 Salk
+      4 Rubber Research Institute of India, Kottayam 686 0
+      4 Roche NimbleGen
+      4 Queens Medical Centre, Clinical Microbiology Department / DeepSeq Nottingham
+      4 QIBEBT, CAS
+      4 Public Health Agency of Sweden
+      4 Oil Crops Research Institute
+      4 novogene
+      4 Northeast Forestry University
+      4 NIAID-RML-RTS
+      4 National Institute of Plant Genome Research
+      4 Nanjing Forestry University
+      4 MPI-EVA
+      4 Montana State University
+      4 Memorial Sloan-Kettering Cancer Center
+      4 Max Delbrueck Center for Molecular Medicine
+      4 Korea Polar Research Institute
+      4 KORDI
+      4 Johns Hopkins University
+      4 J. Craig Venter Institute
+      4 Istituto Zooprofilattico Sperimentale della Lombardia e del Emilia Romagna (IZSLER)
+      4 Istituto Italiano di Tecnologia
+      4 International Crops Research Institute for the Sem
+      4 Instituto de Agroquimica y Tecnología de Alimentos
+      4 Institute of Zoology Chinese Academy of Sciences
+      4 Institute of Medicinal Plant, Chinese Academy of M
+      4 Institute of Marine Biology and Genetics
+      4 Institute of Biophysics, Academy of Science of the
+      4 Institue of Oceanology,Chinese Academy of Sciences
+      4 Innsbruck Medical University
+      4 Indian Agricultural Research Institute
+      4 IGSP
+      4 IGIB
+      4 IFM-GEOMAR
+      4 Howard Hughes Medical Institute at Children's Hosp
+      4 Hospital for Sick Children
+      4 Harvard OEB
+      4 Gold
+      4 German Cancer Research Center and National Center 
+      4 GEOMAR - Helmholtz Centre for Ocean Research Kiel
+      4 Genotypic Technology
+      4 Genome institute of singapore
+      4 Genome Center UC Davis CA
+      4 Fli Jena
+      4 Division of Genomics of Disease and Development, Institute for Molecular Bioscience, The University 
+      4 DHG-EUSC
+      4 Department of biology Hong Kong Baptist University
+      4 DDPSC
+      4 CSIC
+      4 CSF
+      4 CREG-UNLP
+      4 Corpogen
+      4 College of Plant Protection
+      4 CNPSA
+      4 Cinvestav Unidad Irapuato
+      4 Chinese Research Academy of Enviromental Sciences
+      4 chgc
+      4 Centre for Arctic Gas Hydrate, Environment and Climate
+      4 Central Drug Research Institute
+      4 Center for Genomic Regulation (CRG)
+      4 BOEHRINGER INGELHEIM PHARMA GMBH & CO KG
+      4 Bioinformatics Core Facility, University of Manchester
+      4 BGI and Chinese PLA General Hospital
+      4 Bergen Center for Computational Science
+      4 Auburn
+      4 ARO Volcani Center
+      4 ARO
+      4 Alagappa University
+      4 Agricultural Research Service, US Department of Ag
+      4 Agricultural Research Organization (Volcani Center
+      3 Zhejiang Academy of Agricultural Sciences
+      3 XYZ Lab
+      3 Xiamen University
+      3 Vetmeduni Vienna
+      3 Vaccine Research Center
+      3 UWNL
+      3 USDA Forest Service
+      3 USDA-ARS / Kansas State University
+      3 University of Tartu
+      3 University of Sydney
+      3 University of Stellenbosch
+      3 University of PEI
+      3 University of Nevada, Las Vegas
+      3 University of Montana
+      3 University of Minnesota Duluth
+      3 University of Hong Kong
+      3 University of Hawaii
+      3 University of California, Irvine
+      3 University of Califo
+      3 University of Birmingham
+      3 Universite Laval
+      3 universite-CHU Bordeaux
+      3 Unite de Recherche sur les Maladies Infectieuses et Tropicales Emergentes (URMITE) CNRS, Faculte de 
+      3 UMH-EGG
+      3 UF-ICBR-NS
+      3 UdeM
+      3 UCSF_DR
+      3 UCSF-Abbott Viral Discovery Center
+      3 UCI-KT
+      3 U.C. Berkeley
+      3 UAB
+      3 Tsinghua University
+      3 The Univ. of Tokyo
+      3 The University of Oklahoma
+      3 The University of Auckland
+      3 The Hong Kong University of Science and Tehcnology
+      3 TGen/NAU
+      3 Temple University School of Medicine
+      3 TAMU
+      3 Sun yat-sen university
+      3 STSI
+      3 Southern Cross University
+      3 Sichuan Agriculture University
+      3 Shanghai Jiao Tong University School of Medicine
+      3 shanghaijiaotong University
+      3 Shaanxi Normal University
+      3 SGIL_BARC
+      3 school of life sciences, Xiamen University
+      3 School of Biotechnology and Biomolecular Science, 
+      3 School of Biological Sciences, Research Center for
+      3 Rutgers
+      3 Royal Institute of Technology
+      3 Rice University
+      3 Research Center for Eco-Environmental Sciences, Ch
+      3 Regional Virus Laboratory, Belfast Health and Social Care Trust
+      3 Queensland Univeristy of Technology
+      3 PuKyong University
+      3 POSTECH
+      3 Plant and Food Research
+      3 Peking University, college of life sciences
+      3 Ohio Agriculture Research Development Center
+      3 NYU School of Medicine
+      3 Nofima
+      3 Nicolaus Copernicus 
+      3 NCBI-TEST
+      3 NBRI
+      3 Natural History Museum of Denmark
+      3 National University of Singapore
+      3 National Institute for Basic Biology
+      3 National Centre for Genetic Engineering and Biotec
+      3 Nanjing Agricultural University
+      3 MRC Laboratory of Molecular Biology
+      3 MD Anderson Cancer Center
+      3 Max-Planck Institute
+      3 Los Alamos National Laboratory
+      3 Liverpool School of 
+      3 Life Science College, Hunan Normal University.
+      3 LANGEBIO
+      3 Kyungpook National University, South Korea
+      3 Korea Research Institute of Bioscience and Biotech
+      3 Korean Institute of Science and Technology (KIST)
+      3 Korea Institute of Science and Technology
+      3 Jilin Agricultural University
+      3 Jiangxi Agricultural university
+      3 Jet propulsion laboratory
+      3 Institute of Plant Protection, Chinese Academy of 
+      3 Institute of Pathogen Biology, Chinese Academy of 
+      3 Institute of Oceanology, Chinese Academy of Scienc
+      3 Institute for Genome Sciences - UMB
+      3 Individual
+      3 ILLUMINA
+      3 IFV
+      3 hkust-kaust
+      3 Harbin Medical University
+      3 GMI
+      3 Fudan university
+      3 Florida State University
+      3 Federal University of Pampa
+      3 febit
+      3 ERASMUS MC, UNIVERISTY MEDICAL CENTER
+      3 Environmental Research Institute
+      3 East China Normal University
+      3 Department of Biochemistry and Molecular Genetics,
+      3 Department IFA-Tulln, BOKU
+      3 Delft University of Technology
+      3 CSIR-National Botanical Research Institute
+      3 CRITFC
+      3 Copenhagen university
+      3 ,College of life sciences, Wuhan university
+      3 Chun-Yao Chen lab
+      3 Chinese Academy of Fishery Sciences
+      3 Chengdu Institute of Biology, Chinese Academy of S
+      3 Centre for Enzyme Innovation, University of Portsmouth / Translational Research Laboratory, Portsmou
+      3 Centers for Disease 
+      3 CEG
+      3 CDFD
+      3 CARDIFF SCHOOL OF BIOSCIENCES
+      3 CAFS
+      3 Biology Centre of the Academy of Sciences, Czech Republic
+      3 Bangor University
+      3 Australian Centre for Ecogenomics
+      3 AU-DJF
+      3 Anhui Agricultural University
+      3 AGRESEARCH
+      3 454MSC
+      2 Zhejiang University Insect Institute
+      2 yunnan normal university
+      2 your University or Center Name
+      2 XM U
+      2 WU School of Medicin
+      2 Wuhan university
+      2 Wenzhou Medical College, China
+      2 Weill Cornell Medical College
+      2 UT MD Anderson Cancer Center
+      2 UTAustin
+      2 USDA Agriculture Research Service
+      2 UQSIB
+      2 UPenn
+      2 Univ. Konstanz
+      2 University of Uppsala
+      2 University of Tromsoe
+      2 University of Torino
+      2 UNIVERSITY OF SZEGED
+      2 University of Sheffield, Department of Animal & Pl
+      2 University of Notre 
+      2 University of Nevada Las Vegas
+      2 University of Nebraska Medical Center
+      2 University of Kaiserslautern
+      2 University of Illinois, Urbana-Champaign
+      2 university of florida
+      2 university of Florid
+      2 University of Cincinnati
+      2 University of California, Los Angeles
+      2 University of Bristol
+      2 University of Alberta, Edmonton, Canada
+      2 University at Buffalo
+      2 Universite of Geneva
+      2 Universite de Toulouse ; UPS ; LBCMCP ; 118 route de Narbonne, 31062, Toulouse, France;CNRS ; LBCMCP
+      2 Université de Rennes
+      2 Universitat de Barcelona
+      2 Universitaet Potsdam
+      2 Universidade de Evora
+      2 Universidade de Brasilia
+      2 Universidade da Coruña
+      2 unibas
+      2 UNC-CH
+      2 UNCC
+      2 UFBPGC
+      2 UCSF/HHMI
+      2 twaku
+      2 Tsinghua Univ
+      2 Tongji University
+      2 The University of Texas at Austin
+      2 The University of Arizona
+      2 The Hamner Institutes for Health Sciences
+      2 The First Institute of Oceanography, State Oceanic
+      2 the First Affiliated Hospital, School of Medicine,
+      2 The Australian National University
+      2 Technical University Munich
+      2 Sun Yet-sen University
+      2 St Jude Children's Research Hospital
+      2 Statens Serum Institut
+      2 State Key laboratory of Microbial Technology
+      2 SPG
+      2 Spanish National Center for Biotechnology - CSIC
+      2 South China Sea Institute of Oceanology
+      2 skuldtech
+      2 SKLBC
+      2 Sistemas Genomicos
+      2 sichuan agricultural university
+      2 Shenzhen-PKU-HKUST Medical Center
+      2 Shanghai Institutes for Biological Sciences
+      2 School of Biological Sciences, Chung-Ang universit
+      2 San Francisco State 
+      2 Samsung Medical Center, Sungkyunkwan University School of Medicine, Seoul, Korea
+      2 Salk Institute
+      2 Rutgers Univeristy
+      2 RIKEN_OSC
+      2 RIKEN
+      2 Research And Testing Laboratory
+      2 Plant & Food Research
+      2 Pfizer, Inc.
+      2 PARC-OHSU-VA
+      2 Ocean University of 
+      2 Observatoire Océanologique de Banyuls sur mer
+      2 OARDC, The Ohio State University
+      2 Northwest A&F University
+      2 Northumbria University / South Tees Hospitals NHS Foundation Trust / North Cumbria Integrated Care N
+      2 Nofima Marin
+      2 NMSU
+      2 NIH/NHGRI
+      2 Nicolaus Copernicus University
+      2 NHLBI, NIH
+      2 NCBI-TSA
+      2 NAU-MGGEN
+      2 National YangMing University
+      2 National Veterinary 
+      2 National University of Mexico (UNAM)
+      2 National Institute of Biological Sciences, Beijing
+      2 National Institure of Plant Genome Research
+      2 Murdoch University
+      2 MPI Mol. Plant Physiol.
+      2 MPI Bremen
+      2 Moscow State University, Belozersky Research Insti
+      2 Minzu University of China
+      2 Michael Smith Labs, University of British Columbia
+      2 Medical University Innsbruck
+      2 Mcgill University
+      2 Max Planck Institute for terrestrial microbiology
+      2 Max Planck institute for chemical ecology
+      2 Marine Science Institute
+      2 MARDENLAB
+      2 marbilab
+      2 Madurai Kamaraj University
+      2 Lunds University
+      2 LSHTM
+      2 Kyung Hee University
+      2 Kunming Institute of Zoology, CAS
+      2 Korea University
+      2 KOBIC
+      2 Justus-Liebig University Giessen
+      2 J Craig Venter Institute
+      2 Jagiellonian University
+      2 IUE
+      2 ITB-CNR
+      2 Istituto Nazionale di Oceanografia e di Geofisica Sperimentale
+      2 IRD
+      2 International Centre for Terrestrial Antarctic Research, University of Waikato, New Zealand
+      2 Instituto de Investigação Cientifica Tropical
+      2 Institute of Vegetables,  Shandong Academy of Agri
+      2 Institute of Plant Protection, Chinese Academy of
+      2 Institute of Plant Physiology and Ecology, Shangha
+      2 Institute of Plant Physiology and Ecology
+      2 Institute of Molecular and Cellular Biology
+      2 Institute of Military Veterinary
+      2 Institute of Microbiology, CAS
+      2 Institute of Chinese Academy Science
+      2 Institute of chemical biology and fundamental medi
+      2 Institute Name
+      2 Innsbruck Biocenter
+      2 Indian Institute of Chemical Biology
+      2 Incheon Research Institute of Public Health and En
+      2 IMBUQ
+      2 IKMB, University of 
+      2 icipe
+      2 IBMC
+      2 IAS-CSIC
+      2 IARI-NRCPB
+      2 Guru Gobind Singh Indraprastha University
+      2 GU
+      2 GSC
+      2 Griffith University
+      2 Graduate University Of The Chinese Academy Of Scie
+      2 Graduate University of Chinese Academy of Sciences
+      2 GoldStamp Id
+      2 GlaxoSmithKline
+      2 GENOSCOPE-CEA
+      2 febit synbio gmbh
+      2 Faculty of Veterinary Medicine, Department of Clinical Sciences, FARAH, University of Liege, Liege, 
+      2 European Molecular Biology Laboratory, Heidelberg, Germany
+      2 European Bioinformatics Institute
+      2 EMBRAPA Recursos Geneticos e Biotecnologia
+      2 EMBL-EBI & Wellcome Sanger Institute
+      2 Ecole Polytechnique Fédérale de Lausanne
+      2 ECDC
+      2 EBI
+      2 Earth and life Institute
+      2 Duesseldorf University
+      2 Division of Fish Health Management, Central  Insti
+      2 Department of Plant 
+      2 Department of Life Sciences, NCKU
+      2 Department of biology, Hong Kong Baptist Universit
+      2 Department for Animal Biodiversity
+      2 Data2Bio, LLC
+      2 Data2Bio
+      2 DanKook University
+      2 CSIRO-PI
+      2 CSIRO Entomology
+      2 CSIRO Ecosystem Sciences
+      2 CSIR-IICB
+      2 Crops Research Institute of Guangdong Academy of A
+      2 CRIBI, University of
+      2 Computational Biology Research Center, AIST
+      2 CompleteGenomics
+      2 College of Resources and Environment, Graduate Uni
+      2 College of life sciences, Peking University
+      2 COLD SPRING HARBOR LABORATORY
+      2 Clinical Bioinformatics Area
+      2 Clemson University
+      2 CINVESTAV-Irapuato
+      2 CINVESTAV
+      2 Chung Ang University
+      2 Chinese Academy of Sciences & Yunnan Province, Kun
+      2 Chinese Academy of Forestry
+      2 Chinese Academy of Agricultural Sciences
+      2 Childrens Hospital Boston
+      2 CHGC at Shanghai
+      2 Charles Sturt University
+      2 CHARLES DARWIN UNIVERISTY
+      2 Chalmers University of Technology
+      2 Centro Nacional de Analisis Genomico
+      2 CENTRO DE ASTROBIOLOGIA INTA-CSIC
+      2 Centre for Comparative Genomics
+      2 Central Institute of Freshwater Aquaculture
+      2 Centers for Disease Control and Prevention
+      2 Center for Research 
+      2 Center for Astrobiology INTA-CSIC
+      2 CBMSO
+      2 Cardiff Univesity
+      2 Brown University
+      2 Boston College
+      2 Biology Centre, Institute of Parasitology, Czech A
+      2 Biodiversity and Climate Research Centre
+      2 BGITS-RNA
+      2 BGI and Central South University
+      2 bgi
+      2 Benaroya Research Institute
+      2 Beijing Forestry University
+      2 Baker IDI Heart and Diabetes Institute
+      2 Australian National University
+      2 Andong National University
+      2 American Museum of Natural History
+      2 Alfred Wegener Institute for Polar and Marine Rese
+      2 Agriculture and AgriFood Canada
+      2 ABRII
+      2 AAFC-SCPFRC
+      2 ??????
+      1 Zoology Department, University of Oxford
+      1 Zoologisches Forschungsmuseum A. Koenig
+      1 Zoological Museum of the University of Hamburg
+      1 Zoological Institute
+      1 ZMB
+      1 Zhejiang Wanli University
+      1 Zhejiang University, Hangzhou, P. R. China
+      1 Zhe Jiang university
+      1 Zhejiang university
+      1 Zhejiang Agriculture and Forestry University
+      1 Zentrum für Molekulare Biodiversitätsforschung, Zo
+      1 Yunnan normal university
+      1 Yonsei Univeristy
+      1 YC Kim
+      1 Yale
+      1 Xishuangbanna Tropical Botanical Garden, Chinese A
+      1 Xcelris labs ltd
+      1 Wuhan Botanical Garden, The Chinese Academy of Sci
+      1 WU-ABGC
+      1 WSU-CH
+      1 West Virginia University,
+      1 Wayne State Universi
+      1 WAGENINGEN UR
+      1 Wadsworth Center, NYSDOH
+      1 Vrije Universiteit Brussel
+      1 virginia bioinformatics institute
+      1 Victoria University of Wellington
+      1 VIB-UGent
+      1 VIB
+      1 Verticillium dahilae
+      1 VCU-CSBC
+      1 UWM-GLWI
+      1 UWBL
+      1 UTMB at Galveston
+      1 UTHSC-CITG
+      1 USTQIAN
+      1 USDA FS
+      1 USDA-FP
+      1 USDA-ARS-PSM
+      1 U.S. Army Engineer Research and Development Center
+      1 UPPSALA UNIVERISTY
+      1 U of Rochester
+      1 University of Wiscon
+      1 University of Warwick
+      1 University of Turku
+      1 University of Tromsø
+      1 UNIVERSITY OF TORINO
+      1 University of Thessaly
+      1 UNIVERSITY OF ST ANDREWS
+      1 University of Southern Mississippi
+      1 University of Southern California, Molecular and C
+      1 University of S*o Paulo
+      1 UNIVERSITY OF SANTIAGO DE COMPOSTELA
+      1 University of Rochester School of Medicine and Den
+      1 University of Rochester
+      1 University of Rhode Island
+      1 University of Regensburg
+      1 University Of Pennsylvania
+      1 University of Padova
+      1 University of Ottawa
+      1 University of North Carolina at Chapel Hill
+      1 University of New England
+      1 UNIVERSITY OF MELBOURNE
+      1 University of Manitoba
+      1 university of malaya
+      1 University of Malaga
+      1 University of Limerick, Life Sciences, Ireland
+      1 University Of Leicester, University of Bergen
+      1 University of Illinois at Urbana Champaign
+      1 UNIVERSITY OF ILLINOIS
+      1 University of Idaho, Department of Biological Scie
+      1 university of guelph
+      1 university of ghent
+      1 University of Geneva
+      1 UNIVERSITY OF FLORIDA
+      1 UNIVERSITY OF COPENHAGEN, DEPARTMENT OF GEOSCIENCES AND NATURAL RESOURCE MANAGEMENT
+      1 University of Connecitcut
+      1 University of Cambridge, UK
+      1 UNIVERSITY OF CALIFORNIA - SAN FRANCISCO
+      1 UNiversity of California, Irvine
+      1 University of California-Davis
+      1 University of California at Irvine
+      1 University of Bern
+      1 University of Auckland
+      1 University of Arkansas
+      1 UNIVERSITY OF ADELAIDE
+      1 University of Aberdeen
+      1 University Medicine Greifswald
+      1 University Federal of Para
+      1 University College London, Great Ormond Street Hospital for Children NHS Foundation Trust, Imperial 
+      1 Universiti Malaya
+      1 Université Pierre et Marie Curie
+      1 Université Jean Monnet
+      1 Universite du Littoral Cote d'Opale
+      1 Université d'Orléans
+      1 Université Claude Bernard Lyon 1
+      1 Universite Blaise-Pascal, Clermont-Ferrand
+      1 Universität Bremen
+      1 Universidad Nacional de Colombia
+      1 Universidade Federal do Pará
+      1 Universidade Federal do Par*
+      1 UNIVERSIDADE FEDERAL DO ESPIRITO SANTO
+      1 Universidade Estadua
+      1 Universidade de Sao Paulo
+      1 Universidad de Valencia
+      1 Universidad de Antioquia
+      1 Universidad Complutense de Madrid
+      1 Univeristy of Florida
+      1 UNC Charlotte
+      1 UNC at Chapel Hill
+      1 UNAM
+      1 UMDNJ-NJMS
+      1 UMASS Medical School
+      1 ULg
+      1 UFZ
+      1 Udine University, Italy
+      1 UCSD / Bioengineerin
+      1 UCLA-NL
+      1 UCD_DPS
+      1 UCC
+      1 Tulane University
+      1 Tufts University
+      1 TRICAAS
+      1 TH Wildau
+      1 Thompson Rivers University
+      1 The University of Western Australia
+      1 The University of Hong KOng
+      1 The Research Institute of Forestry, Chinese Academy of Forestry
+      1 The Chinese Academy of Forestry
+      1 The Broad Institute / Dana-Farber Cancer Institute
+      1 TGen
+      1 Test Institute
+      1 Tel Aviv Sourasky Medical Center
+      1 Tea Research Institute of Chinese Academy of Agric
+      1 Tea Research Institute, Guangdong Academy of Agric
+      1 SYSU
+      1 Swarthmore College
+      1 SUDB-QL
+      1 St Jude Children's Research Hosp
+      1 State Key Laboratory of Microbial Metabolism and S
+      1 SRM University
+      1 Southwest university, China
+      1 Southern Illinois University Carbondale
+      1 South China Sea Institute of Oceanology, Chinese A
+      1 southchina normal university
+      1 South China Agricultural University
+      1 South African Sugarcane Research Institute
+      1 SNU
+      1 SINTEF Materials and Chemistry
+      1 Shihezi University
+      1 Shangqiu Normal University
+      1 shanghai jiaotong university
+      1 Shanghai Insititutes for Biological Sciences
+      1 Shandong University
+      1 SHAGHAI OCEAN UNIVERSITY
+      1 Scripps Translationa
+      1 School of the Environment, Nanjing University
+      1 School of Biological Sciences, University of Auckl
+      1 Sangamo Biosciences Inc.
+      1 Sandor
+      1 Rutgers, the State University of New Jersey
+      1 Royal Netherlands Institute for Sea Research
+      1 RGCB
+      1 Research Institute of Physico-Chemical Medicine
+      1 Research Institute of Physical-Chemical Medicine
+      1 Red Cross Transfusion Service for Upper Austria
+      1 Queen's University Belfast, Belfast, Northern Ireland, UK
+      1 Qld Dept of Agriculture, Fisheries and Forestry
+      1 Qingdao University of Science and Technology
+      1 Qingdao University of Science an
+      1 QAU Islamabd Pakistan
+      1 princeton university
+      1 PR0174_GenomeTrakr
+      1 PNNL-EMSL
+      1 Plant Research International
+      1 Plant Biotechnology 
+      1 PHILIP MORRIS INTERNATIONAL R&D
+      1 PGP
+      1 personal
+      1 peanut research institute
+      1 Pasteur Institute Paris
+      1 Pacific Biosciences, CA
+      1 Oxford Nanopore Technologies
+      1 ONPRC
+      1 Oklahoma State University, Danforth Center
+      1 Oil Crops Research Institute of Chinese Academy of
+      1 OID-SelfService
+      1 Ocean university of China
+      1 NRC-PBI
+      1 Novozymes
+      1 Northwest Fisheries Science Center
+      1 Northeast Forestry Univeristy
+      1 NOAA, NMFS, Northwest Fisheries Science Center
+      1 Ningbo University
+      1 NIH/NIDDK
+      1 NICEM
+      1 NIBS
+      1 nibs
+      1 NIAID LMVR
+      1 NCSU-GSL
+      1 NCKU
+      1 NBACC
+      1 National Taiwan Normal University
+      1 National Institute of Genetics
+      1 National Fisheries Research and Development Instit
+      1 National Chemical Laboratory
+      1 National Center of Genetic Engineering and Biotech
+      1 National Center for Cool and Cold Water Aquacultur
+      1 National Bureau of Animal Genetic Resources, Sando
+      1 National Botanical research Institute
+      1 NANOBIOTEC
+      1 Nanjing Institute of Geography and Limnology, Chin
+      1 MUW
+      1 Mus*um National d'Histoire Naturelle de Paris
+      1 Mount Desert Island 
+      1 Monsanto Company
+      1 mit
+      1 Mie University
+      1 MHRI
+      1 MFPL
+      1 MEMORIAL SLOAN KETTERING CANCER CENTER
+      1 meercas
+      1 McGill University and Genome Quebec Innovation Cen
+      1 Max-Planck-Institut 
+      1 MATIS OHF.
+      1 Martin-Luther-University Halle-Wittenberg, Institu
+      1 Malaysia Genome Institute
+      1 Magee Womens Research Institute
+      1 Lund University
+      1 LUMC
+      1 Lomonosov Moscow State University
+      1 LMU Munich
+      1 Liao Ning Normal University
+      1 Leiden University Medical Center
+      1 LEIBNIZ INSTITUTE FOR BALTIC SEA RESEARCH, WARNEMUENDE
+      1 LBNL
+      1 La Jolla Institute for Allergy and Immunology
+      1 Kyungpook National University
+      1 Kunming Institute of Botany,CAS
+      1 Koret School of Veterinary Medicine, The R.H Smith
+      1 Korea BioInformation Center, Korea Research Instit
+      1 KIST
+      1 kings college
+      1 KIAE-LGA
+      1 KAUST
+      1 Karpaga Vinayaga College of Engineering and Techno
+      1 Joint Unit of Research in Genomics and Health: Cen
+      1 Jinan University
+      1 Jimei University
+      1 JGI Project ID
+      1 IZB, University of Bern
+      1 ISUCPG
+      1 Istanbul Bilgi University
+      1 Israel Oceanographic and Limnological research
+      1 IRNAS-CSIC
+      1 IRIDIAN GENOMES
+      1 IRIDIAN
+      1 iranbioinformatic
+      1 IPK-Gatersleben
+      1 IPK-G
+      1 IOCAS
+      1 INTA
+      1 Institut PAsteur Montevideo
+      1 Institut Pasteur - Lille
+      1 Institut Pasteur, FRANCE
+      1 Instituto de Biologia Molecular y Celular de Plant
+      1 Instituto de Bioinform*tica e Biotecnologia
+      1 Institute of Soil Science, Chinese Academy of Scie
+      1 Institute of Plant Physiology and Ecology, SIBS, C
+      1 Institute of oceanology, Chinese academy of scienc
+      1 Institute of Oceanology , Chinese Academy of  Scie
+      1 Institute of Molecular Life Science University Zurich
+      1 Institute of Molecular and Cell Biology
+      1 Institute of Microbiology, Xinjiang Academy of Agr
+      1 Institute of Medicinal Plants, Peking Union Medica
+      1 Institute of Medicinal Plant Development
+      1 Institute of Hydrobiology
+      1 Institute of General Microbiology, Kiel University
+      1 Institute of Fruit Tree Research, Guangdong Academ
+      1 Institute of Economic Crops Breeding and Cultivati
+      1 Institute of Crop Sciences, Chinese Academy of Agr
+      1 Institute of Cotton Research, Chinese Academy of A
+      1 Institute of Botany, Chinese Academy of Sciences
+      1 Institute of Bast Fiber Crops and Center of Southe
+      1 Institute of Animal Science, CAAS
+      1 Institute for Stem Cell Biology and Regenerative M
+      1 Institute for Research in Biomedicine Barcelona
+      1 Institute for Agricultural and Fisheries Research
+      1 Institut de Recerca de la SIDA
+      1 Institue of oceanology, Chinese academic of scienc
+      1 inStem
+      1 INMI - National Institute for Infectious Diseases 
+      1 Inha univ.
+      1 imtech
+      1 Implad
+      1 implad
+      1 Imperial College London
+      1 IMBGA
+      1 IMAR-Center. University of the Azores
+      1 Illumina
+      1 IEB
+      1 ibp
+      1 IBEST
+      1 IASMA research centre FEM Fundation
+      1 Huazhong University of Science and Technology
+      1 Huazhong Agriculture University
+      1 HPA
+      1 Howard Hughes Medical Institute
+      1 Hospital Universitario 12 de Octubre
+      1 Hôpital Charles Nicolle Tunis
+      1 Hong Kong University of Science and Technology
+      1 Hong Kong Baptist University
+      1 hku
+      1 Hiroshima University
+      1 HHMI/Brandeis University
+      1 Heriot-Watt University, Edinburgh, Scotland
+      1 henan academy of agricultural sciences
+      1 HelmholtzZentrum München
+      1 Hellenic Centre for Marine Research
+      1 Health Protection Agency
+      1 harbin institute of technology
+      1 Gurdon Institute
+      1 Guizhou University
+      1 Guangdong Ocean University
+      1 Great Lake Bioenergy
+      1 goat
+      1 GNF (Genomics Institute of the Novartis Research F
+      1 GNF
+      1 Genoscope CEA
+      1 Geneva University Hospitals
+      1 GBSF_UCD
+      1 Gaziosmanpasa University
+      1 Gachon University
+      1 Fundação Antônio Pru
+      1 Funcrypta
+      1 Fujian Agriculture and Forestry University
+      1 Free University of Berlin
+      1 FORGEN
+      1 Forestry and Agricultural Biotechnology Institute
+      1 Floragenex
+      1 Flanders Institute f
+      1 FDA
+      1 Facultad de Medicina
+      1 Evolutionary Genomics Group, División de Microbiol
+      1 Eureka Genomics
+      1 ERDC, USACE
+      1 Energy Biosciences Institute
+      1 EMBL-EBI - United Kingdom
+      1 Ege University
+      1 EDLC-CDC
+      1 Edinburgh University
+      1 EBI-test-mhunt
+      1 East China University Of Science And Technology
+      1 DUKE
+      1 DTU-CfB
+      1 DSCBC
+      1 Dongguk Univ
+      1 División de Microbio
+      1 Dept. of Microbial Ecology, University of Vienna
+      1 Dept. of Dermatology, School of Medicine, UC San D
+      1 Dept. of Biotechnology Yonsei Univ.
+      1 Dept. Genetica UV
+      1 Dep, of Limnology
+      1 DEPARTMENT OF ZOOLOGY
+      1 Department of Zoolog
+      1 Department of Plant and Environmental Sciences, Un
+      1 Department of Ornamental Horticulture, China Agric
+      1 Department of Genetics, University Of Cambridge
+      1 Department of Entomology
+      1 Department of Animal Science and Technology, Hebei
+      1 Dalian Institute of Chemical Physics
+      1 Dalhousie University
+      1 Cytogenetics Institute, Nanjing Agricultural Unive
+      1 CU Boulder
+      1 CSTB
+      1 CSIRO Plant Industry
+      1 CSIR-NEIST
+      1 CSIR-IHBT
+      1 CSB
+      1 Council for Scientific and Industrial Research (CS
+      1 Corporacion Corpogen
+      1 Consortium for Comparative Genomics, University of
+      1 Concordia University
+      1 Complutense University
+      1 company
+      1 College of Veterinary Medicine, Gyeongsang Nationa
+      1 College of Resources and Environmental Sciences, N
+      1 College of Pastoral Agriculture Science and Techno
+      1 College of oceanography and evironmental science o
+      1 College of Marine Life Science, Ocean University o
+      1 College of Life Sciences, Wuhan University
+      1 College of Life Sciences of Hebei University
+      1 College of Biological Sciences in China Agricultur
+      1 College of Agronomy, Guangxi University
+      1 Coconut Research Institute
+      1 CNRS/UNIVERSITE MONTPELLIER 2
+      1 CNRS/UMR 7278
+      1 C.N.R. - Institute for Coastal Marine Environment 
+      1 CNR
+      1 CNB
+      1 CNAG
+      1 CITRUS RESEARCH AND EDUCATION CENTER
+      1 Cincinnati Children's Hospital Medical Center
+      1 CICITEM-Univ. de Antofagasta
+      1 CIBIO-Inbio
+      1 Chung-ang university
+      1 Chinese National Hum
+      1 Chinese Academy of Chinese Academy of Inspection a
+      1 China University of Geosciences
+      1 China Jiliang University, Zhejiang Provincial Key 
+      1 China Jiliang University, Zhejiang Provincial Key
+      1 China Academy of Chinese Medicinal Sciences
+      1 Charit* Universit*ts
+      1 Centro Superior de Investigacion en Salud Publica
+      1 Centre for GeoGenetics, Natural History Museum, University of Copenhagen, Denmark
+      1 Centre for Chemical Biology (CCB@USM)
+      1 Centers for Disease Control
+      1 Center for New Medicine Research, Changchun Univer
+      1 Center for Microbial Oceanography and Research, University of Hawai'i at Manoa
+      1 CEINGE Biotecnologie Avanzate
+      1 CeBiTec
+      1 CEBAS-CSIC
+      1 CCMAR - Center of Marines Sciences
+      1 CCMAR
+      1 cbmso
+      1 CBCB
+      1 cas in marine Biology
+      1 CAREERI
+      1 BWH Department of Pathology, Harvard Medical Schoo
+      1 Burnet Institute
+      1 Brno University of Technology
+      1 BRI-NRC
+      1 Boyce Thompson Institute, Cornell Univeristy
+      1 Boston University
+      1 Bose Institute, Kolkata
+      1 Boku University Vienna, Austria
+      1 BMR Genomics srl
+      1 Biomol-Informatics
+      1 BGI-Shenzhen
+      1 BGI Research Institute
+      1 Ben Gurion University of the Negev
+      1 Beijing Institute of Genomics, Chinese Academy of 
+      1 Beijing institute of genomics
+      1 Beijing Institute of Genomices
+      1 beijing genomics insitute
+      1 Beijing Genome Institute
+      1 Beijing forestry university
+      1 BC Centre for Excellence in HIV/AIDS
+      1 BC
+      1 BAYGEN
+      1 Battelle Memorial Institute
+      1 Banaras Hindu University
+      1 Austrian Institute of Technology
+      1 Austrian Academy of Sciences
+      1 Arkansas State University
+      1 APF
+      1 Annamalai University
+      1 Animal Health Trust
+      1 Animal Health and Veterinary Laboratories Agency
+      1 Allegheny Singer Research Institute
+      1 ALFRED-WEGENER-INSTITUTE
+      1 Alfred-Wegener-Institute
+      1 Agriculture and Agri-Food Canada
+      1 Agricultural Research Organisation (ARO), Volcani 
+      1 Agricultural Research Organisation (ARO), Volcani
+      1 AgResearch
+      1 ACNFP
+      1 Accounts for workshop participants
+      1 Abersytwyth University
+      1 AAUIN
+      1 4D Pharma Cork Limited
+      1 1st Hospital of Zhejiang University
+      1 1. Liaoning Ocean and Fisheries Science Research I
+      1 ??
