@@ -1,6 +1,8 @@
 # biosample-basex
 Using XQueries in a BaseX database to convert NCBI's BioSample database from XML to SQLite.
 
+**Required SQLite3 3.36**
+
 NCBI 
 
 Name             Resources  Size         Input Path                                                                                           
