@@ -2,6 +2,7 @@
 #del_from = 12500001
 #biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
 #BASEXCMD = ???
+#final_sqlite_gz_dest = ???
 
 ifneq (,$(wildcard ./.env))
     include .env
@@ -12,15 +13,10 @@ endif
 
 # https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
 
-##export PROJDIR=/global/cfs/cdirs/m3513/endurable/biosample/mam
-##export BASEXCMD=$(PROJDIR)/biosample-basex/basex/bin/basex
-
-## just require that basex binaries are on the path?
-## and use the default data directory?
+## use the default BaseX data directory?
 ## remember that we will be looping over all databases for some queries
 
-# rearrange xq and sql file folders
-
+# TODO rearrange xq and sql file folders
 ## work on file and variable naming conventions
 ## capitalization
 ## count X by Y
@@ -28,7 +24,7 @@ endif
 .PHONY: all clean biosample-basex check_env final_sqlite_gz_dest reports
 
 all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz
-# doesn't include final_sqlite_gz_dest
+# doesn't include final_sqlite_gz_dest OR the reports
 
 reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv
 
@@ -118,7 +114,7 @@ target/biosample_basex.db.gz:
 
 # on cori, /global/cfs/cdirs/m3513/www/biosample is exposed at https://portal.nersc.gov/project/m3513/biosample
 final_sqlite_gz_dest: target/biosample_basex.db.gz
-	cp ${final_sqlite_gz_dest} ${final_sqlite_gz_dest}
+	cp $< ${final_sqlite_gz_dest}
 	chmod 777 ${final_sqlite_gz_dest}
 
 reports/grow_facil_pattern.tsv:
