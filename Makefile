@@ -32,7 +32,7 @@ remind:
 	-pip list
 	-screen -ls
 
-all: remind clean load_reqs check_env \
+all: remind clean check_env \
 	biosample-basex basex_reports \
 	target/biosample_basex.db target/env_package_repair_new.tsv sqlite_reports \
 	target/biosample_basex.db.gz
