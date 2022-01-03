@@ -30,8 +30,28 @@ https://docs.basex.org/wiki/Main_Page
 https://basex.org/download/
 
 
+## NERSC cori specific notes
 
-TODO: update for running on NERSC cori
+- `cd /global/cfs/cdirs/m3513/endurable/biosample`
+- `git clone git@github.com:turbomam/biosample-basex.git` 
+- `wget` the latest BaseX zip archive
+    - 2022-01-02: `wget https://files.basex.org/releases/9.6.4/BaseX964.zip`
+- `unzip BaseX964.zip`
+- increase the Java memory allocation in `basex/bin/basex`
+    - `BASEX_JVM="-Xmx96g $BASEX_JVM"`
+    - That may be more than necessary. Seems to run OK on an Intel MacBook Pro with 24 GB allocated.
+- `cp biosample-basex/template.env biosample-basex/.env`
+- edit `biosample-basex/.env`
+    - `BASEXCMD = ../basex/bin/basex`
+    - The value for `del_from` should be roughly half the number of BioSamples. The suggested value of 12500001 should be reasonable but could be revised after downloading and unpacking the BioSample XML file. Run something like `tail -n 50 target` at the shell prompt, note the `id` attribute of the last `<BioSample>`, and set `del_from` to an integer close to one half of that last `id` value. 
+- Start a session manager like `screen`. If you get disconnected, it may be tricking to log back inot the same cori node because of load balancing, but scripts started before the disconnection should run to completion. It doesn't hurt to force your client computer to stay awake with something like `caffeine`.
+- `module load python`
+    - On cori, this makes common Python paackages like `pandas` available. On other systems, users should create a `venv` virtual environment, enter it, and run `pip install -r requirments.txt`
+- cd `biosample-basex/`
+- `make all`
 
-results can be foudn at https://portal.nersc.gov/project/m3513/biosample/
+----
 
+- 2022-01-02 15:20
+
+results can be found at https://portal.nersc.gov/project/m3513/biosample/
