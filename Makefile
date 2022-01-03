@@ -143,6 +143,14 @@ basex_list.txt:
 	$(BASEXCMD) -c "list" > $@
 
 # hardcoded db and target
+biosample_set_1_info_db.txt:
+	$(BASEXCMD) -c "open biosample_set_1 ; info db" > $@
+
+# hardcoded db and target
+biosample_set_2_info_db.txt:
+	$(BASEXCMD) -c "open biosample_set_2 ; info db" > $@
+
+# hardcoded db and target
 biosample_set_1_info_index.txt:
 	$(BASEXCMD) -c "open biosample_set_1 ; info index" > $@
 
