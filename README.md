@@ -3,13 +3,14 @@ Using XQueries in a BaseX database to convert NCBI's BioSample database from XML
 
 **Requires SQLite3 3.32**
 
-NCBI 
+NCBI attributes vs XML attributes blah blah blah
 
+```
 Name             Resources  Size         Input Path                                                                                           
 --------------------------------------------------------------------------------------------------------------------------------------------
 biosample_set_1  1          32517967506  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_under_12500001.xml  
 biosample_set_2  1          30367728281  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_over_12500001.xml   
-
+```
 
 Specificlly, the result is a database with the following tables:
 - all_attribs
@@ -19,9 +20,9 @@ Specificlly, the result is a database with the following tables:
 - non_attribute_metadata
 
 As of 2022-01-03
-SQLite DBs contain minimal indices
-biosample_basex.db.gz: 7.7 GB
-biosample_basex.db:   67.9 GB
+_The SQLite DBs contain minimal indices_
+- biosample_basex.db.gz: 7.7 GB
+- biosample_basex.db:   67.9 GB
 
 BaseX can be installed with homebrew on Macs or `apt-get` on Ubuntu Linux machines. It's open-source software.
 
