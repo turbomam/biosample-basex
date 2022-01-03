@@ -29,7 +29,7 @@ remind:
 	@echo "DON'T FORGET 'screen' FOR REMOTE SYSTEMS INCLUDING CORI"
 	@echo
 	-module list
-	-pip list
+	-pip list | grep pandas
 	-screen -ls
 
 all: remind clean check_env \
