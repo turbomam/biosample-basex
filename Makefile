@@ -21,17 +21,28 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: all clean biosample-basex check_env final_sqlite_gz_dest reports ha_highlights_reports
+.PHONY: remind all clean biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports sqlite_reports
 
+remind:
+	@echo
+	@echo "DON'T FORGET 'module load python/3.9-anaconda-2021.11' FOR CORI OR 'source venv/bin/activate' FOR OTHER SYSTEMS"
+	@echo
 
-all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz reports
+all: remind clean load_reqs check_env \
+	biosample-basex basex_reports \
+	target/biosample_basex.db target/env_package_repair_new.tsv sqlite_reports \
+	target/biosample_basex.db.gz
+
 # doesn't include final_sqlite_gz_dest
 
 # not cleaning out previous reports yet
-reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv \
-	ha_highlights_reports \
-	basex_list.txt \
-	biosample_set_1_info_index.txt biosample_set_2_info_index.txt
+# ha_highlights_reports fails on cori
+#   value_counts() got an unexpected keyword argument 'dropna'
+sqlite_reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv ha_highlights_reports
+
+basex_reports: reports/basex_list.txt \
+	reports/biosample_set_1_info_db.txt reports/biosample_set_1_info_index.txt \
+	reports/biosample_set_2_info_db.txt reports/biosample_set_2_info_index.txt
 
 check_env:
 	echo ${del_from}
@@ -122,6 +133,8 @@ final_sqlite_gz_dest: target/biosample_basex.db.gz
 	cp $< ${final_sqlite_gz_dest}
 	chmod 777 ${final_sqlite_gz_dest}
 
+# ----
+
 reports/grow_facil_pattern.tsv:
 	python util/investigate_unharmonized.py \
 		--pattern %grow%facil% \
@@ -139,22 +152,22 @@ ha_highlights_reports:
 		--database_file target/biosample_basex.db \
 		--output_dir reports
 
-basex_list.txt:
+reports/basex_list.txt:
 	$(BASEXCMD) -c "list" > $@
 
 # hardcoded db and target
-report/biosample_set_1_info_db.txt:
+reports/biosample_set_1_info_db.txt:
 	$(BASEXCMD) -c "open biosample_set_1 ; info db" > $@
 
 # hardcoded db and target
-report/biosample_set_2_info_db.txt:
+reports/biosample_set_2_info_db.txt:
 	$(BASEXCMD) -c "open biosample_set_2 ; info db" > $@
 
 # hardcoded db and target
-report/biosample_set_1_info_index.txt:
+reports/biosample_set_1_info_index.txt:
 	$(BASEXCMD) -c "open biosample_set_1 ; info index" > $@
 
 # hardcoded db and target
-report/biosample_set_2_info_index.txt:
+reports/biosample_set_2_info_index.txt:
 	$(BASEXCMD) -c "open biosample_set_2 ; info index" > $@
 
