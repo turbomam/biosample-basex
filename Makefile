@@ -27,7 +27,7 @@ endif
 all: clean biosample-basex target/biosample_basex.db target/env_package_repair_new.tsv target/biosample_basex.db.gz reports
 # doesn't include final_sqlite_gz_dest
 
-
+# not cleaning out previous reports yet
 reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv \
 	ha_highlights_reports \
 	basex_list.txt \
@@ -143,18 +143,18 @@ basex_list.txt:
 	$(BASEXCMD) -c "list" > $@
 
 # hardcoded db and target
-biosample_set_1_info_db.txt:
+report/biosample_set_1_info_db.txt:
 	$(BASEXCMD) -c "open biosample_set_1 ; info db" > $@
 
 # hardcoded db and target
-biosample_set_2_info_db.txt:
+report/biosample_set_2_info_db.txt:
 	$(BASEXCMD) -c "open biosample_set_2 ; info db" > $@
 
 # hardcoded db and target
-biosample_set_1_info_index.txt:
+report/biosample_set_1_info_index.txt:
 	$(BASEXCMD) -c "open biosample_set_1 ; info index" > $@
 
 # hardcoded db and target
-biosample_set_2_info_index.txt:
+report/biosample_set_2_info_index.txt:
 	$(BASEXCMD) -c "open biosample_set_2 ; info index" > $@
 
