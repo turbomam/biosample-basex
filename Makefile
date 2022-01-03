@@ -26,7 +26,11 @@ endif
 remind:
 	@echo
 	@echo "DON'T FORGET 'module load python/3.9-anaconda-2021.11' FOR CORI OR 'source venv/bin/activate' FOR OTHER SYSTEMS"
+	@echo "DON'T FORGET 'screen' FOR REMOTE SYSTEMS INCLUDING CORI"
 	@echo
+	-module list
+	-pip list
+	-screen -ls
 
 all: remind clean load_reqs check_env \
 	biosample-basex basex_reports \
