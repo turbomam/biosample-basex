@@ -13,7 +13,7 @@ endif
 
 # https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
 
-## use the default BaseX data directory?
+## uses the default BaseX data directory
 ## remember that we will be looping over all databases for some queries
 
 # TODO rearrange xq and sql file folders
@@ -68,14 +68,21 @@ target/biosample_basex.db:
 	sqlite3 target/biosample_basex.db < non_attribute_metadata.sql
 	$(BASEXCMD) queries/all_biosample_attributes_values_by_raw_id.xq > target/all_biosample_attributes_values_by_raw_id.tsv
 	$(BASEXCMD) queries/biosample_non_attribute_metadata_wide.xq > target/biosample_non_attribute_metadata_wide.tsv
-	sqlite3 target/biosample_basex.db ".mode tabs" ".import --skip 1 target/all_biosample_attributes_values_by_raw_id.tsv all_attribs" ""
-	sqlite3 target/biosample_basex.db ".mode tabs" ".import --skip 1 target/biosample_non_attribute_metadata_wide.tsv non_attribute_metadata" ""
+	sqlite3 target/biosample_basex.db \
+		".mode tabs" ".import --skip 1 target/all_biosample_attributes_values_by_raw_id.tsv all_attribs" ""
+	sqlite3 target/biosample_basex.db \
+		".mode tabs" ".import --skip 1 target/biosample_non_attribute_metadata_wide.tsv non_attribute_metadata" ""
 	python3 util/extract_harmonizeds.py
 	sqlite3 target/biosample_basex.db < harmonized_wide_raw_id_idx.sql
 	sqlite3 target/biosample_basex.db < harmonized_wide_env_package_idx.sql
 	sqlite3 target/biosample_basex.db < env_package_repair_ddl.sql
-	sqlite3 target/biosample_basex.db ".mode tabs" ".import --skip 1 env_package_repair_curated.tsv env_package_repair" ""
+	sqlite3 target/biosample_basex.db \
+		".mode tabs" ".import --skip 1 env_package_repair_curated.tsv env_package_repair" ""
 	sqlite3 target/biosample_basex.db < harmonized_wide_repaired_ddl.sql
+	sqlite3 target/biosample_basex.db \
+		'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_attribute_metadata LEFT JOIN harmonized_wide using("raw_id"))' ''
+
+
 
 target/env_package_repair_new.tsv: target/biosample_basex.db
 	sqlite3 -readonly -csv -header -separator $$'\t' $< < env_package_repair.sql > $@
