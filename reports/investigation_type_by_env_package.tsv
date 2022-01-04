@@ -1,11 +1,11 @@
 env_package	investigation_type	count
-		21475350
-	metagenome	290329
+		21681623
+	metagenome	291158
 	metagenome-assembled genome	214556
 	mimarks-survey	76543
 host-associated		65627
 human-gut		49613
-	bacteria_archaea	40384
+	bacteria_archaea	40816
 human-skin		14636
 miscellaneous natural or artificial environment		14615
 built environment		13685
@@ -13,7 +13,7 @@ water		13202
 	single amplified genome	12994
 soil		10639
 human-oral		9743
-	eukaryote	7917
+	eukaryote	8005
 human-gut	metagenome	5767
 human-associated		5458
 host-associated	metagenome	5057

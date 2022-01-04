@@ -1,0 +1,33 @@
+Database Properties
+ NAME: biosample_set_2
+ SIZE: 29 GB
+ NODES: 1148871826
+ DOCUMENTS: 1
+ BINARIES: 0
+ TIMESTAMP: 2022-01-03T15:47:41.108Z
+ UPTODATE: true
+
+Resource Properties
+ INPUTPATH: /home/mark/gitrepos/biosample-basex/target/biosample_set_over_12500001.xml
+ INPUTSIZE: 28 GB
+ INPUTDATE: 2022-01-03T14:59:43.215Z
+
+Indexes
+ TEXTINDEX: true
+ ATTRINDEX: true
+ TOKENINDEX: false
+ FTINDEX: false
+ TEXTINCLUDE: 
+ ATTRINCLUDE: 
+ TOKENINCLUDE: 
+ FTINCLUDE: 
+ LANGUAGE: English
+ STEMMING: false
+ CASESENS: false
+ DIACRITICS: false
+ STOPWORDS: 
+ UPDINDEX: false
+ AUTOOPTIMIZE: false
+ MAXCATS: 100
+ MAXLEN: 96
+ SPLITSIZE: 0
