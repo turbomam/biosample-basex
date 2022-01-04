@@ -24,12 +24,59 @@ After running the XQueries, the generated `TSV`s are loaded into a SQLite databa
 
 ### Tables in the SQLite database 
 
+_Note: some column names like `id` and `temp` may be reserved words. These should be wrapped in double quotes when writing queries._
+
 - all_attribs
-    - ...notes...
+    - All "attribute" elements from all BioSamples, whether they have a harmonized name or not, in a long format.
+    - Pretty slow to query, despite indexing several columns.
+    - `CREATE INDEX all_attribs_idx on all_attribs("harmonized_name", "raw_id", "attribute_name");`
+    - Maybe the indexes weren't set up properly? (I haven't tried querying without indexes.)
+    - 324,806,062 rows
+    - columns (`TEXT` unless otherwise specified):
+        - raw_id (`INTEGER`)
+        - attribute_name
+        - harmonized_name
+        - value
 - env_package_repair
+    - Standardizes the user-submitted `env_package` values
+    - From [env_package_repair_curated.tsv](env_package_repair_curated.tsv)
+    - The `Makefile` has a step to create a `target/env_package_repair_new.tsv`. No tools are provided yet for automatically reconciling the new file with the previous curated file.
+    - 99 rows
+    - columns (`TEXT` unless otherwise specified):
+        - env_package_raw
+        - count (`INTEGER`)
+        - env_package _(indexed)_
+        - checklist_fragment
+        - curation_confidence
+        - notes
+        - curation_complete
 - harmonized_wide
+    - Just the values of those attributes that have harmonized names, as `TEXT`, in wide format. Also includes the BioSample `raw_id`s, as `INTEGER`s.
+    - 22,608,173 rows
+    - 516 columns including `raw_id`
+    - Provided with indices on `raw_id_idx` and `env_package`. More could be added for better queries at the cost of disk footprint.
 - harmonized_wide_repaired
+    - Exact same shape as `harmonized_wide`. Serves as a place to collect values that have gone though some cleanup/repair process. Currently `env_package` is the only column repaired by this repo, by way of the `env_package_repair` table.
+    - Provided with an index on `raw_id_idx`
 - non_attribute_metadata
+    - Metadata about the BioSamples that doesn't come from "attribute" entities. External IDs and links have been simplified compared to previous versions. Among other things, `DOI`s have been omitted , since they are only available for ~ 400 out of the 20+ million BioSamples.
+    - 24,580,658 rows. That's greater than the number of `harmonized_wide` rows as some BioSamples don't have any attributes with harmonized names.
+    - columns (`TEXT` unless otherwise indicated):
+        - id (Not native to the `biosample_set.xml` file. Built from the prefix "BIOSAMPLE:" and the `primary_id`)
+        - accession
+        - raw_id (`INTEGER`, _primary key_)
+        - primary_id
+        - sra_id
+        - bp_id (while these are stored as `TEXT`, they are **numerical** BioProject IDs and should really be joined with the BioProject XML database to get BioProject accessions.)
+        - model
+        - package
+        - package_name
+        - status
+        - status_date
+        - taxonomy_id
+        - taxonomy_name
+        - title
+        - paragraph
 
 As of 2022-01-03
 _The SQLite DBs contain minimal indices_
