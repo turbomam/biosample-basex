@@ -1,7 +1,32 @@
 # biosample-basex
-Using the BaseX XML database to discover structure in NCBI's Biosample database
+Using XQueries in a BaseX database to convert NCBI's BioSample database from XML to SQLite.
 
-BaseX can be installed with homebrew on Macs. It can be installed with `apt-get` on Ubuntu Linux machines, but I prefer to download the `.zip` archive. That makes it easier to make the necessary increase to the allocated RAM in the launch scripts. For eaxmple, on a 32 GB machine, `basex/bin/basex` might look like this:
+**Requires SQLite3 3.32**
+
+NCBI attributes vs XML attributes blah blah blah
+
+```
+Name             Resources  Size         Input Path                                                                                           
+--------------------------------------------------------------------------------------------------------------------------------------------
+biosample_set_1  1          32517967506  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_under_12500001.xml  
+biosample_set_2  1          30367728281  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_over_12500001.xml   
+```
+
+Specificlly, the result is a database with the following tables:
+- all_attribs
+- env_package_repair
+- harmonized_wide
+- harmonized_wide_repaired
+- non_attribute_metadata
+
+As of 2022-01-03
+_The SQLite DBs contain minimal indices_
+- biosample_basex.db.gz: 7.7 GB
+- biosample_basex.db:   67.9 GB
+
+BaseX can be installed with homebrew on Macs or `apt-get` on Ubuntu Linux machines. It's open-source software.
+
+Downloading the `.zip` archive makes it a little more straightforward to increase the amount of memory allocated by the launch scripts. For example, on a 32 GB machine, `basex/bin/basex` might look like this:
 
 ```bash
 #!/usr/bin/env bash
@@ -32,6 +57,8 @@ https://basex.org/download/
 
 ## NERSC cori specific notes
 
+`make all` takes roughly 8 hours.
+
 - `cd /global/cfs/cdirs/m3513/endurable/biosample`
 - `git clone git@github.com:turbomam/biosample-basex.git` 
 - `wget` the latest BaseX zip archive
@@ -51,7 +78,5 @@ https://basex.org/download/
 - `make all`
 
 ----
-
-- 2022-01-02 15:20
 
 results can be found at https://portal.nersc.gov/project/m3513/biosample/
