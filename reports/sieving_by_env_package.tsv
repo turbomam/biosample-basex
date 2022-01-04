@@ -1,5 +1,5 @@
 env_package	sieving	count
-		22124050
+		22331601
 host-associated		77039
 human-gut		60830
 water		21327
@@ -30,6 +30,7 @@ soil	one forest plot had the size 25.8 m x 25.8 m with 400 tree individuals plan
 	none	240
 soil	single	155
 	4 mm sieve	144
+	no	133
 	4 pooled samples	130
 	composite sample of ten cores pooled before sieving, 2 mm mesh size sieving	130
 	Fresh soil sieved 2mm mesh	123
@@ -46,7 +47,6 @@ soil	Soil sample composed by 16-20 randomly selected subsamples. homogenized in 
 	0.5 cm	72
 	stored in a ¨C20¡ãC freezer	66
 	2 mm sieve; 3-4 soil cores pooled	64
-	no	62
 	0.45	58
 	pooling of three replicate samples per plot and sieving (2 mm)	50
 	2 mm, entire sample was sieved	48
@@ -63,9 +63,9 @@ soil	TRUE	33
 	missing	28
 	cut-mill	27
 soil	2mm	27
+	<0.25_mm	24
 	8_mm	24
 	no seiving	24
-	<0.25_mm	24
 	pooling of three replicate samples per plot and cutting	24
 	2_mm	24
 	1_mm	24

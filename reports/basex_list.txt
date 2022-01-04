@@ -1,0 +1,6 @@
+Name             Resources  Size         Input Path                                                                                           
+--------------------------------------------------------------------------------------------------------------------------------------------
+biosample_set_1  1          32551637372  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_under_12500001.xml  
+biosample_set_2  1          30498102162  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_over_12500001.xml   
+
+2 database(s).

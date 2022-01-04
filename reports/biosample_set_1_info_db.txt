@@ -1,0 +1,33 @@
+Database Properties
+ NAME: biosample_set_1
+ SIZE: 31 GB
+ NODES: 1248461949
+ DOCUMENTS: 1
+ BINARIES: 0
+ TIMESTAMP: 2022-01-03T15:40:24.752Z
+ UPTODATE: true
+
+Resource Properties
+ INPUTPATH: /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_under_12500001.xml
+ INPUTSIZE: 30 GB
+ INPUTDATE: 2022-01-03T14:55:49.302Z
+
+Indexes
+ TEXTINDEX: true
+ ATTRINDEX: true
+ TOKENINDEX: false
+ FTINDEX: false
+ TEXTINCLUDE: 
+ ATTRINCLUDE: 
+ TOKENINCLUDE: 
+ FTINCLUDE: 
+ LANGUAGE: English
+ STEMMING: false
+ CASESENS: false
+ DIACRITICS: false
+ STOPWORDS: 
+ UPDINDEX: false
+ AUTOOPTIMIZE: false
+ MAXCATS: 100
+ MAXLEN: 96
+ SPLITSIZE: 0

@@ -1,5 +1,5 @@
 env_package	size_frac	count
-		22125151
+		22332604
 host-associated		77039
 human-gut		60830
 water		21327
@@ -41,13 +41,16 @@ air		472
 	0.2 um	89
 	3-20 um	86
 	0.2-3 um	72
+	Only stones and plant roots thicker than 1 cm removed manually	71
 	> 20 um	68
 	NOT APPLICABLE	61
 	0.2	59
 	0.22-5 um	56
+	0.2-25 micrometer	49
+	> 3 µm	48
 	according to Quiagen DNeasy® PowerSoil® Pro Kit	48
 	< 3 µm	48
-	> 3 µm	48
+	not collected	46
 	SF 20	43
 	missing	43
 	0.2 - 200 µm	42
@@ -57,12 +60,12 @@ air		472
 	0.45 micrometer	38
 	> = 11 um	37
 	3-0.2um	36
+	0.22	34
 	T 0.2	34
 	>3um	34
-	0.22	34
 	None	33
-	>5um	32
 	<5um to 0.2um	32
+	>5um	32
 	3-50 micrometer	32
 	0-0.22 um	31
 	5�m	28
@@ -71,50 +74,51 @@ air		472
 	0.4 micrometer	25
 	0.1 micron	23
 	0.22-150 um	19
+	>2.7 micrometer	18
 	na	18
 	0.2-2.7 micrometer	18
-	>2.7 micrometer	18
 	12 micrometer	17
 	SF 0.2	16
-	<2 mm	16
 	0.22 μm micrometer	16
+	<2 mm	16
 	0.02-0.22 micrometer	15
 	total	14
 	0.2-3 micrometer	13
 	0.22 - 2 micrometer	10
-	0.2-2μm	9
-	>22μm	9
-	2-22μm	9
-	>3µm	9
 	D50 0.3-0.6 micrometer	9
 	D50 1.0-1.8 micrometer	9
-	> 0,2µm	9
+	>3µm	9
 	D50 3.2-5.6 micrometer	9
+	0.2-2μm	9
+	> 0,2µm	9
 	3-0.22µm	9
+	>22μm	9
+	2-22μm	9
 	0.22-1.2	8
 	0.2um	7
 	>1.2	7
-	0.2 micrometer	6
-	0.2-0.02	6
-	20 micrometer	6
-	0.6 micrometer	6
 	2 micrometer	6
-	PM10	6
 	1.2 micrometer	6
-	2um	4
-	0.2-2um	4
+	0.6 micrometer	6
+	0.2-0.02	6
+	0.2 micrometer	6
+	20 micrometer	6
+	PM10	6
 	0.22um +	4
 	5-11 um	4
-	not collected	3
+	2um	4
+	0.2-2um	4
 	5.0 m and 0.22 m	3
-	0.2-2.7	2
+	>10 um	3
+	0.45 um	3
+	>20	2
 	0.22-10 micrometer	2
 	ultrafiltered	2
+	0.2-2.7	2
 	2.7-20	2
 	>100 micrometer	2
-	>20	2
-	no selection	1
 	0.1 m bulk filter	1
+	no selection	1
 	No	1
 	greater than 10 kb	1
 	74 mm	1
