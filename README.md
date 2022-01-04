@@ -133,7 +133,7 @@ https://basex.org/download/
 - edit `biosample-basex/.env`
     - `BASEXCMD = ../basex/bin/basex`
     - The value for `del_from` should be roughly half the number of BioSamples. The suggested value of 12500001 should be reasonable but could be revised after downloading and unpacking the BioSample XML file. Run something like `tail -n 50 target` at the shell prompt, note the `id` attribute of the last `<BioSample>`, and set `del_from` to an integer close to one half of that last `id` value. 
-- Start a session manager like `screen`. If you get disconnected, it may be tricking to log back into the same cori node because of load balancing, but scripts started before the disconnection should run to completion. It doesn't hurt to force your client computer to stay awake with something like `caffeine`.
+- Start a session manager like `screen`. If you get disconnected, it may be tricky to log back into the same cori node because of load balancing, but scripts started before the disconnection should run to completion. It doesn't hurt to force your client computer to stay awake with something like `caffeine`.
 - `module load python`
     - On cori, this makes common Python packages like `pandas` available. On other systems, users should create a `venv` virtual environment, enter it, and run `pip install -r requirments.txt`
 - cd `biosample-basex/`
