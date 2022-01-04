@@ -21,7 +21,7 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: remind all clean biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports sqlite_reports
+.PHONY: remind all clean biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports sqlite_reports bio_project
 
 remind:
 	@echo
@@ -182,3 +182,12 @@ reports/biosample_set_1_info_index.txt:
 reports/biosample_set_2_info_index.txt:
 	$(BASEXCMD) -c "open biosample_set_2 ; info index" > $@
 
+bio_project:
+	rm -f target/bioproject.xml
+	${BASEXCMD} -c 'drop db bioproject'
+	rm -f target/bp_id_accession.tsv
+	curl https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml --output target/bioproject.xml
+	$(BASEXCMD) -c 'CREATE DB bioproject target/bioproject.xml'
+	$(BASEXCMD)  queries/bp_id_accession.xq > target/bp_id_accession.tsv
+	sqlite3 target/biosample_basex.db \
+		".mode tabs" ".import target/bp_id_accession.tsv bp_id_accession" ""
