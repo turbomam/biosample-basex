@@ -77,6 +77,8 @@ _Note: some column names like `id` and `temp` may be reserved words. These shoul
         - taxonomy_name
         - title
         - paragraph
+- biosample_basex_merged **view**
+    - `non_attribute_metadata` + `harmonized_wide` tables
 
 As of 2022-01-03
 - biosample_basex.db.gz: 7.7 GB
