@@ -79,7 +79,6 @@ _Note: some column names like `id` and `temp` may be reserved words. These shoul
         - paragraph
 
 As of 2022-01-03
-_The SQLite DBs contain minimal indices_
 - biosample_basex.db.gz: 7.7 GB
 - biosample_basex.db:   67.9 GB
 
