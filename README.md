@@ -22,9 +22,10 @@ As of early January, 2022, the number of XML nodes necessary to model the 22,786
 
 After running the XQueries, the generated `TSV`s are loaded into a SQLite database. SQLite was selected because the entire, indexed and ready-to-use database can be shared as a single, compressible file and because of the plethora of compatible tools, which do not require setting up a persistent database server. Examples include Python's built-in [sqlite module](https://docs.python.org/3/library/sqlite3.html), the `sqlite` command line client (which can be downloaded from https://www.sqlite.org/download.html or installed with package managers that are included in many Unix-like operating systems), or with a graphical tool like [DBeaver](https://dbeaver.io/download/). 
 
-The 
+### Tables in the SQLite database 
 
 - all_attribs
+    - ...notes...
 - env_package_repair
 - harmonized_wide
 - harmonized_wide_repaired
