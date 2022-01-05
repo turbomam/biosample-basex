@@ -21,20 +21,21 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: remind all clean biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports sqlite_reports bio_project
+.PHONY: remind all clean bio_project biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports sqlite_reports bio_project
 
 remind:
 	@echo
 	@echo "DON'T FORGET 'module load python/3.9-anaconda-2021.11' FOR CORI OR 'source venv/bin/activate' FOR OTHER SYSTEMS"
 	@echo "DON'T FORGET 'screen' FOR REMOTE SYSTEMS INCLUDING CORI"
 	@echo
-	-module list
+	## always errors out, even oin cori
+	#-module list
 	-pip list | grep pandas
 	-screen -ls
 
-all: remind clean check_env \
+all: remind clean check_env  \
 	biosample-basex basex_reports \
-	target/biosample_basex.db target/env_package_repair_new.tsv sqlite_reports \
+	target/biosample_basex.db bio_project target/env_package_repair_new.tsv sqlite_reports \
 	target/biosample_basex.db.gz
 
 # doesn't include final_sqlite_gz_dest
@@ -61,6 +62,11 @@ clean:
 	rm -f target/*.tsv
 	rm -f target/biosample_set_over_$(del_from)*.xml
 	rm -f target/biosample_set_under_$(del_from)*.xml
+	rm -f reports/biosample_set_1_info_db.txt reports/biosample_set_2_info_db.txt \
+		reports/biosample_set_1_info_index.txt reports/biosample_set_2_info_index.txt
+	rm -f reports/*_pattern.tsv
+	rm -f reports/basex_list.txt
+
 
 target/biosample_basex.db:
 	# 	date ; time
@@ -162,6 +168,8 @@ ha_highlights_reports:
 	python util/ha_highlights.py \
 		--database_file target/biosample_basex.db \
 		--output_dir reports
+	zip -r reports/sample_name_by_env_package.tsv.zip reports/sample_name_by_env_package.tsv
+	rm -f reports/sample_name_by_env_package.tsv
 
 reports/basex_list.txt:
 	$(BASEXCMD) -c "list" > $@
