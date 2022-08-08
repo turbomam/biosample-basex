@@ -52,6 +52,17 @@ let $sraid :=  fn:normalize-space(
   )
 )
 
+(: <Id db_label="Sample name">14_0903_02_20cm</Id> :)
+
+let $samp_name :=  fn:normalize-space(
+  string-join(
+    data(
+      $bs/Ids/Id[@db_label="Sample name"]
+    ),$delim
+  )
+)
+
+
 let $bp_link := $bs/Links/Link[@type='entrez' and @target='bioproject']
 
 let $bp_ids := fn:normalize-space(
@@ -189,6 +200,12 @@ return
 <title>{
   $title
 }</title>
+
+
+<samp_name>{
+  $samp_name
+}</samp_name>
+
 
 <paragraph>{
   $paragraph
