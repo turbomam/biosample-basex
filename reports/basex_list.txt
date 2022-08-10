@@ -1,6 +1,10 @@
-Name             Resources  Size         Input Path                                                                                           
---------------------------------------------------------------------------------------------------------------------------------------------
-biosample_set_1  1          32551637372  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_under_12500001.xml  
-biosample_set_2  1          30498102162  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_over_12500001.xml   
+Name             Resources  Size        Input Path                                                                         
+-------------------------------------------------------------------------------------------------------------------------
+bioproject       1          1569952043  /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/bioproject.xml  
+biosample_set_1  1          27572363    /Users/MAM/Documents/gitrepos/biosample-basex/target/partial_under.xml             
+biosample_set_2  1          56104686    /Users/MAM/Documents/gitrepos/biosample-basex/target/partial_over.xml              
+books            1          6273        /Users/MAM/books.xml                                                               
+color_words      1          5290        /Users/MAM/color_words.xml                                                         
+irregular        1          5141        /Users/MAM/irregular.xml                                                           
 
-2 database(s).
+6 database(s).

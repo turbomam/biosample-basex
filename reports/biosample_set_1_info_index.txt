@@ -1,212 +1,192 @@
 Elements
 - Structure: Hash
-- Entries: 35
-  Attribute     162428470x, strings, leaf
-  Id            28379249x, strings, leaf
-  Name          16268610x, strings
-  Model         12559904x, strings, leaf
-  Description   12053339x
-  Title         12053339x, strings, leaf
-  Organism      12053339x
-  Attributes    12053339x
-  Package       12053339x, strings, leaf
-  Owner         12053339x
-  Models        12053339x
-  Status        12053339x, leaf
-  BioSample     12053339x
-  Ids           12053339x
-  OrganismName  7062746x, strings, leaf
-  Link          5799396x, strings, leaf
-  Links         4702906x
-  Contact       4261241x
-  Contacts      4260378x
-  Last          4203794x, strings, leaf
-  First         4134951x, strings, leaf
-  Paragraph     2504879x, strings, leaf
-  Comment       2299332x
-  Cell          1870418x, strings, leaf
-  Middle        583962x, strings, leaf
-  Synonym       453639x, strings, leaf
-  Row           238478x
-  Street        66923x, strings, leaf
-  Address       66923x
-  Body          16520x
-  Table         16520x
-  Caption       16520x, 5 distinct strings, leaf
-  Header        16520x
-  Curation      13994x, leaf
+- Entries: 25
+  Attribute     79612x, strings, leaf
+  Id            47250x, strings, leaf
+  Name          18888x, strings
+  Model         15196x, 6 distinct strings, leaf
+  Organism      15194x
+  BioSample     15194x
+  Ids           15194x
+  Description   15194x
+  Title         15194x, strings, leaf
+  Status        15194x, leaf
+  Models        15194x
+  Package       15194x, 4 distinct strings, leaf
+  Attributes    15194x
+  Owner         15194x
+  Link          13457x, strings, leaf
+  Paragraph     8679x, strings, leaf
+  Comment       8479x
+  Links         7558x
+  Contacts      5440x
+  Contact       5440x
+  Last          3694x, strings, leaf
+  First         3413x, strings, leaf
+  OrganismName  3317x, strings, leaf
+  Middle        257x, 41 distinct strings, leaf
   BioSampleSet  1x
 
 Attributes
 - Structure: Hash
-- Entries: 33
-  attribute_name    162428470x, strings, leaf
-  display_name      128779125x, strings, leaf
-  harmonized_name   116725786x, strings, leaf
-  db                26010166x, strings, leaf
-  id                12053339x, integers [2, 12500000], leaf
-  is_primary        12053339x, integer [1, 1], leaf
-  last_update       12053339x, strings, leaf
-  publication_date  12053339x, strings, leaf
-  access            12053339x, 2 distinct strings, leaf
-  taxonomy_name     12053339x, strings, leaf
-  status            12053339x, 2 distinct strings, leaf
-  when              12053339x, strings, leaf
-  taxonomy_id       12053339x, integers [1, 2906078], leaf
-  accession         12053338x, strings, leaf
-  submission_date   12026539x, strings, leaf
-  db_label          7585536x, string, leaf
-  type              5799396x, 2 distinct strings, leaf
-  label             5734318x, strings, leaf
-  abbreviation      5234095x, strings, leaf
-  is_hidden         4593258x, integer [1, 1], leaf
-  email             4220346x, strings, leaf
-  target            4188336x, 11 distinct strings, leaf
-  url               807683x, strings, leaf
-  lab               124180x, strings, leaf
-  version           104409x, 9 distinct doubles [1, 4], leaf
-  phone             41369x, strings, leaf
-  fax               26393x, strings, leaf
-  unit              16966x, strings, leaf
-  curation_status   13994x, string, leaf
-  curation_date     13994x, string, leaf
-  class             12299x, 2 distinct strings, leaf
-  is_reference      2331x, integer [0, 0], leaf
-  submission_id     94x, 94 distinct strings, leaf
+- Entries: 25
+  attribute_name    79612x, strings, leaf
+  display_name      59595x, strings, leaf
+  db                47250x, strings, leaf
+  harmonized_name   44401x, strings, leaf
+  access            15194x, 2 distinct strings, leaf
+  id                15194x, integers [2, 17999], leaf
+  accession         15194x, strings, leaf
+  is_primary        15194x, integer [1, 1], leaf
+  taxonomy_id       15194x, integers [2, 2822231], leaf
+  taxonomy_name     15194x, strings, leaf
+  status            15194x, 2 distinct strings, leaf
+  submission_date   15194x, strings, leaf
+  last_update       15194x, strings, leaf
+  publication_date  15194x, strings, leaf
+  when              15194x, strings, leaf
+  type              13457x, 2 distinct strings, leaf
+  label             13079x, strings, leaf
+  db_label          11988x, string, leaf
+  unit              11930x, strings, leaf
+  abbreviation      10583x, strings, leaf
+  email             5052x, strings, leaf
+  target            5014x, 6 distinct strings, leaf
+  lab               2639x, strings, leaf
+  phone             1474x, strings, leaf
+  is_hidden         216x, integer [1, 1], leaf
 
 Text Index
 - Structure: Sorted List
 - Names: 
-- Size: 835 MB
-- Entries: 45988145
-  Generic                                    8940830x
-  Generic.1.0                                8924440x
-  Not provided                               4963499x
-  DNA                                        3771636x
-  1                                          3580176x
-  No                                         3087423x
-  female                                     2860008x
-  missing                                    2715980x
-  male                                       2704958x
-  EBI                                        2532426x
-  Homo sapiens                               2375766x
-  not applicable                             1900137x
-  Case-Control                               1716137x
-  public                                     1695687x
-  Blood                                      1449440x
-  Framingham_SHARe                           1430188x
-  Yes                                        1353311x
-  SNP Genotypes (Array)                      1348663x
-  GRU                                        1281075x
-  ERC000011                                  1213503x
-  Prospective Longitudinal Cohort            1073983x
-  Mus musculus                               985853x
-  2                                          747350x
-  not collected                              723617x
-  Metagenome or environmental                701009x
-  Metagenome.environmental.1.0               700904x
-  blood                                      657818x
-  0                                          643930x
-  NA                                         624512x
-  eMERGE                                     536754x
+- Size: 1034 kB
+- Entries: 83755
+  Generic.1.0                                                             14842x
+  Generic                                                                 14234x
+  missing                                                                 2659x
+  NCBI                                                                    2207x
+  Homo sapiens                                                            1937x
+  not determined                                                          1637x
+  female                                                                  1457x
+  male                                                                    1431x
+  http://www.ncbi.nlm.nih.gov/SNP/snp_viewBatch.cgi?sbid=1061891          1248x
+  1                                                                       1048x
+  Broad Institute                                                         1004x
+  http://ccr.coriell.org/Sections/Collections/NHGRI/hapmap.aspx?PgId=266  997x
+  Generic sample from Homo sapiens                                        945x
+  Marine Biological Laboratory                                            816x
+  Gene Expression Omnibus                                                 759x
+  Generic sample from marine metagenome                                   752x
+  No description currently available                                      675x
+  HapMap sample from Homo sapiens                                         613x
+  HapMap                                                                  608x
+  public                                                                  542x
+  EBI                                                                     542x
+  Bacteria                                                                437x
+  Joint Genome Institute, U.S. Department of Energy                       418x
+  Plasmodium falciparum                                                   412x
+  SC                                                                      410x
+  Baylor College of Medicine                                              391x
+  European                                                                371x
+  EUR                                                                     371x
+  NCI_TARGET                                                              366x
+  father                                                                  347x
   ...
-  "200m depth, 2010 summer"                  1x
-  "200m depth, 2009 summer"                  1x
-  "200m depth, 2007 summer"                  1x
-  "2,186,260"                                1x
-  "2, 4"                                     1x
-  "16 samples, each with 5 primer sets"      1x
-  "15 samples, each with 2 primer sets"      1x
-  "10m depth, 2007 summer"                   1x
-  "100m depth,2010 spring"                   1x
-  "100m depth, 2010 spring"                  1x
-  "100m depth, 2009 summer"                  1x
-  "100m depth, 2007 summer"                  1x
-  "1,807,617"                                1x
-  "1,506,686"                                1x
-  "1,267,173"                                1x
-  "1,163,297"                                1x
-  "0m depth, 2010 summer"                    1x
-  "0m depth, 2009 summer"                    1x
-  ""                                         1x
-  !Gubi                                      1x
-  !Ai                                        1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_34  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_33  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_32  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_31  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_30  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_29  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_28  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_27  1x
-  !6S_Illumina_MiSeq_fecal_sample_pt_PtC_26  1x
+  -126.3080556                                                            1x
+  -123.023                                                                1x
+  -12.45933333                                                            1x
+  -118                                                                    1x
+  -113                                                                    1x
+  -111.4083                                                               1x
+  -111.4054                                                               1x
+  -111.4                                                                  1x
+  -11.63973333                                                            1x
+  -108                                                                    1x
+  -104.2938                                                               1x
+  -102                                                                    1x
+  -1.55                                                                   1x
+  -1.22                                                                   1x
+  -1.2                                                                    1x
+  -1.1                                                                    1x
+  -1.094                                                                  1x
+  -0.818                                                                  1x
+  -0.39833333                                                             1x
+  -0.31                                                                   1x
+  -0.3048                                                                 1x
+  -0.224                                                                  1x
+  -0.04                                                                   1x
+  -0.021                                                                  1x
+  + serum                                                                 1x
+  (pXO1-, pXO2-); high-level ciprofloxacin resistance                     1x
+  (pXO1-, pXO2-)                                                          1x
+  (BY4741 Disw1 X CBS432 ho::nat MATα Disw1 )                            1x
+  (BY4741 Dhtz1 X CBS432 ho::nat MATα Dhtz1)                             1x
+  (BY4741 Dgcn5 X CBS432 ho::nat MATα Dgcn5)                             1x
 
 Attribute Index
 - Structure: Sorted List
 - Names: 
-- Size: 1416 MB
-- Entries: 51793218
-  1                                                16646598x
-  sex                                              16242868x
-  BioSample                                        12054086x
-  tissue                                           11556078x
-  live                                             10725805x
-  gap_accession                                    9187262x
-  gap_subject_id                                   9187202x
-  gap_sample_id                                    9187202x
-  study name                                       9187079x
-  submitter handle                                 9186802x
-  biospecimen repository                           9186802x
-  submitted sample id                              9186758x
-  submitted subject id                             9186746x
-  biospecimen repository sample id                 9186742x
-  Generic                                          8924440x
-  analyte type                                     8281045x
-  gap_consent_code                                 8158534x
-  gap_consent_short_name                           8128452x
-  study design                                     7673476x
-  Sample name                                      7594627x
-  public                                           7568811x
-  SRA                                              6876465x
-  9606                                             6054829x
-  Homo sapiens                                     6054828x
-  geo_loc_name                                     6019995x
-  strain                                           5898173x
-  collection_date                                  5314804x
-  host                                             5271519x
-  molecular data type                              4868302x
-  subject is affected                              4837729x
-  ...
-  (0)49 6131 39 25748                              1x
-  (0)49 6131 39 25346                              1x
-  (0) 467144625                                    1x
-  (0) 467144622                                    1x
-  (+98) 21 44580399                                1x
-  (+98) 21 44580301-27                             1x
-  (+86)45155190778                                 1x
-  (+86)45155103336                                 1x
-  (+65) 64368352                                   1x
-  (+61 7) 33659150                                 1x
-  (+61 7) 33654620                                 1x
-  (+47)55584305                                    1x
-  (+47)55584303                                    1x
-  (+44) 151 705 3369                               1x
-  (+44) 151 705 3155                               1x
-  (+39)0816132330                                  1x
-  (+39)0816132258                                  1x
-  (+34) 958181600                                  1x
-  (+2) 0643 210 509                                1x
-  (+2) 0122 086 2886                               1x
-  (+)8623-68349001                                 1x
-  (+ 61 8) 8303 4863                               1x
-  (+ 61 8) 8303 4399                               1x
-  'Sphingomonas ginsengisoli' Hoang et al. 2012    1x
-  'Pterocarpus indicus' fasciation phytoplasma     1x
-  'Osedax' symbiont bacterium Rs2_46_30_T18        1x
-  'Megasphaera vaginalis' Bordigoni et al. 2020    1x
-  'Chrysanthemum coronarium' phytoplasma           1x
-  'Catharanthus roseus' aster yellows phytoplasma  1x
-  'Brassica napus' phytoplasma                     1x
+- Size: 1377 kB
+- Entries: 79410
+  1                             15410x
+  BioSample                     15195x
+  live                          15192x
+  SRA                           15149x
+  public                        14978x
+  Generic                       14842x
+  Sample name                   12722x
+  strain                        11015x
+  url                           8443x
+  sex                           7764x
+  source_name                   7552x
+  population                    6753x
+  GEO                           5294x
+  entrez                        5014x
+  9606                          4927x
+  Homo sapiens                  4926x
+  bioproject                    4845x
+  tissue                        3950x
+  source name                   3776x
+  2013-05-23T00:00:00           2949x
+  NCBI                          2790x
+  culture_collection            2681x
+  cell type                     2624x
+  Super Population Description  2584x
+  Super Population Code         2584x
+  Population Description        2584x
+  cell line                     2267x
+  sample_name                   2032x
+  sample name                   1999x
+  10014                         1x
+  10013                         1x
+  10012                         1x
+  10011                         1x
+  10010                         1x
+  1001                          1x
+  10009                         1x
+  10008                         1x
+  10007                         1x
+  10006                         1x
+  10005                         1x
+  10004                         1x
+  10003                         1x
+  10002                         1x
+  10001                         1x
+  10000                         1x
+  1000                          1x
+  100                           1x
+  10                            1x
+  1-404-727-2440                1x
+  020-39332990                  1x
+  008613165985208               1x
+  00441316507403                1x
+  +82-2-880-8153                1x
+  +81-82-424-7986               1x
+  +64 3 489 9040                1x
+  +61 425743849                 1x
+  +55-19-35211141               1x
+  +4690106783                   1x
+  +46730575403                  1x
 
 Token Index
 - Not available
@@ -217,91 +197,66 @@ Full-Text Index
 Path Index
 doc(): 1x
   BioSampleSet: 1x
-    BioSample: 12053339x
-      @submission_date: 12026539x, strings, leaf
-      @last_update: 12053339x, strings, leaf
-      @publication_date: 12053339x, strings, leaf
-      @access: 12053339x, 2 distinct strings, leaf
-      @id: 12053339x, integers [2, 12500000], leaf
-      @accession: 12053338x, strings, leaf
-      Ids: 12053339x
-        Id: 28379249x, leaf
-          @db: 25556527x, strings, leaf
-          @is_primary: 12053339x, integer [1, 1], leaf
-          text(): 28379249x, strings, leaf
-          @db_label: 7585536x, string, leaf
-          @is_hidden: 4593258x, integer [1, 1], leaf
-      Description: 12053339x
-        Title: 12053339x, leaf
-          text(): 12053339x, strings, leaf
-        Organism: 12053339x
-          @taxonomy_id: 12053339x, integers [1, 2906078], leaf
-          @taxonomy_name: 12053339x, strings, leaf
-          OrganismName: 7062746x, leaf
-            text(): 7054863x, strings, leaf
-        Comment: 2299332x
-          Paragraph: 2504879x, leaf
-            text(): 2500050x, strings, leaf
-          Table: 16520x
-            @class: 12299x, 2 distinct strings, leaf
-            Caption: 16520x, leaf
-              text(): 16520x, 5 distinct strings, leaf
-            Header: 16520x
-              Cell: 125262x, leaf
-                text(): 124082x, 27 distinct strings, leaf
-            Body: 16520x
-              Row: 238478x
-                Cell: 1745156x, leaf
-                  text(): 1363057x, strings, leaf
-        Synonym: 453639x, leaf
-          @db: 453639x, strings, leaf
-          text(): 453639x, strings, leaf
-      Owner: 12053339x
-        Name: 12064816x, leaf
-          @abbreviation: 5234095x, strings, leaf
-          text(): 7462056x, strings, leaf
-          @url: 807683x, strings, leaf
-        Contacts: 4260378x
-          Contact: 4261241x
-            @email: 4220346x, strings, leaf
-            Name: 4203794x
-              Last: 4203794x, leaf
-                text(): 4202527x, strings, leaf
-              First: 4134951x, leaf
-                text(): 4134878x, strings, leaf
-              Middle: 583962x, leaf
-                text(): 583950x, strings, leaf
-            @lab: 124180x, strings, leaf
-            @phone: 41369x, strings, leaf
-            Address: 66923x
-              Street: 66923x, leaf
-                text(): 66923x, strings, leaf
-            @fax: 26393x, strings, leaf
-      Models: 12053339x
-        Model: 12559904x, leaf
-          text(): 12559904x, strings, leaf
-          @version: 104409x, 9 distinct doubles [1, 4], leaf
-      Package: 12053339x, leaf
-        @display_name: 12053339x, strings, leaf
-        text(): 12053339x, strings, leaf
-      Attributes: 12053339x
-        Attribute: 162428470x, leaf
-          @attribute_name: 162428470x, strings, leaf
-          text(): 161874542x, strings, leaf
-          @harmonized_name: 116725786x, strings, leaf
-          @display_name: 116725786x, strings, leaf
-          @unit: 16966x, strings, leaf
-      Links: 4702906x
-        Link: 5799396x, leaf
-          @type: 5799396x, 2 distinct strings, leaf
-          @label: 5734318x, strings, leaf
-          text(): 5796894x, strings, leaf
-          @target: 4188336x, 11 distinct strings, leaf
-          @submission_id: 94x, 94 distinct strings, leaf
-      Status: 12053339x, leaf
-        @status: 12053339x, 2 distinct strings, leaf
-        @when: 12053339x, strings, leaf
-      @is_reference: 2331x, integer [0, 0], leaf
-      Curation: 13994x, leaf
-        @curation_date: 13994x, string, leaf
-        @curation_status: 13994x, string, leaf
+    BioSample: 15194x
+      @submission_date: 15194x, strings, leaf
+      @last_update: 15194x, strings, leaf
+      @publication_date: 15194x, strings, leaf
+      @access: 15194x, 2 distinct strings, leaf
+      @id: 15194x, integers [2, 17999], leaf
+      @accession: 15194x, strings, leaf
+      Ids: 15194x
+        Id: 47250x, leaf
+          @db: 47250x, strings, leaf
+          @is_primary: 15194x, integer [1, 1], leaf
+          text(): 47250x, strings, leaf
+          @db_label: 11988x, string, leaf
+          @is_hidden: 216x, integer [1, 1], leaf
+      Description: 15194x
+        Title: 15194x, leaf
+          text(): 15194x, strings, leaf
+        Organism: 15194x
+          @taxonomy_id: 15194x, integers [2, 2822231], leaf
+          @taxonomy_name: 15194x, strings, leaf
+          OrganismName: 3317x, leaf
+            text(): 3018x, strings, leaf
+        Comment: 8479x
+          Paragraph: 8679x, leaf
+            text(): 8679x, strings, leaf
+      Owner: 15194x
+        Name: 15194x, leaf
+          @abbreviation: 10583x, strings, leaf
+          text(): 14977x, strings, leaf
+        Contacts: 5440x
+          Contact: 5440x
+            @email: 5052x, strings, leaf
+            Name: 3694x
+              Last: 3694x, leaf
+                text(): 3413x, strings, leaf
+              First: 3413x, leaf
+                text(): 3413x, strings, leaf
+              Middle: 257x, leaf
+                text(): 257x, 41 distinct strings, leaf
+            @lab: 2639x, strings, leaf
+            @phone: 1474x, strings, leaf
+      Models: 15194x
+        Model: 15196x, leaf
+          text(): 15196x, 6 distinct strings, leaf
+      Package: 15194x, leaf
+        @display_name: 15194x, 4 distinct strings, leaf
+        text(): 15194x, 4 distinct strings, leaf
+      Attributes: 15194x
+        Attribute: 79612x, leaf
+          @attribute_name: 79612x, strings, leaf
+          text(): 79612x, strings, leaf
+          @harmonized_name: 44401x, strings, leaf
+          @display_name: 44401x, strings, leaf
+          @unit: 11930x, strings, leaf
+      Links: 7558x
+        Link: 13457x, leaf
+          @type: 13457x, 2 distinct strings, leaf
+          @label: 13079x, strings, leaf
+          text(): 13457x, strings, leaf
+          @target: 5014x, 6 distinct strings, leaf
+      Status: 15194x, leaf
+        @status: 15194x, 2 distinct strings, leaf
+        @when: 15194x, strings, leaf

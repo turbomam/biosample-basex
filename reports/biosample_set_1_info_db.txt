@@ -1,16 +1,16 @@
 Database Properties
  NAME: biosample_set_1
- SIZE: 31 GB
- NODES: 1248461949
+ SIZE: 27 MB
+ NODES: 1065706
  DOCUMENTS: 1
  BINARIES: 0
- TIMESTAMP: 2022-01-03T15:40:24.752Z
+ TIMESTAMP: 2022-08-10T02:10:40.629Z
  UPTODATE: true
 
 Resource Properties
- INPUTPATH: /global/cfs/cdirs/m3513/endurable/biosample/biosample-basex/target/biosample_set_under_12500001.xml
- INPUTSIZE: 30 GB
- INPUTDATE: 2022-01-03T14:55:49.302Z
+ INPUTPATH: /Users/MAM/Documents/gitrepos/biosample-basex/target/partial_under.xml
+ INPUTSIZE: 24 MB
+ INPUTDATE: 2022-08-10T02:10:37.484Z
 
 Indexes
  TEXTINDEX: true

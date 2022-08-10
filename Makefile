@@ -21,7 +21,8 @@ endif
 ## capitalization
 ## count X by Y
 
-.PHONY: remind all clean bio_project biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports sqlite_reports bio_project
+.PHONY: remind all clean bio_project biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports \
+sqlite_reports bio_project minimal
 
 remind:
 	@echo
@@ -32,6 +33,63 @@ remind:
 	#-module list
 	-pip list | grep pandas
 	-screen -ls
+
+# TEST SCRIPTS ON A SUBSET OF THE DATABASE
+
+clean_fetch: remind clean check_env target/biosample_set.xml
+
+subset_biosamples:
+	- mv target/biosample_set.xml target/biosample_set_complete.xml
+	complete_lines_count=`cat target/biosample_set_complete.xml | wc -l | tr -d " \t\n\r"` ; \
+		echo $$complete_lines_count ; \
+		fractional_lines_count=$$( expr $$complete_lines_count / 1000 ) ;\
+		echo $$fractional_lines_count ; \
+		head -n $$fractional_lines_count target/biosample_set_complete.xml > target/biosample_set_partial.xml
+	# manually remove partial biosample at end and add closing tag </BioSampleSet>
+
+find_midpoint:
+	grep '<BioSample' target/biosample_set_partial.xml | tail -n 1
+	# set del_from (in .env) to half of the last biosample' id
+
+confirm_midpoint:
+	echo ${del_from}
+
+target/partial_under_noclose.xml:
+	sed '/^<BioSample.*id="$(del_from)"/,$$d'  target/biosample_set_partial.xml > $@
+
+target/partial_under.xml: target/partial_under_noclose.xml
+	cat $< biosample_set_closer.txt > $@
+	rm -f $<
+
+target/partial_over_noopen.xml:
+	sed -n '/^<BioSample.*id="$(del_from)"/,$$p'  target/biosample_set_partial.xml > $@
+
+target/partial_over.xml: target/partial_over_noopen.xml
+	cat biosample_set_opener.txt $< > $@
+	rm -f $<
+
+partial_cleanup:
+	- ${BASEXCMD} -c 'drop db biosample_set_*'
+	rm -rf target/partial_under_noclose.xml
+	rm -rf target/partial_under.xml
+	rm -rf target/partial_over_noopen.xml
+	rm -rf target/partial_over.xml
+	rm -rf reports/basex_list.txt
+	rm -rf reports/biosample_set*txt
+	rm -rf target/biosample_basex.db
+
+partial_basex: partial_cleanup target/partial_over.xml target/partial_under.xml
+	$(BASEXCMD) -c 'CREATE DB biosample_set_1 target/partial_under.xml'
+	$(BASEXCMD) -c 'CREATE DB biosample_set_2 target/partial_over.xml'
+
+return_to_automation: partial_basex basex_reports
+
+more_cleanup:
+	rm -rf target/biosample_basex.db
+
+more_automation: more_cleanup target/biosample_basex.db bio_project target/biosample_basex.db.gz
+
+# END SUBSET TESTING
 
 all: remind clean check_env  \
 	biosample-basex basex_reports \
@@ -85,8 +143,9 @@ target/biosample_basex.db:
 	sqlite3 target/biosample_basex.db \
 		".mode tabs" ".import --skip 1 env_package_repair_curated.tsv env_package_repair" ""
 	sqlite3 target/biosample_basex.db < harmonized_wide_repaired_ddl.sql
+	sqlite3 target/biosample_basex.db < indexing.sql
 	sqlite3 target/biosample_basex.db \
-		'CREATE VIEW biosample_basex_merged AS SELECT * FROM non_attribute_metadata LEFT JOIN harmonized_wide using("raw_id"))' ''
+		"CREATE VIEW biosample_basex_merged AS SELECT * FROM non_attribute_metadata LEFT JOIN harmonized_wide using('raw_id')"  ""
 
 
 
@@ -176,19 +235,19 @@ reports/basex_list.txt:
 
 # hardcoded db and target
 reports/biosample_set_1_info_db.txt:
-	$(BASEXCMD) -c "open biosample_set_1 ; info db" > $@
+	$(BASEXCMD) -c "open biosample_set_1; info db" > $@
 
 # hardcoded db and target
 reports/biosample_set_2_info_db.txt:
-	$(BASEXCMD) -c "open biosample_set_2 ; info db" > $@
+	$(BASEXCMD) -c "open biosample_set_2; info db" > $@
 
 # hardcoded db and target
 reports/biosample_set_1_info_index.txt:
-	$(BASEXCMD) -c "open biosample_set_1 ; info index" > $@
+	$(BASEXCMD) -c "open biosample_set_1; info index" > $@
 
 # hardcoded db and target
 reports/biosample_set_2_info_index.txt:
-	$(BASEXCMD) -c "open biosample_set_2 ; info index" > $@
+	$(BASEXCMD) -c "open biosample_set_2; info index" > $@
 
 bio_project:
 	rm -f target/bioproject.xml

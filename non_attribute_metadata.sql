@@ -15,7 +15,9 @@ CREATE TABLE non_attribute_metadata(
   "taxonomy_id" TEXT,
   "taxonomy_name" TEXT,
   "title" TEXT,
+  "samp_name" TEXT,
   "paragraph" TEXT
+
 );
 
 --  INTEGER PRIMARY KEY,
