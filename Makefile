@@ -1,13 +1,18 @@
 ## using .env for
-#del_from = 12500001
 #biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
-#BASEXCMD = ???
-#final_sqlite_gz_dest = ???
+#BASEXCMD
+#   the path to the basex executable
+#final_sqlite_gz_dest
+#   a path to a location where the final sqlite database will be stored
 
 ifneq (,$(wildcard ./.env))
     include .env
     export
 endif
+
+CHUNKDIR=target/splitted
+IN = $(wildcard $(CHUNKDIR)/*.xml)
+OUT = $(subst xml,txt,$(IN))
 
 # ---
 
@@ -29,67 +34,24 @@ remind:
 	@echo "DON'T FORGET 'module load python/3.9-anaconda-2021.11' FOR CORI OR 'source venv/bin/activate' FOR OTHER SYSTEMS"
 	@echo "DON'T FORGET 'screen' FOR REMOTE SYSTEMS INCLUDING CORI"
 	@echo
-	## always errors out, even oin cori
-	#-module list
 	-pip list | grep pandas
 	-screen -ls
 
-# TEST SCRIPTS ON A SUBSET OF THE DATABASE
+split_biosample_set:
+	python util/splitter.py \
+		--input_file_name target/biosample_set.xml \
+		--output_dir=$(CHUNKDIR) \
+		--biosamples_per_file 300000 \
+		--last_biosample 120001
 
-clean_fetch: remind clean check_env target/biosample_set.xml
+$(CHUNKDIR)/%.txt: $(CHUNKDIR)/%.xml
+	$(BASEXCMD) -c 'CREATE DB $(basename $(notdir $<)) $<'
 
-subset_biosamples:
-	- mv target/biosample_set.xml target/biosample_set_complete.xml
-	complete_lines_count=`cat target/biosample_set_complete.xml | wc -l | tr -d " \t\n\r"` ; \
-		echo $$complete_lines_count ; \
-		fractional_lines_count=$$( expr $$complete_lines_count / 1000 ) ;\
-		echo $$fractional_lines_count ; \
-		head -n $$fractional_lines_count target/biosample_set_complete.xml > target/biosample_set_partial.xml
-	# manually remove partial biosample at end and add closing tag </BioSampleSet>
+load_basex: $(OUT)
 
-find_midpoint:
-	grep '<BioSample' target/biosample_set_partial.xml | tail -n 1
-	# set del_from (in .env) to half of the last biosample' id
+hybrid: remind clean check_env target/biosample_set.xml split_biosample_set load_basex
 
-confirm_midpoint:
-	echo ${del_from}
-
-target/partial_under_noclose.xml:
-	sed '/^<BioSample.*id="$(del_from)"/,$$d'  target/biosample_set_partial.xml > $@
-
-target/partial_under.xml: target/partial_under_noclose.xml
-	cat $< biosample_set_closer.txt > $@
-	rm -f $<
-
-target/partial_over_noopen.xml:
-	sed -n '/^<BioSample.*id="$(del_from)"/,$$p'  target/biosample_set_partial.xml > $@
-
-target/partial_over.xml: target/partial_over_noopen.xml
-	cat biosample_set_opener.txt $< > $@
-	rm -f $<
-
-partial_cleanup:
-	- ${BASEXCMD} -c 'drop db biosample_set_*'
-	rm -rf target/partial_under_noclose.xml
-	rm -rf target/partial_under.xml
-	rm -rf target/partial_over_noopen.xml
-	rm -rf target/partial_over.xml
-	rm -rf reports/basex_list.txt
-	rm -rf reports/biosample_set*txt
-	rm -rf target/biosample_basex.db
-
-partial_basex: partial_cleanup target/partial_over.xml target/partial_under.xml
-	$(BASEXCMD) -c 'CREATE DB biosample_set_1 target/partial_under.xml'
-	$(BASEXCMD) -c 'CREATE DB biosample_set_2 target/partial_over.xml'
-
-return_to_automation: partial_basex basex_reports
-
-more_cleanup:
-	rm -rf target/biosample_basex.db
-
-more_automation: more_cleanup target/biosample_basex.db bio_project target/biosample_basex.db.gz
-
-# END SUBSET TESTING
+# ---
 
 all: remind clean check_env  \
 	biosample-basex basex_reports \
@@ -108,7 +70,6 @@ basex_reports: reports/basex_list.txt \
 	reports/biosample_set_2_info_db.txt reports/biosample_set_2_info_index.txt
 
 check_env:
-	echo ${del_from}
 	echo ${biosample_url}
 	echo ${BASEXCMD}
 	echo ${final_sqlite_gz_dest}
@@ -116,14 +77,14 @@ check_env:
 clean:
 	${BASEXCMD} -c 'drop db biosample_set_*'
 	rm -f downloads/*.gz
+	rm -f reports/*.tsv
+	rm -f reports/*.txt
 	rm -f target/*.db
 	rm -f target/*.tsv
-	rm -f target/biosample_set_over_$(del_from)*.xml
-	rm -f target/biosample_set_under_$(del_from)*.xml
-	rm -f reports/biosample_set_1_info_db.txt reports/biosample_set_2_info_db.txt \
-		reports/biosample_set_1_info_index.txt reports/biosample_set_2_info_index.txt
-	rm -f reports/*_pattern.tsv
-	rm -f reports/basex_list.txt
+	rm -f target/splitted/*.xml
+	rm -rf target/bioproject.xml
+	rm -rf target/biosample_basex.db.gz
+	rm -rf target/biosample_set.xml
 
 
 target/biosample_basex.db:
