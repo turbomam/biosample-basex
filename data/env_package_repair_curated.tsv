@@ -1,0 +1,100 @@
+env_package_raw	count	env_package	checklist_fragment	curation_confidence	notes	curation_complete
+	22133405			high		TRUE
+host-associated	72404	host-associated		high		TRUE
+human-gut	58102	human-gut		high		TRUE
+water	19300	water		high		TRUE
+misc environment	15257	miscellaneous natural or artificial environment		high		TRUE
+human-skin	14608	human-skin		high		TRUE
+built environment	14539	built environment		high		TRUE
+soil	12511	soil		high		TRUE
+human-oral	10562	human-oral		high		TRUE
+missing	8452			medium		TRUE
+sediment	6401	sediment		high		TRUE
+human-associated	5364	human-associated		high		TRUE
+MIGS/MIMS/MIMARKS.soil	3786	soil	MIGS/MIMS/MIMARKS	high		TRUE
+MIGS/MIMS/MIMARKS.host-associated	2988	host-associated	MIGS/MIMS/MIMARKS	high		TRUE
+plant-associated	2554	plant-associated		high		TRUE
+MIGS/MIMS/MIMARKS.human-gut	2499	human-gut	MIGS/MIMS/MIMARKS	high		TRUE
+microbial mat/biofilm	2215	microbial mat_biofilm		high		TRUE
+MIGS/MIMS/MIMARKS.water	1821	water	MIGS/MIMS/MIMARKS	high		TRUE
+MIGS/MIMS/MIMARKS.human-associated	1465	human-associated	MIGS/MIMS/MIMARKS	high		TRUE
+MIGS/MIMS/MIMARKS.sediment	1177	sediment	MIGS/MIMS/MIMARKS	high		TRUE
+MIGS/MIMS/MIMARKS.human-oral	1154	human-oral	MIGS/MIMS/MIMARKS	high		TRUE
+human-vaginal	1087	human-vaginal		high		TRUE
+MIGS/MIMS/MIMARKS.plant-associated	1063	plant-associated	MIGS/MIMS/MIMARKS	high		TRUE
+MIGS/MIMS/MIMARKS.microbial	734	microbial mat_biofilm	MIGS/MIMS/MIMARKS	medium		TRUE
+miscellaneous natural or artificial environment	578	miscellaneous natural or artificial environment		high		TRUE
+MIGS/MIMS/MIMARKS.miscellaneous	558	miscellaneous natural or artificial environment	MIGS/MIMS/MIMARKS	medium		TRUE
+wastewater|sludge	417	wastewater_sludge		high		TRUE
+mouse-gut	406	host-associated		medium		TRUE
+MIGS/MIMS/MIMARKS.wastewater	385	wastewater_sludge	MIGS/MIMS/MIMARKS	high		TRUE
+wastewater/sludge	383	wastewater_sludge		high		TRUE
+Skin mycobiome	327	host-associated		low		TRUE
+Skin microbiome	325	host-associated		low		TRUE
+air	266	air		high		TRUE
+Human-associated	212	human-associated		high		TRUE
+MIGS/MIMS/MIMARKS.air	206	air	MIGS/MIMS/MIMARKS	high		TRUE
+Human-oral	201	human-oral		high		TRUE
+gut	172	host-associated		low		TRUE
+host_associated	171	host-associated		high		TRUE
+MIGS/MIMS/MIMARKS.human-skin	135	human-skin	MIGS/MIMS/MIMARKS	high		TRUE
+biofilm	114	microbial mat_biofilm		high		TRUE
+Human-gut	111	human-gut		high		TRUE
+Host-associated	107	host-associated		high		TRUE
+human-not providedsopharyngeal	107	human-associated		medium		TRUE
+Water	95	water		high		TRUE
+wastewater sludge	90	wastewater_sludge		high		TRUE
+Missing: Not provided	90			medium		TRUE
+mice gut	87	host-associated		low		TRUE
+built	61	built environment		high		TRUE
+human gut	59	human-gut		high		TRUE
+Human_Gut	59	human-gut		high		TRUE
+default	51			medium		TRUE
+microbial mat|biofilm	48	microbial mat_biofilm		high		TRUE
+Unspecified	42			medium		TRUE
+soil-associated	36	soil		high		TRUE
+seawater	36	water		medium		TRUE
+sterile water	35	water		medium		TRUE
+miscellaneous	33	miscellaneous natural or artificial environment		high		TRUE
+human_skin	28	human-skin		high		TRUE
+Human-vaginal	28	human-vaginal		high		TRUE
+Mouse_Gut	27	host-associated		low		TRUE
+fresh water	27	water		medium		TRUE
+gut microbiome	23	host-associated		low		TRUE
+Soil	19	soil		high		TRUE
+mims extension	19		MIMS	medium		TRUE
+wastewater	14	wastewater_sludge		high		TRUE
+control	14			medium		TRUE
+NA	10			medium		TRUE
+MIGS/MIMS/MIMARKS.human-vaginal	9	human-vaginal	MIGS/MIMS/MIMARKS	high		TRUE
+freshwater sediment	9	sediment		medium		TRUE
+misc-environment	7	miscellaneous natural or artificial environment		high		TRUE
+MIMARKS_water	6	water	MIMARKS	medium		TRUE
+env_package	4			medium		TRUE
+Not available	4			medium		TRUE
+MIGS.plant-associated	3	plant-associated	MIGS	high		TRUE
+plant	3	plant-associated		high		TRUE
+not collected	3			medium		TRUE
+host associated	2	host-associated		high		TRUE
+Sediment	2	sediment		high		TRUE
+sea water	2	water		medium		TRUE
+Coastal water body (ENVO:02000049)	1	water		medium		TRUE
+Deep-sea water	1	water		medium		TRUE
+ocean[ENVO:00000015]	1	water		medium		TRUE
+Sea water	1	water		medium		TRUE
+"sea water, [ENVO:00002149]"	1	water		medium		TRUE
+not applicable	1			medium		TRUE
+marine sediment (ENVO:00002113)	1	sediment		medium		TRUE
+mimarks	479		MIMARKS			
+microbiome	159					
+CV	60					
+"home, outdoor environment"	44					
+fermentation-associated	42					
+rock	12					
+arctic	10					
+extreme habitat	10					
+MIENS_16S	6					
+cave	5					
+MIMARKS_16S	1		MIMARKS			
+ENVO:00000016	1					
+saliva	1					

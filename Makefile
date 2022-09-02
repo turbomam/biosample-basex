@@ -1,33 +1,35 @@
-## using .env for
-#biosample_url = https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
-#BASEXCMD
-#   the path to the basex executable
-#final_sqlite_gz_dest
-#   a path to a location where the final sqlite database will be stored
+# todo template.env and .env need more documentation
+
+# todo more indexing and joining esp bioproject and repaired env pack
+
+# https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
+
+## uses the default BaseX data directory for whichever binary was selected
+## remember that we will be looping over all databases for some queries
+
+## work on file and variable naming conventions
+## capitalization
+## count X by Y
 
 ifneq (,$(wildcard ./.env))
     include .env
     export
 endif
 
-CHUNKDIR=target/splitted
-IN = $(wildcard $(CHUNKDIR)/*.xml)
-OUT = $(subst xml,txt,$(IN))
+SPLITDIR=target/splitted
 
-# ---
-
-# https://stackoverflow.com/questions/6824717/sqlite-how-do-you-join-tables-from-different-databases
-
-## uses the default BaseX data directory
-## remember that we will be looping over all databases for some queries
-
-# TODO rearrange xq and sql file folders
-## work on file and variable naming conventions
-## capitalization
-## count X by Y
-
-.PHONY: remind all clean bio_project biosample-basex check_env final_sqlite_gz_dest ha_highlights_reports basex_reports \
-sqlite_reports bio_project minimal
+.PHONY:  all \
+basex_load \
+bio_project \
+biosample-basex \
+check_env \
+clean \
+create_view \
+final_sqlite_gz_dest \
+ha_highlights_reports \
+remind \
+split_biosample_set \
+sqlite_reports
 
 remind:
 	@echo
@@ -38,123 +40,101 @@ remind:
 	-screen -ls
 
 split_biosample_set:
-	python util/splitter.py \
+	python util/bioasample_set_splitter.py \
 		--input_file_name target/biosample_set.xml \
-		--output_dir=$(CHUNKDIR) \
-		--biosamples_per_file 300000 \
-		--last_biosample 120001
+		--output_dir=$(SPLITDIR) \
+		--biosamples_per_file ${BIOSAMPLES_PER_SPLIT} \
+		--last_biosample ${BIOSAMPLE_FOR_LAST_SPLIT}
 
-$(CHUNKDIR)/%.txt: $(CHUNKDIR)/%.xml
+$(SPLITDIR)/%.loaded_not_created: $(SPLITDIR)/%.xml
 	$(BASEXCMD) -c 'CREATE DB $(basename $(notdir $<)) $<'
 
-load_basex: $(OUT)
 
-hybrid: remind clean check_env target/biosample_set.xml split_biosample_set load_basex
 
-# ---
+all: fetch_decompress splitting do_load_etc
 
-all: remind clean check_env  \
-	biosample-basex basex_reports \
-	target/biosample_basex.db bio_project target/env_package_repair_new.tsv sqlite_reports \
-	target/biosample_basex.db.gz
+fetch_decompress: remind check_env squeaky_clean target/biosample_set.xml
+	rm -f target/bioproject.xml
+	rm -f target/bp_id_accession.tsv
+	- ${BASEXCMD} -c 'drop db bioproject'
+	curl ${BIOPROJECT_XML_URL} --output downloads/bioproject.xml
 
-# doesn't include final_sqlite_gz_dest
+splitting: clean split_biosample_set
 
-# not cleaning out previous reports yet
+SPLITLIST = $(wildcard $(SPLITDIR)/*.xml)
+BASEX_LOAD = $(subst xml,loaded_not_created,$(SPLITLIST))
+
+do_basex_load: $(BASEX_LOAD)
+	@echo "echoing the files to load"
+	echo $(BASEX_LOAD)
+
+do_load_etc: do_basex_load  \
+reports/basex_list.txt reports/biosample_set_from_0_info_db.txt reports/biosample_set_from_0_info_index.txt \
+target/biosample_basex.db bio_project target/env_package_repair_new.tsv create_view \
+target/biosample_basex.db.gz final_sqlite_gz_dest
+
+# todo omitting sqlite_reports because it assumes the presence of columns that might be absent due to partial load
+
 # ha_highlights_reports fails on cori
 #   value_counts() got an unexpected keyword argument 'dropna'
 sqlite_reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv ha_highlights_reports
 
-basex_reports: reports/basex_list.txt \
-	reports/biosample_set_1_info_db.txt reports/biosample_set_1_info_index.txt \
-	reports/biosample_set_2_info_db.txt reports/biosample_set_2_info_index.txt
+
+# add more variables
 
 check_env:
-	echo ${biosample_url}
+	echo ${BIOSAMPLE_SET_XML_URL}
 	echo ${BASEXCMD}
-	echo ${final_sqlite_gz_dest}
+	echo ${FINAL_SQLITE_GZ_DEST}
+
+squeaky_clean: clean
+	rm -f downloads/*.gz
+	rm -f downloads/*.xml
+	rm -rf target/biosample_set.xml
 
 clean:
 	${BASEXCMD} -c 'drop db biosample_set_*'
-	rm -f downloads/*.gz
 	rm -f reports/*.tsv
 	rm -f reports/*.txt
 	rm -f target/*.db
 	rm -f target/*.tsv
 	rm -f target/splitted/*.xml
-	rm -rf target/bioproject.xml
-	rm -rf target/biosample_basex.db.gz
-	rm -rf target/biosample_set.xml
+
 
 
 target/biosample_basex.db:
-	# 	date ; time
-	sqlite3 target/biosample_basex.db < all_attribs.sql
-	sqlite3 target/biosample_basex.db < non_attribute_metadata.sql
-	$(BASEXCMD) queries/all_biosample_attributes_values_by_raw_id.xq > target/all_biosample_attributes_values_by_raw_id.tsv
-	$(BASEXCMD) queries/biosample_non_attribute_metadata_wide.xq > target/biosample_non_attribute_metadata_wide.tsv
+	# time these and record expected execution times?
+	sqlite3 target/biosample_basex.db < sql/all_attribs.sql
+	sqlite3 target/biosample_basex.db < sql/non_attribute_metadata.sql
+	$(BASEXCMD) xq/all_biosample_attributes_values_by_raw_id.xq > target/all_biosample_attributes_values_by_raw_id.tsv
+	$(BASEXCMD) xq/biosample_non_attribute_metadata_wide.xq > target/biosample_non_attribute_metadata_wide.tsv
 	sqlite3 target/biosample_basex.db \
 		".mode tabs" ".import --skip 1 target/all_biosample_attributes_values_by_raw_id.tsv all_attribs" ""
 	sqlite3 target/biosample_basex.db \
 		".mode tabs" ".import --skip 1 target/biosample_non_attribute_metadata_wide.tsv non_attribute_metadata" ""
-	python3 util/extract_harmonizeds.py
-	sqlite3 target/biosample_basex.db < harmonized_wide_raw_id_idx.sql
-	sqlite3 target/biosample_basex.db < harmonized_wide_env_package_idx.sql
-	sqlite3 target/biosample_basex.db < env_package_repair_ddl.sql
+	python3 util/pivot_harmonizeds.py
+	sqlite3 target/biosample_basex.db < sql/harmonized_wide_raw_id_idx.sql
+	sqlite3 target/biosample_basex.db < sql/harmonized_wide_env_package_idx.sql
+	sqlite3 target/biosample_basex.db < sql/env_package_repair_ddl.sql
 	sqlite3 target/biosample_basex.db \
-		".mode tabs" ".import --skip 1 env_package_repair_curated.tsv env_package_repair" ""
-	sqlite3 target/biosample_basex.db < harmonized_wide_repaired_ddl.sql
-	sqlite3 target/biosample_basex.db < indexing.sql
-	sqlite3 target/biosample_basex.db \
-		"CREATE VIEW biosample_basex_merged AS SELECT * FROM non_attribute_metadata LEFT JOIN harmonized_wide using('raw_id')"  ""
-
+		".mode tabs" ".import --skip 1 data/env_package_repair_curated.tsv env_package_repair" ""
+	sqlite3 target/biosample_basex.db < sql/harmonized_wide_repaired_ddl.sql
+	sqlite3 target/biosample_basex.db < sql/indexing.sql
 
 
 target/env_package_repair_new.tsv: target/biosample_basex.db
-	sqlite3 -readonly -csv -header -separator $$'\t' $< < env_package_repair.sql > $@
+	sqlite3 -readonly -csv -header -separator $$'\t' $< < sql/env_package_repair.sql > $@
 
 # 20211004: 1.5 GB
 # roughly 1 minute
 downloads/biosample_set.xml.gz:
-	# wget ftp://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz
-	curl ftp://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz --output $@
+	curl ${BIOSAMPLE_SET_XML_URL} --output $@
 
 # 2021-06-15: 51 GB
 # roughly 2 minutes
 target/biosample_set.xml: downloads/biosample_set.xml.gz
 	gunzip -c $< > $@
 
-target/biosample_set_under_$(del_from)_noclose.xml: target/biosample_set.xml
-	# two minutes when retrieving 12500000 lines
-	date
-	#sed '/^<BioSample.*id="$(del_from)"/q'  $< > $@
-	# below might not require deletion of trailing line
-	# not that that's a slow step
-	sed '/^<BioSample.*id="$(del_from)"/,$$d'  $< > $@
-	date
-
-target/biosample_set_under_$(del_from).xml: target/biosample_set_under_$(del_from)_noclose.xml
-	# sed's q operator leaves the matching line
-	# this deletes the unwanted matching line
-	# note $$ escaping within make
-	#sed -i.bak '$$d' $<
-	# another two minutes when retrieving 12500000 lines
-	cat $< biosample_set_closer.txt > $@
-	rm -f $<
-	# DELETE BACKUP FILE
-
-target/biosample_set_over_$(del_from)_noopen.xml: target/biosample_set.xml
-	sed -n '/^<BioSample.*id="$(del_from)"/,$$p'  $< > $@
-
-target/biosample_set_over_$(del_from).xml: target/biosample_set_over_$(del_from)_noopen.xml
-	cat biosample_set_opener.txt $< > $@
-	rm -f $<
-
-# ~ 90 minutes on cori @ Xmx  = 96 GB RAM. Xmx may not matter much for load. But indexing?
-# du -sh $PROJDIR/biosample-basex/basex/data/biosample_set/: 52G
-biosample-basex: target/biosample_set_under_$(del_from).xml target/biosample_set_over_$(del_from).xml
-	$(BASEXCMD) -c 'CREATE DB biosample_set_1 target/biosample_set_under_$(del_from).xml'
-	$(BASEXCMD) -c 'CREATE DB biosample_set_2 target/biosample_set_over_$(del_from).xml'
 
 # ----
 
@@ -167,8 +147,8 @@ target/biosample_basex.db.gz:
 
 # on cori, /global/cfs/cdirs/m3513/www/biosample is exposed at https://portal.nersc.gov/project/m3513/biosample
 final_sqlite_gz_dest: target/biosample_basex.db.gz
-	cp $< ${final_sqlite_gz_dest}
-	chmod 777 ${final_sqlite_gz_dest}
+	cp $< ${FINAL_SQLITE_GZ_DEST}
+	chmod 777 ${FINAL_SQLITE_GZ_DEST}
 
 # ----
 
@@ -191,31 +171,27 @@ ha_highlights_reports:
 	zip -r reports/sample_name_by_env_package.tsv.zip reports/sample_name_by_env_package.tsv
 	rm -f reports/sample_name_by_env_package.tsv
 
+# ---
+
 reports/basex_list.txt:
 	$(BASEXCMD) -c "list" > $@
 
 # hardcoded db and target
-reports/biosample_set_1_info_db.txt:
-	$(BASEXCMD) -c "open biosample_set_1; info db" > $@
+# could parameterize this too, but do we really want dozens of reports?
+reports/biosample_set_from_0_info_db.txt:
+	$(BASEXCMD) -c "open biosample_set_from_0; info db" > $@
 
 # hardcoded db and target
-reports/biosample_set_2_info_db.txt:
-	$(BASEXCMD) -c "open biosample_set_2; info db" > $@
+reports/biosample_set_from_0_info_index.txt:
+	$(BASEXCMD) -c "open biosample_set_from_0; info index" > $@
 
-# hardcoded db and target
-reports/biosample_set_1_info_index.txt:
-	$(BASEXCMD) -c "open biosample_set_1; info index" > $@
-
-# hardcoded db and target
-reports/biosample_set_2_info_index.txt:
-	$(BASEXCMD) -c "open biosample_set_2; info index" > $@
+# ---
 
 bio_project:
-	rm -f target/bioproject.xml
-	${BASEXCMD} -c 'drop db bioproject'
-	rm -f target/bp_id_accession.tsv
-	curl https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml --output target/bioproject.xml
-	$(BASEXCMD) -c 'CREATE DB bioproject target/bioproject.xml'
-	$(BASEXCMD)  queries/bp_id_accession.xq > target/bp_id_accession.tsv
+	$(BASEXCMD) -c 'CREATE DB bioproject downloads/bioproject.xml'
+	$(BASEXCMD)  xq/bp_id_accession.xq > target/bp_id_accession.tsv
 	sqlite3 target/biosample_basex.db \
 		".mode tabs" ".import target/bp_id_accession.tsv bp_id_accession" ""
+
+create_view:
+	sqlite3 target/biosample_basex.db < sql/create_biosample_view.sql

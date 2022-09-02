@@ -3,6 +3,10 @@ import os
 import click
 
 
+# todo refactor esp repetitive sections
+#   also, not writing last split after hitting last_biosample
+
+
 @click.command()
 @click.option('--input_file_name', required=True, type=click.Path(exists=True),
               help='un-packed NCBI biosample set XML file')
@@ -13,6 +17,7 @@ import click
 def cli(input_file_name, biosamples_per_file, last_biosample, output_dir):
     """Chunks the NCBI biosample set into smaller but valid BioSampleSet XML files."""
     biosamples_seen = 0
+    last_biosample = int(last_biosample) if last_biosample else None
     # expect ~ 30 000 000 biosamples
     # want ~ 10 chunks
     # start with more, smaller chunks
@@ -37,8 +42,8 @@ def cli(input_file_name, biosamples_per_file, last_biosample, output_dir):
 
                     smallfile.write('</BioSampleSet>\n')
                     smallfile.close()
-                    if last_biosample and biosamples_seen > last_biosample:
-                        print("Emergency break")
+                    if last_biosample and biosamples_seen >= last_biosample:
+                        print(f"Stopping here because {last_biosample} or more biosamples have been processed.")
                         break
                     small_filename = os.path.join(output_dir, f"biosample_set_from_{biosamples_seen}.xml")
                     smallfile = open(small_filename, "w")

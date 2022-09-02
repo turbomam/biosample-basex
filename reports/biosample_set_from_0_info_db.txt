@@ -1,0 +1,33 @@
+Database Properties
+ NAME: biosample_set_from_0
+ SIZE: 274 MB
+ NODES: 10696650
+ DOCUMENTS: 1
+ BINARIES: 0
+ TIMESTAMP: 2022-09-02T19:24:28.079Z
+ UPTODATE: true
+
+Resource Properties
+ INPUTPATH: /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_0.xml
+ INPUTSIZE: 267 MB
+ INPUTDATE: 2022-09-02T19:23:45.419Z
+
+Indexes
+ TEXTINDEX: true
+ ATTRINDEX: true
+ TOKENINDEX: false
+ FTINDEX: false
+ TEXTINCLUDE: 
+ ATTRINCLUDE: 
+ TOKENINCLUDE: 
+ FTINCLUDE: 
+ LANGUAGE: English
+ STEMMING: false
+ CASESENS: false
+ DIACRITICS: false
+ STOPWORDS: 
+ UPDINDEX: false
+ AUTOOPTIMIZE: false
+ MAXCATS: 100
+ MAXLEN: 96
+ SPLITSIZE: 0
