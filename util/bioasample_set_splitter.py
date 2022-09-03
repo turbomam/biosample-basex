@@ -55,8 +55,9 @@ def cli(input_file_name, biosamples_per_file, last_biosample, output_dir):
                     for i in openers_to_write:
                         smallfile.write(i)
         if smallfile:
-            for i in openers_to_write:
-                smallfile.write(i)
+            print(
+                f"{biosamples_seen} complete biosamples have been seen as of line #{lineno}. For chunks of {biosamples_per_file}, the modulo is {offset}. Final output file =  {small_filename}")
+            smallfile.write(closer_to_write)
             smallfile.close()
 
 
