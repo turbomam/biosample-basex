@@ -82,10 +82,7 @@ sqlite_reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv
 
 # add more variables
 
-check_env:
-	echo ${BIOSAMPLE_SET_XML_URL}
-	echo ${BASEXCMD}
-	echo ${FINAL_SQLITE_GZ_DEST}
+
 
 squeaky_clean: clean
 	rm -f downloads/*.gz
@@ -100,6 +97,66 @@ clean:
 	rm -f target/*.tsv
 	rm -f target/splitted/*.xml
 
+
+
+
+
+
+bio_project:
+	$(BASEXCMD) -c 'CREATE DB bioproject downloads/bioproject.xml'
+	$(BASEXCMD)  xq/bp_id_accession.xq > target/bp_id_accession.tsv
+	sqlite3 target/biosample_basex.db \
+		".mode tabs" ".import target/bp_id_accession.tsv bp_id_accession" ""
+
+check_env:
+	echo ${BIOSAMPLE_SET_XML_URL}
+	echo ${BASEXCMD}
+	echo ${FINAL_SQLITE_GZ_DEST}
+
+create_view:
+	sqlite3 target/biosample_basex.db < sql/create_biosample_view.sql
+
+
+# 20211004: 1.5 GB
+# roughly 1 minute
+downloads/biosample_set.xml.gz:
+	curl ${BIOSAMPLE_SET_XML_URL} --output $@
+
+# on cori, /global/cfs/cdirs/m3513/www/biosample is exposed at https://portal.nersc.gov/project/m3513/biosample
+final_sqlite_gz_dest: target/biosample_basex.db.gz
+	cp $< ${FINAL_SQLITE_GZ_DEST}
+	chmod 777 ${FINAL_SQLITE_GZ_DEST}
+
+reports/basex_list.txt:
+	$(BASEXCMD) -c "list" > $@
+
+# hardcoded db and target
+# could parameterize this too, but do we really want dozens of reports?
+reports/biosample_set_from_0_info_db.txt:
+	$(BASEXCMD) -c "open biosample_set_from_0; info db" > $@
+
+# hardcoded db and target
+reports/biosample_set_from_0_info_index.txt:
+	$(BASEXCMD) -c "open biosample_set_from_0; info index" > $@
+
+reports/grow_facil_pattern.tsv:
+	python util/investigate_unharmonized.py \
+		--pattern %grow%facil% \
+		--database_file target/biosample_basex.db \
+		--output_file $@
+
+reports/sam_coll_meth_pattern.tsv:
+	python util/investigate_unharmonized.py \
+		--pattern %sam%coll%meth% \
+		--database_file target/biosample_basex.db \
+		--output_file $@
+
+ha_highlights_reports:
+	python util/ha_highlights.py \
+		--database_file target/biosample_basex.db \
+		--output_dir reports
+	zip -r reports/sample_name_by_env_package.tsv.zip reports/sample_name_by_env_package.tsv
+	rm -f reports/sample_name_by_env_package.tsv
 
 
 target/biosample_basex.db:
@@ -121,23 +178,6 @@ target/biosample_basex.db:
 	sqlite3 target/biosample_basex.db < sql/harmonized_wide_repaired_ddl.sql
 	sqlite3 target/biosample_basex.db < sql/indexing.sql
 
-
-target/env_package_repair_new.tsv: target/biosample_basex.db
-	sqlite3 -readonly -csv -header -separator $$'\t' $< < sql/env_package_repair.sql > $@
-
-# 20211004: 1.5 GB
-# roughly 1 minute
-downloads/biosample_set.xml.gz:
-	curl ${BIOSAMPLE_SET_XML_URL} --output $@
-
-# 2021-06-15: 51 GB
-# roughly 2 minutes
-target/biosample_set.xml: downloads/biosample_set.xml.gz
-	gunzip -c $< > $@
-
-
-# ----
-
 # depends on target/biosample_basex.db
 #   but want to be careful about adding duplicate rows to SQLite
 #   or nuking any rows
@@ -145,53 +185,10 @@ target/biosample_basex.db.gz:
 	gzip -c target/biosample_basex.db > $@
 	chmod 777 $@
 
-# on cori, /global/cfs/cdirs/m3513/www/biosample is exposed at https://portal.nersc.gov/project/m3513/biosample
-final_sqlite_gz_dest: target/biosample_basex.db.gz
-	cp $< ${FINAL_SQLITE_GZ_DEST}
-	chmod 777 ${FINAL_SQLITE_GZ_DEST}
+# 2021-06-15: 51 GB
+# roughly 2 minutes
+target/biosample_set.xml: downloads/biosample_set.xml.gz
+	gunzip -c $< > $@
 
-# ----
-
-reports/grow_facil_pattern.tsv:
-	python util/investigate_unharmonized.py \
-		--pattern %grow%facil% \
-		--database_file target/biosample_basex.db \
-		--output_file $@
-
-reports/sam_coll_meth_pattern.tsv:
-	python util/investigate_unharmonized.py \
-		--pattern %sam%coll%meth% \
-		--database_file target/biosample_basex.db \
-		--output_file $@
-
-ha_highlights_reports:
-	python util/ha_highlights.py \
-		--database_file target/biosample_basex.db \
-		--output_dir reports
-	zip -r reports/sample_name_by_env_package.tsv.zip reports/sample_name_by_env_package.tsv
-	rm -f reports/sample_name_by_env_package.tsv
-
-# ---
-
-reports/basex_list.txt:
-	$(BASEXCMD) -c "list" > $@
-
-# hardcoded db and target
-# could parameterize this too, but do we really want dozens of reports?
-reports/biosample_set_from_0_info_db.txt:
-	$(BASEXCMD) -c "open biosample_set_from_0; info db" > $@
-
-# hardcoded db and target
-reports/biosample_set_from_0_info_index.txt:
-	$(BASEXCMD) -c "open biosample_set_from_0; info index" > $@
-
-# ---
-
-bio_project:
-	$(BASEXCMD) -c 'CREATE DB bioproject downloads/bioproject.xml'
-	$(BASEXCMD)  xq/bp_id_accession.xq > target/bp_id_accession.tsv
-	sqlite3 target/biosample_basex.db \
-		".mode tabs" ".import target/bp_id_accession.tsv bp_id_accession" ""
-
-create_view:
-	sqlite3 target/biosample_basex.db < sql/create_biosample_view.sql
+target/env_package_repair_new.tsv: target/biosample_basex.db
+	sqlite3 -readonly -csv -header -separator $$'\t' $< < sql/env_package_repair.sql > $@

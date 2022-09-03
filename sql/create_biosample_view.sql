@@ -1,6 +1,6 @@
 CREATE VIEW biosample_basex_merged
 AS
-SELECT nam.raw_id      as raw_id_nam,
+SELECT nam.raw_id      as nam_raw_id,
        nam.id,
        nam.accession,
        nam.primary_id,

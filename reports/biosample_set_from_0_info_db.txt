@@ -4,13 +4,13 @@ Database Properties
  NODES: 10696650
  DOCUMENTS: 1
  BINARIES: 0
- TIMESTAMP: 2022-09-02T19:24:28.079Z
+ TIMESTAMP: 2022-09-02T20:04:32.346Z
  UPTODATE: true
 
 Resource Properties
  INPUTPATH: /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_0.xml
  INPUTSIZE: 267 MB
- INPUTDATE: 2022-09-02T19:23:45.419Z
+ INPUTDATE: 2022-09-02T20:03:49.717Z
 
 Indexes
  TEXTINDEX: true
