@@ -51,7 +51,7 @@ $(SPLITDIR)/%.loaded_not_created: $(SPLITDIR)/%.xml
 
 
 
-all: fetch_decompress splitting do_load_etc
+all: fetch_decompress splitting do_basex_load post_load
 
 fetch_decompress: remind check_env squeaky_clean target/biosample_set.xml
 	rm -f target/bioproject.xml
@@ -68,8 +68,7 @@ do_basex_load: $(BASEX_LOAD)
 	@echo "echoing the files to load"
 	echo $(BASEX_LOAD)
 
-do_load_etc: do_basex_load  \
-reports/basex_list.txt reports/biosample_set_from_0_info_db.txt reports/biosample_set_from_0_info_index.txt \
+post_load: reports/basex_list.txt reports/biosample_set_from_0_info_db.txt reports/biosample_set_from_0_info_index.txt \
 target/biosample_basex.db bio_project target/env_package_repair_new.tsv create_view \
 target/biosample_basex.db.gz final_sqlite_gz_dest
 
@@ -96,10 +95,7 @@ clean:
 	rm -f target/*.db
 	rm -f target/*.tsv
 	rm -f target/splitted/*.xml
-
-
-
-
+	mkdir -p target/splitted
 
 
 bio_project:
