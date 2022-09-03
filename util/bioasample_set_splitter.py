@@ -2,9 +2,13 @@ import os
 
 import click
 
-
 # todo refactor esp repetitive sections
 #   also, not writing last split after hitting last_biosample
+
+openers_to_write = ['<?xml version="1.0" encoding="UTF-8"?>\n', '<BioSampleSet>\n']
+closer_to_write = '</BioSampleSet>\n'
+file_prefix = 'biosample_set_from_'
+opening_trigger = '</BioSample>'
 
 
 @click.command()
@@ -25,31 +29,34 @@ def cli(input_file_name, biosamples_per_file, last_biosample, output_dir):
     with open(input_file_name) as bigfile:
         for lineno, line in enumerate(bigfile):
             if not smallfile:
-                small_filename = os.path.join(output_dir, f"biosample_set_from_{biosamples_seen}.xml")
+                small_filename = os.path.join(output_dir, f"{file_prefix}{biosamples_seen}.xml")
                 smallfile = open(small_filename, "w")
-                smallfile.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-                smallfile.write('<BioSampleSet>\n')
+                for i in openers_to_write:
+                    smallfile.write(i)
             offset = biosamples_seen % biosamples_per_file
             # print(
             #     f"{biosamples_seen} complete biosamples have been seen as of line #{lineno}. For chunks of {biosamples_per_file}, the modulo is {offset}. Active output file =  {small_filename}")
-            if not (line.startswith("<?xml") or line.startswith("<BioSampleSet>")):
+            if not (line.startswith("<?xml") or line.startswith("<BioSampleSet>") or line.startswith(
+                    "</BioSampleSet>")):
                 smallfile.write(line)
-            if line.startswith('</BioSample>'):
+            if line.startswith(opening_trigger):
                 biosamples_seen += 1
                 if offset == 0 and biosamples_seen > 1:
                     print(
                         f"{biosamples_seen} complete biosamples have been seen as of line #{lineno}. For chunks of {biosamples_per_file}, the modulo is {offset}. Active output file =  {small_filename}")
 
-                    smallfile.write('</BioSampleSet>\n')
+                    smallfile.write(closer_to_write)
                     smallfile.close()
                     if last_biosample and biosamples_seen >= last_biosample:
                         print(f"Stopping here because {last_biosample} or more biosamples have been processed.")
                         break
-                    small_filename = os.path.join(output_dir, f"biosample_set_from_{biosamples_seen}.xml")
+                    small_filename = os.path.join(output_dir, f"{file_prefix}{biosamples_seen}.xml")
                     smallfile = open(small_filename, "w")
-                    smallfile.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-                    smallfile.write('<BioSampleSet>\n')
+                    for i in openers_to_write:
+                        smallfile.write(i)
         if smallfile:
+            for i in openers_to_write:
+                smallfile.write(i)
             smallfile.close()
 
 
