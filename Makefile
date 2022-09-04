@@ -33,6 +33,7 @@ sqlite_reports
 
 remind:
 	@echo
+	@echo "CHECK THE RAM AVAILABLE ON YOUR SYSTEM, AND THE ALLOCATION TO BASEX"
 	@echo "DON'T FORGET 'module load python/3.9-anaconda-2021.11' FOR CORI OR 'source venv/bin/activate' FOR OTHER SYSTEMS"
 	@echo "DON'T FORGET 'screen' FOR REMOTE SYSTEMS INCLUDING CORI"
 	@echo
@@ -51,7 +52,9 @@ $(SPLITDIR)/%.loaded_not_created: $(SPLITDIR)/%.xml
 
 
 
-all: fetch_decompress splitting do_basex_load post_load
+all: fetch_decompress splitting do_basex_load post_load pivot post_pivot_etc
+
+
 
 fetch_decompress: remind check_env squeaky_clean target/biosample_set.xml
 	rm -f target/bioproject.xml
@@ -69,7 +72,11 @@ do_basex_load: $(BASEX_LOAD)
 	echo $(BASEX_LOAD)
 
 post_load: reports/basex_list.txt reports/biosample_set_from_0_info_db.txt reports/biosample_set_from_0_info_index.txt \
-target/biosample_basex.db bio_project target/env_package_repair_new.tsv create_view \
+target/biosample_basex.db
+
+do_pivot: pivot
+
+post_pivot_etc: post_pivot bio_project target/env_package_repair_new.tsv create_view \
 target/biosample_basex.db.gz final_sqlite_gz_dest
 
 # todo omitting sqlite_reports because it assumes the presence of columns that might be absent due to partial load
@@ -77,10 +84,6 @@ target/biosample_basex.db.gz final_sqlite_gz_dest
 # ha_highlights_reports fails on cori
 #   value_counts() got an unexpected keyword argument 'dropna'
 sqlite_reports: reports/grow_facil_pattern.tsv reports/sam_coll_meth_pattern.tsv ha_highlights_reports
-
-
-# add more variables
-
 
 
 squeaky_clean: clean
@@ -165,7 +168,11 @@ target/biosample_basex.db:
 		".mode tabs" ".import --skip 1 target/all_biosample_attributes_values_by_raw_id.tsv all_attribs" ""
 	sqlite3 target/biosample_basex.db \
 		".mode tabs" ".import --skip 1 target/biosample_non_attribute_metadata_wide.tsv non_attribute_metadata" ""
+
+pivot:
 	python3 util/pivot_harmonizeds.py
+
+post_pivot:
 	sqlite3 target/biosample_basex.db < sql/harmonized_wide_raw_id_idx.sql
 	sqlite3 target/biosample_basex.db < sql/harmonized_wide_env_package_idx.sql
 	sqlite3 target/biosample_basex.db < sql/env_package_repair_ddl.sql
