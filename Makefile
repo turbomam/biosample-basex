@@ -195,3 +195,13 @@ target/biosample_set.xml: downloads/biosample_set.xml.gz
 
 target/env_package_repair_new.tsv: target/biosample_basex.db
 	sqlite3 -readonly -csv -header -separator $$'\t' $< < sql/env_package_repair.sql > $@
+
+
+id_retention_qc:
+	basex xq/qc/list_ids.xq > target/basex_list_ids.tsv
+	wc -l target/basex_list_ids.tsv
+	sort target/basex_list_ids.tsv > target/sorted_basex_list_ids.tsv
+	sqlite3 target/biosample_basex.db ".mode tabs" ".header on" 'select raw_id as "id" from non_attribute_metadata nam' > target/sqlite_list_ids.tsv
+	wc -l target/sqlite_list_ids.tsv
+	sort target/sqlite_list_ids.tsv > target/sorted_sqlite_list_ids.tsv
+	diff target/sorted_basex_list_ids.tsv target/sorted_sqlite_list_ids.tsv

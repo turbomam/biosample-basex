@@ -1,17 +1,17 @@
-Name                       Resources  Size       Input Path                                                                                   
---------------------------------------------------------------------------------------------------------------------------------------------
-biosample_set_from_0       1          286269306  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_0.xml       
-biosample_set_from_100001  1          230364911  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_100001.xml  
-biosample_set_from_200001  1          264479637  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_200001.xml  
-biosample_set_from_300001  1          305064324  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_300001.xml  
-biosample_set_from_400001  1          316116868  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_400001.xml  
-biosample_set_from_500001  1          296587552  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_500001.xml  
-biosample_set_from_600001  1          276884649  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_600001.xml  
-biosample_set_from_700001  1          276767209  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_700001.xml  
-biosample_set_from_800001  1          298923404  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_800001.xml  
-biosample_set_from_900001  1          307110404  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_900001.xml  
-books                      1          6273       /Users/MAM/books.xml                                                                         
-color_words                1          5290       /Users/MAM/color_words.xml                                                                   
-irregular                  1          5141       /Users/MAM/irregular.xml                                                                     
+Name                         Resources  Size        Input Path                                                                                     
+-------------------------------------------------------------------------------------------------------------------------------------------------
+biosample_set_from_0         1          8492177011  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_0.xml         
+biosample_set_from_12000001  1          7829167152  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_12000001.xml  
+biosample_set_from_15000001  1          8303400332  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_15000001.xml  
+biosample_set_from_18000001  1          8792597254  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_18000001.xml  
+biosample_set_from_21000001  1          9192189812  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_21000001.xml  
+biosample_set_from_24000001  1          9776744731  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_24000001.xml  
+biosample_set_from_27000001  1          4108951021  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_27000001.xml  
+biosample_set_from_3000001   1          7982292618  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_3000001.xml   
+biosample_set_from_6000001   1          8143386215  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_6000001.xml   
+biosample_set_from_9000001   1          7829178299  /Users/MAM/Documents/gitrepos/biosample-basex/target/splitted/biosample_set_from_9000001.xml   
+books                        1          6273        /Users/MAM/books.xml                                                                           
+color_words                  1          5290        /Users/MAM/color_words.xml                                                                     
+irregular                    1          5141        /Users/MAM/irregular.xml                                                                       
 
 13 database(s).
