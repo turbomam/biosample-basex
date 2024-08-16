@@ -1,4 +1,4 @@
-Superseded by https://github.com/turbomam/biosample-xmldb-sqldb (which, despite it's name, doesn't use an XML database)
+**Superseded by https://github.com/turbomam/biosample-xmldb-sqldb (which, despite it's name, doesn't use an XML database)**
 
 # biosample-basex
 _Using XQueries in a BaseX database to convert NCBI's BioSample database from XML to SQLite._
